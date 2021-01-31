@@ -1,0 +1,33 @@
+{
+  "name": "fit2me",
+  "version": "1.0.0",
+  "description": "### Fit2Me  Fit2Me is a web application that allows fitness seekers to connect with trainers in their area at outdoor or home locations.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gigimscarborough/Fit2Me.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gigimscarborough/Fit2Me/issues"
+  },
+  "homepage": "https://github.com/gigimscarborough/Fit2Me#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.14",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
