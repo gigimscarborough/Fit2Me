@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { openModal } from '../../actions/modal_actions';
 import './navbar.scss'
+import fit2me from '../../assets/images/fit2me.png'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -36,6 +37,7 @@ class NavBar extends React.Component {
         return (
             <div className="main-nav-div">
                 {this.getButton()}
+                <img src={fit2me} alt=""/>
             </div>
         );
     }
