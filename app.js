@@ -17,7 +17,7 @@ app.get('/',(req,res)=>{
     secretAccessKey: keys.AWSsecretAccessKey
   });
 
-  let s3 = new AWS.S3();//test
+  let s3 = new AWS.S3();
 
   async function getImage(){
     const data =  s3.getObject(
