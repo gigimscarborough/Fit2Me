@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/gigimscarborough/Fit2Me#readme",
   "dependencies": {
+    "aws-sdk": "^2.834.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
