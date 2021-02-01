@@ -60,14 +60,15 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="modal-top" onClick={e => e.stopPropagation()}>
-            <div className="signup-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <div className="signup-form">
-                        <br />
+                <div className="session-logo">LOGO HERE</div>
+                <h1 className="session-form-header">Please create an account if you would like to make reservations</h1>
+                <div className="session-form-container">
+                    <form className="session-form" onSubmit={this.handleSubmit}>
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
+                            className="username-input"
                         />
                         <br />
                         <input type="text"
@@ -86,6 +87,7 @@ class SignupForm extends React.Component {
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
+                            className="password-input"
                         />
                         <br />
                         <input type="password"
@@ -110,9 +112,8 @@ class SignupForm extends React.Component {
                         </label>
                         <input type="submit" value="Sign Up" />
                         {this.renderErrors()}
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
             </div>
         );
     }

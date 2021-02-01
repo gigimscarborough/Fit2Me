@@ -28,6 +28,7 @@ class NavBar extends React.Component {
             return (
                 <div>
                     <button onClick={() => this.props.openModal('login')}>Sign In</button>
+                    <button onClick={() => this.props.openModal('signup')}>Create an Account</button>
                 </div>
             );
         }

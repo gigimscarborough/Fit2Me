@@ -1,5 +1,9 @@
+$fit2me-blue: #25859b;
+$fit2me-light-blue: #25859bef;
+
+
 .behind-modal{
-    position: fixed;
+   position: fixed;
    top: 0;
    bottom: 0;
    right: 0;
@@ -9,27 +13,90 @@
 }
 
 .modal-top{
-background-color: white;
-position: absolute;
-border-radius: 5px;
-height: 500px;
-width: 450px;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);  
+   background-color: white;
+   position: absolute;
+   border-radius: 5px;
+   width: 350px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);  
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   .session-form-header {
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+      width: 300px;
+   }
+
+   .session-logo {
+      margin-top: 40px;
+   }
 }
 
 
-.login-form-container {
-  position: relative;
+.session-form-container {
+   position: relative;
    display: flex;
    justify-content: center;
+   flex-direction: column;
+   margin-bottom: 30px;
+
+   form.session-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      input {
+         width: 200px;
+         height: 20px;
+         font-size: 14px;
+         padding: 5px;
+         border-radius: 5px;
+         border: solid 1px $fit2me-blue;
+         // outline: none;
+      }
+
+
+      input.form-submit {
+         cursor: pointer;
+         height: 30px;
+         width: 214px;
+         background-color: $fit2me-blue;
+         border: none;
+         color: white;
+         font-weight: bold
+      }
+
+      input.form-submit:hover {
+         background-color: $fit2me-light-blue;
+      }
+      
+   }
+
+   .switch-session {
+      display: flex;
+      justify-content: space-between;
+
+      .switch-link {
+         cursor: pointer;
+         text-decoration: underline;
+         // margin-bottom: 50px;
+      }
+      
+   }
+   
    
 }
 
-.signup-form-container {
-  position: relative;
-   display: flex;
-   justify-content: center;
+// .signup-form-container {
+//    position: relative;
+//    display: flex;
+//    justify-content: center;
+
    
-}
+// }
