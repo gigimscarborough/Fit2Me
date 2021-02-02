@@ -115,6 +115,7 @@
 }
 
 .slide-text-top{
+    -webkit-text-stroke: 0.5px black;
     position: relative;
     color: white;
     bottom: 720px;
@@ -124,6 +125,7 @@
 }
 
 .slide-text-bot{
+    -webkit-text-stroke: 1px black;
     position: relative;
     color: white;
     bottom: 170px;
@@ -134,6 +136,7 @@
 }
 
 .slide-text-intro{
+    -webkit-text-stroke: 1px black;
     position: relative;
     color: white;
     font-weight: bold;
@@ -145,17 +148,25 @@
 }
 
 .slide-text-main{
+    -webkit-text-stroke: 1px black;
     position: relative;
     color: white;
     font-weight: bold;
     bottom: 280px;
     left: 600px;
-    font-size: 22px;
+    font-size: 25px;
     font-family: 'Rubik';
     // margin-right: 20px;
 }
 
+.slide-text-main-box{
+    position: relative;
+    width: 600px;
+    margin: 30px;
+}
+
 .slide-reserve-button{
+    -webkit-text-stroke: 1px black;
     position: relative;
     color: white;
     bottom: 380px;

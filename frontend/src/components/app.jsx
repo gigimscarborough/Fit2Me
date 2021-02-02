@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import NavBar from './nav/navbar_container'
 import Modal from './session/modal'
 import Splash from './splash/splash'
-
+import TrainerShowContainer from './trainer/trainer_show_container'
 
 const App = () => (
     <div>
@@ -13,6 +13,7 @@ const App = () => (
     <NavBar/>
     <Switch>
         <Route exact path="/" component={Splash} />
+        <Route exact path="/trainers/:trainerId" component={TrainerShowContainer} />
     </Switch>
     </div>
 );

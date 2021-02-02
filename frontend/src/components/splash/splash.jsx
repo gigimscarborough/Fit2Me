@@ -50,9 +50,7 @@ class Splash extends React.Component {
                         <div className="slide">
                             <img src={splashIntro2} />
                             <div className="slide-text-main">
-                                <p>FIT2ME IS AN INNOVATIVE WEB APPLICATION THAT ALLOWS </p>
-                                <p>TRAINEES TO SEARCH AND FIND THEIR BEST MATCHED TRAINERS </p>
-                                <p>BASED ON LOCATION AND THEIR SPECIALTIES!</p>
+                                <p className="slide-text-main-box">FIT2ME IS AN INNOVATIVE WEB APPLICATION THAT ALLOWS TRAINEES TO SEARCH AND FIND THEIR BEST MATCHED TRAINERS BASED ON LOCATION AND THEIR SPECIALTIES!</p>
                             </div>
                         </div>
                         <div className="slide">
