@@ -1,19 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const TrainerSchema = new Schema({
     id: {
-      type: Schema.Types.ObjectId,
-      required: true
-    },
-    email: {
-      type: String,
-      required: true
-    },
-    password: {
-      type: String,
-      required: true
-    },
+        type: Schema.Types.ObjectId,
+        required: true
+      },
     firstName: {
       type: String,
       required: true
@@ -23,15 +15,27 @@ const UserSchema = new Schema({
       required: true
     },
     hasLocation: {
-      type: Boolean,
-      // required: true
+      type: String,
+      required: true
     },
     canTravel: {
+      type: String,
+      required: true
+    },
+    dailyAvailability: {
       type: Boolean,
+      required: true
+    },
+    experienceLevel: {
+      type: Boolean,
+      required: true
+    },
+    specialties: {
+      type: Array,
       required: true
     }
   }, {
     timestamps: true
   })
   
-  module.exports = User = mongoose.model('User', UserSchema);
+  module.exports = Trainer = mongoose.model('Trainer', TrainerSchema);
