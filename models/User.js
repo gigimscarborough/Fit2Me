@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
-
 const UserSchema = new Schema({
-    handle: {
-      type: String,
+    id: {
+      type: Schema.Types.ObjectId,
       required: true
     },
     email: {
@@ -26,7 +24,7 @@ const UserSchema = new Schema({
     },
     hasLocation: {
       type: Boolean,
-      required: true
+      // required: true
     },
     canTravel: {
       type: Boolean,
