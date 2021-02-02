@@ -15,11 +15,11 @@ const TrainerSchema = new Schema({
       required: true
     },
     hasLocation: {
-      type: String,
+      type: Boolean,
       required: true
     },
     canTravel: {
-      type: String,
+      type: Boolean,
       required: true
     },
     dailyAvailability: {

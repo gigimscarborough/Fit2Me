@@ -9,6 +9,9 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
+router.get('/test', (req, res) => {
+  res.send('Hello World')
+})
 
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
     res.json({
@@ -16,6 +19,8 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
       email: req.user.email
     });
   })
+
+
 
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
