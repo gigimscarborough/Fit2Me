@@ -126,8 +126,56 @@
 .slide-text-bot{
     position: relative;
     color: white;
-    bottom: 150px;
+    bottom: 170px;
     left: 80px;
     font-size: 20px;
     font-family: 'Rubik';
+    // margin-right: 20px;
+}
+
+.slide-text-intro{
+    position: relative;
+    color: white;
+    font-weight: bold;
+    bottom: 220px;
+    left: 80px;
+    font-size: 50px;
+    font-family: 'Rubik';
+    // margin-right: 20px;
+}
+
+.slide-text-main{
+    position: relative;
+    color: white;
+    font-weight: bold;
+    bottom: 280px;
+    left: 600px;
+    font-size: 22px;
+    font-family: 'Rubik';
+    // margin-right: 20px;
+}
+
+.slide-reserve-button{
+    position: relative;
+    color: white;
+    bottom: 380px;
+    left: 500px;
+    font-size: 25px;
+    font-family: "Rubik";
+    border: solid 2px white;
+    border-radius: 10px;
+    width: 330px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 9px;
+    text-decoration: none;
+}
+.reserve-link{
+    text-decoration: none;
+}
+.slide-reserve-button:hover{
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    transition: 0.7s;
 }
