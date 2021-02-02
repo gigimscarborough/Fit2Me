@@ -24,7 +24,7 @@ const UserSchema = new Schema({
     },
     hasLocation: {
       type: Boolean,
-      // required: true
+      required: true
     },
     canTravel: {
       type: Boolean,
