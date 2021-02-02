@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
-    id: {
-        type: Schema.Types.ObjectId,
-        required: true
-      },
     trainerId: {
         type: Schema.Types.ObjectId,
       required: true

@@ -13,12 +13,25 @@ router.get('/', (req, res) => {
 router.get('/search', (req, res) => {
     
     Trainer.where('specialties').equals(req.query.specialties)
-        .where('canTravel').equals(req.query.hasLocation)
-        .where('hasLocation').equals(req.query.canTravel)
+        .where('canTravel').equals(Boolean(req.query.hasLocation))
+        .where('hasLocation').equals(Boolean(req.query.canTravel))
         .then(trainers => {
         
         return res.json({trainers})        
     })          
+})
+
+router.post('/create', (req, res) => {
+    
+    const newTrainer = new Trainer({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        hasLocation: Boolean(req.body.hasLocation),
+        canTravel: Boolean(req.body.canTravel),
+        dailyAvailability: req.body.dailyAvailability,
+        experienceLevel: req.body.experienceLevel,
+        specialties: req.body.specialties,
+      })        
 })
 
 module.exports = router;

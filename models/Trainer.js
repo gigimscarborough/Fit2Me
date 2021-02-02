@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TrainerSchema = new Schema({
-    id: {
-        type: Schema.Types.ObjectId,
-        required: true
-      },
     firstName: {
       type: String,
       required: true
