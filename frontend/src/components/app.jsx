@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import NavBar from './nav/navbar_container'
 import Modal from './session/modal'
 import Splash from './splash/splash'
+import UserShowContainer from './user/user_show_container'
 
 
 const App = () => (
@@ -13,6 +14,7 @@ const App = () => (
     <NavBar/>
     <Switch>
         <Route exact path="/" component={Splash} />
+        <Route exact path="/users/:userId" component={UserShowContainer} />
     </Switch>
     </div>
 );
