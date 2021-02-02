@@ -10,6 +10,17 @@ class Splash extends React.Component {
     constructor(props){
         super(props);
     } 
+    
+    componentDidMount(){
+        let counter = 1;
+        setInterval(() => {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter > 4) {
+                counter = 1;
+            }
+         }, 6000) 
+    }
 
     render(){
         return(
@@ -22,10 +33,19 @@ class Splash extends React.Component {
                         <input type="radio" name="radio-btn" id="radio3"/>
                         <input type="radio" name="radio-btn" id="radio4"/>
                         <div className="slide first">
-                            <img src={fitnessFail} />
+                            <img className="slide-image" src={fitnessFail} />
+                            <div className="slide-text-top">
+                                <p>LACKING MOTIVATION WORKING OUT DURING THIS PANDEMIC?</p>
+                            </div>
+                            <div className="slide-text-bot">
+                                <p>NO PROFESSIONAL TRAINERS, NOT ENOUGH EQUIPMENT OR SPACE? </p>
+                            </div>
                         </div>
                         <div className="slide">
                             <img src={splashIntro} />
+                            <div className="slide-text1">
+                                <p></p>
+                            </div>
                         </div>
                         <div className="slide">
                             <img src={splashIntro2} />
@@ -34,12 +54,12 @@ class Splash extends React.Component {
                             <img src={splashIntro3} />
                         </div>
 
-                        <div className="navigation-auto">
-                            <div className="auto-btn1"></div>
-                            <div className="auto-btn2"></div>
-                            <div className="auto-btn3"></div>
-                            <div className="auto-btn4"></div>
-                        </div>
+                    </div>
+                    <div className="navigation-auto">
+                        <div className="auto-btn1"></div>
+                        <div className="auto-btn2"></div>
+                        <div className="auto-btn3"></div>
+                        <div className="auto-btn4"></div>
                     </div>
 
                     <div className="navigation-manual">
