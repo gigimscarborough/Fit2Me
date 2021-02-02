@@ -30,6 +30,7 @@ $fit2me-light-blue: #25859bef;
       font-weight: bold;
       font-size: 24px;
       width: 300px;
+    font-family: 'Rubik', sans-serif;
    }
 
    img.session-logo {
@@ -59,9 +60,14 @@ $fit2me-light-blue: #25859bef;
          padding: 5px;
          border-radius: 5px;
          border: solid 1px $fit2me-blue;
+         font-family: 'Rubik', sans-serif;
+
          // outline: none;
       }
 
+      input:focus {
+        outline: none;
+      }
 
       input.form-submit {
          cursor: pointer;
@@ -70,7 +76,8 @@ $fit2me-light-blue: #25859bef;
          background-color: $fit2me-blue;
          border: none;
          color: white;
-         font-weight: bold
+         font-weight: bold;
+         font-family: 'Rubik', sans-serif;
       }
 
       input.form-submit:hover {
@@ -82,6 +89,7 @@ $fit2me-light-blue: #25859bef;
    .switch-session {
       display: flex;
       justify-content: space-between;
+      font-family: 'Rubik', sans-serif;
 
       .switch-link {
          cursor: pointer;
@@ -96,6 +104,8 @@ $fit2me-light-blue: #25859bef;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+     font-family: 'Rubik', sans-serif;
+
 
       label {
          display: flex;
@@ -106,9 +116,26 @@ $fit2me-light-blue: #25859bef;
             width: auto;
             margin: 0px;
             margin-left: 5px;
+            color: $fit2me-blue
             
          }
       }
+   }
+   .err-list{
+       list-style: none;
+       font-family: 'Rubik', sans-serif;
+       color: $fit2me-light-blue;
+       font-size: 13px;
+      
+   }
+   .radio-cont{
+       display: flex;
+       justify-content: space-around;
+        align-items: center;
+   }
+   .quest{
+       margin: 0 0 3px 0;
+
    }
    
 }
