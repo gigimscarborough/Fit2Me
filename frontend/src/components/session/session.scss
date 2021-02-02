@@ -32,8 +32,9 @@ $fit2me-light-blue: #25859bef;
       width: 300px;
    }
 
-   .session-logo {
+   img.session-logo {
       margin-top: 40px;
+      width: 150px;
    }
 }
 
@@ -90,13 +91,25 @@ $fit2me-light-blue: #25859bef;
       
    }
    
+   .signup-travel-radio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      label {
+         display: flex;
+         align-items: center;
+         
+         
+         .radio {
+            width: auto;
+            margin: 0px;
+            margin-left: 5px;
+            
+         }
+      }
+   }
    
 }
 
-// .signup-form-container {
-//    position: relative;
-//    display: flex;
-//    justify-content: center;
-
-   
-// }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import fit2me from '../../assets/images/fit2me.png'
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -60,7 +61,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="modal-top" onClick={e => e.stopPropagation()}>
-                <div className="session-logo">LOGO HERE</div>
+                <img className="session-logo" src={fit2me} alt="logo"/>
                 <h1 className="session-form-header">Please create an account if you would like to make reservations</h1>
                 <div className="session-form-container">
                     <form className="session-form" onSubmit={this.handleSubmit}>
@@ -96,23 +97,35 @@ class SignupForm extends React.Component {
                             placeholder="Confirm Password"
                         />
                         <br />
-                        <label> Yes
-                        <input type="radio"
-                            value="true"
-                            onChange={this.update('willTravel')}   
-                            />
-                        <br />
-                        </label>
-                        <label> No
-                        <input type="radio"
-                                value="false"
-                                onChange={this.update('willTravel')}
-                            />
+                        <div className="signup-travel-radio">
+                            <p>Are you willing to travel?</p>
+                            <label> Yes
+                                <input type="radio"
+                                    value="true"
+                                    onChange={this.update('willTravel')}   
+                                    className="radio"
+                                    name="travel"
+                                />                                
+                            </label>
+
+                            <label> No
+                                <input type="radio"
+                                    value="false"
+                                    onChange={this.update('willTravel')}
+                                    className="radio"
+                                    name="travel"
+                                />
+                            </label>
                             <br />
-                        </label>
-                        <input type="submit" value="Sign Up" />
+                        </div>
+                        
+                        <input className="form-submit" type="submit" value="Sign Up" />
                         {this.renderErrors()}
                     </form>
+                    <div className="switch-session">
+                        <p>Already a member?</p>
+                        <p className="switch-link" onClick={() => this.props.openModal('login')}>Log in!</p>
+                    </div>
                 </div>
             </div>
         );

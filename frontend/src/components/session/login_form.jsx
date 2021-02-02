@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import logo from ""
-
+import fit2me from '../../assets/images/fit2me.png'
 
 
 class LoginForm extends React.Component {
@@ -62,7 +61,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="modal-top" onClick={e => e.stopPropagation()}>
-                <div className="session-logo">LOGO HERE</div>
+                <img className="session-logo" src={fit2me} alt="logo"/>
                 <h1 className="session-form-header">Log into your account to view your reservations</h1>
                 <div className="session-form-container">
                     <form className="session-form" onSubmit={this.handleSubmit}>
