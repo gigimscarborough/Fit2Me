@@ -44,7 +44,6 @@ router.post('/register', (req, res) => {
             canTravel: Boolean(req.body.canTravel),
           })
 
-
           bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(newUser.password, salt, (err, hash) => {
               if (err) throw err;
@@ -57,7 +56,6 @@ router.post('/register', (req, res) => {
         }
       })
   })
-
 
   router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);

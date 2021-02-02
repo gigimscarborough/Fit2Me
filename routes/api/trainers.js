@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
 router.get('/search', (req, res) => {
     
-    Trainer.where('specialties').equals(req.query.specialties)
+    Trainer.where('specialties').equals(req.query.specialties.toLowerCase())
         .where('canTravel').equals(Boolean(req.query.hasLocation))
         .where('hasLocation').equals(Boolean(req.query.canTravel))
         .then(trainers => {
@@ -31,7 +31,11 @@ router.post('/create', (req, res) => {
         dailyAvailability: req.body.dailyAvailability,
         experienceLevel: req.body.experienceLevel,
         specialties: req.body.specialties,
-      })        
+      })
+      
+    newTrainer.save()
+    .then(trainer => res.json(trainer))
+    .catch(err => console.log(err));
 })
 
 module.exports = router;

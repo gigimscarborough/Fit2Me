@@ -19,11 +19,11 @@ const TrainerSchema = new Schema({
       required: true
     },
     dailyAvailability: {
-      type: Boolean,
+      type: String,
       required: true
     },
     experienceLevel: {
-      type: Boolean,
+      type: String,
       required: true
     },
     specialties: {
