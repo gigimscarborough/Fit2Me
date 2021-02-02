@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TrainerSchema = new Schema({
-    id: {
-        type: Schema.Types.ObjectId,
-        required: true
-      },
     firstName: {
       type: String,
       required: true
@@ -23,15 +19,19 @@ const TrainerSchema = new Schema({
       required: true
     },
     dailyAvailability: {
-      type: Boolean,
+      type: String,
       required: true
     },
     experienceLevel: {
-      type: Boolean,
+      type: String,
       required: true
     },
     specialties: {
       type: Array,
+      required: true
+    },
+    imageUrl: {
+      type: String,
       required: true
     }
   }, {

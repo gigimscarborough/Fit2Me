@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const LocationSchema = new Schema({
-    id: {
-        type: Schema.Types.ObjectId,
-        required: true
-      },
     ownerId: {
         type: Schema.Types.ObjectId,
       required: true
