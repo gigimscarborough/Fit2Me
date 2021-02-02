@@ -28,8 +28,8 @@ module.exports = function validateRegisterInput(data) {
     errors.firstName = 'First name field is required';
   }
 
-  if (!Validator.isLength(data.lastName, { min: 2, max: 30 })) {
-    errors.lastName = 'First Name must be at least 2 characters';
+  if (!Validator.isLength(data.firstName, { min: 2, max: 30 })) {
+    errors.firstName = 'First Name must be at least 2 characters';
   }
 
   if (Validator.isEmpty(data.lastName)) {
