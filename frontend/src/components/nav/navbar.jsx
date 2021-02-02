@@ -22,6 +22,7 @@ class NavBar extends React.Component {
             return (
                 <div>
                     <button className="session-btn" onClick={this.logoutUser}>LOGOUT</button>
+                    <i class="fas fa-user-alt"></i>
                 </div>
             );
         } else {
