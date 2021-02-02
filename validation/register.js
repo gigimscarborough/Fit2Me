@@ -33,7 +33,7 @@ module.exports = function validateRegisterInput(data) {
   }
 
   if (Validator.isEmpty(data.lastName)) {
-    errors.firstName = 'Last name field is required';
+    errors.lastName = 'Last name field is required';
   }
 
   if (!Validator.isLength(data.lastName, { min: 2, max: 30 })) {
