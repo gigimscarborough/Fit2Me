@@ -3,7 +3,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 import NavBar from './nav/navbar_container'
 import Modal from './session/modal'
-
+import Splash from './splash/splash'
 
 
 const App = () => (
@@ -12,7 +12,7 @@ const App = () => (
     <Modal/>
     <NavBar/>
     <Switch>
-     
+        <Route exact path="/" component={Splash} />
     </Switch>
     </div>
 );

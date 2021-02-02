@@ -14,7 +14,7 @@ class LoginForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
+    
     }
 
    
@@ -45,24 +45,17 @@ class LoginForm extends React.Component {
         this.props.login(user);
     }
 
-  
-    renderErrors() {
-        return (
-            <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
-                    </li>
-                ))}
-            </ul>
-        );
+    handleErrors(type) {
+        const inputErrors = Object.keys(this.state.errors).filter(error => this.state.errors[error].includes(type))
+        return inputErrors.map(error => <li className="err-list">{this.state.errors[error]}</li>)
     }
+
 
     render() {
         return (
             <div className="modal-top" onClick={e => e.stopPropagation()}>
                 <img className="session-logo" src={fit2me} alt="logo"/>
-                <h1 className="session-form-header">Log into your account to view your reservations</h1>
+                <h1 className="session-form-header">LOG IN TO VIEW YOUR WORKOUTS</h1>
                 <div className="session-form-container">
                     <form className="session-form" onSubmit={this.handleSubmit}>
                         <input type="text"
@@ -71,6 +64,7 @@ class LoginForm extends React.Component {
                             placeholder="Email"
                             className="username-input"
                         />
+                        {this.handleErrors('Email')}
                         <br />
                         <input type="password"
                             value={this.state.password}
@@ -78,12 +72,13 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                             className="password-input"
                         />
+                        {this.handleErrors('Password')}
                         <br />
                         <input type="submit" value="Login" className="form-submit"/>
-                        {this.renderErrors()}
+                        {/* {this.renderErrors()} */}
                     </form>
                     <div className="switch-session">
-                        <p>Not Yet A Member?</p>
+                        <p >Not Yet A Member?</p>
                         <p className="switch-link" onClick={() => this.props.openModal('signup')}>Join Us!</p>
                     </div>
 
