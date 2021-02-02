@@ -29,6 +29,10 @@ const TrainerSchema = new Schema({
     specialties: {
       type: Array,
       required: true
+    },
+    imageUrl: {
+      type: String,
+      required: true
     }
   }, {
     timestamps: true
