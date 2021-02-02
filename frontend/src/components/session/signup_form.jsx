@@ -11,9 +11,10 @@ class SignupForm extends React.Component {
             last_name: '',
             password: '',
             password2: '',
-            canTravel: "false",
-            hasLocation: "false",
-            errors: {}
+            canTravel: false,
+            hasLocation: false,
+            errors: {},
+
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -61,6 +62,7 @@ class SignupForm extends React.Component {
             </ul>
         );
     }
+
 
     handleErrors(type) {
         const inputErrors = Object.keys(this.state.errors).filter(error => this.state.errors[error].includes(type))
@@ -117,7 +119,7 @@ class SignupForm extends React.Component {
                             <div className ="radio-cont">
                             <label> 
                                 <input type="radio"
-                                    value="true"
+                                    value={true}
                                     onChange={this.update('willTravel')}   
                                     className="radio"
                                     name="travel"
@@ -126,7 +128,7 @@ class SignupForm extends React.Component {
 
                             <label> 
                                 <input type="radio"
-                                    value="false"
+                                    value={false}
                                     onChange={this.update('willTravel')}
                                     className="radio"
                                     name="travel"
@@ -137,7 +139,7 @@ class SignupForm extends React.Component {
                         </div>
                         
                         <input className="form-submit" type="submit" value="Sign Up" />
-                      
+                
                     </form>
                     <div className="switch-session">
                         <p>Already a member?</p>
