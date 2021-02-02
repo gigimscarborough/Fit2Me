@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 const bcrypt = require('bcryptjs');
 const Trainer = require('../../models/Trainer');
 const jwt = require('jsonwebtoken');
@@ -11,25 +11,27 @@ router.get('/', (req, res) => {
 })
 
 router.get('/search', (req, res) => {
-    return res.send(req.params.specialties)
     
-    // Trainer.where('specialties').equals(req.params.specialties)
-    //     .where('canTravel').equals(true)
-    //     .where('hasLocation').equals(false).then(trainers => {
+    Trainer.where('specialties').equals(req.query.specialties)
+        .where('canTravel').equals(Boolean(req.query.hasLocation))
+        .where('hasLocation').equals(Boolean(req.query.canTravel))
+        .then(trainers => {
         
-    //     return res.json({trainers})        
-    // })  
+        return res.json({trainers})        
+    })          
+})
 
-    // if (req.params.canTravel !== null) {
-    //     allTrainers = allTrainers.where('canTravel').equals(req.params.canTravel)
-    // }
-
-    // if (req.params.hasLocation !== null) {
-    //     allTrainers = allTrainers.where('hasLocation').equals(req.params.hasLocation)
-    // }
-
+router.post('/create', (req, res) => {
     
-
+    const newTrainer = new Trainer({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        hasLocation: Boolean(req.body.hasLocation),
+        canTravel: Boolean(req.body.canTravel),
+        dailyAvailability: req.body.dailyAvailability,
+        experienceLevel: req.body.experienceLevel,
+        specialties: req.body.specialties,
+      })        
 })
 
 module.exports = router;
