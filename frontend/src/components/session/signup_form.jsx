@@ -11,7 +11,8 @@ class SignupForm extends React.Component {
             last_name: '',
             password: '',
             password2: '',
-            willTravel: "false",
+            canTravel: "false",
+            hasLocation: "false",
             errors: {}
         };
 
@@ -37,10 +38,13 @@ class SignupForm extends React.Component {
         e.preventDefault();
         let user = {
             email: this.state.email,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
             password: this.state.password,
             password2: this.state.password2,
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
+            canTravel: this.state.canTravel,
+            hasLocation: this.state.hasLocation
+
         };
 
         this.props.signup(user, this.props.history);
@@ -58,11 +62,16 @@ class SignupForm extends React.Component {
         );
     }
 
+    handleErrors(type) {
+        const inputErrors = Object.keys(this.state.errors).filter(error => this.state.errors[error].includes(type))
+        return inputErrors.map(error => <li className="err-list">{this.state.errors[error]}</li>)
+    }
+
     render() {
         return (
             <div className="modal-top" onClick={e => e.stopPropagation()}>
                 <img className="session-logo" src={fit2me} alt="logo"/>
-                <h1 className="session-form-header">Please create an account if you would like to make reservations</h1>
+                <h1 className="session-form-header">CREATE AN ACCOUNT TO BOOK YOUR WORKOUT NOW!</h1>
                 <div className="session-form-container">
                     <form className="session-form" onSubmit={this.handleSubmit}>
                         <input type="text"
@@ -71,18 +80,21 @@ class SignupForm extends React.Component {
                             placeholder="Email"
                             className="username-input"
                         />
+                        {this.handleErrors('Email')}
                         <br />
                         <input type="text"
                             value={this.state.handle}
                             onChange={this.update('firstName')}
                             placeholder="First Name"
                         />
+                        {this.handleErrors('First')}
                         <br />
                         <input type="text"
                             value={this.state.handle}
                             onChange={this.update('lastName')}
                             placeholder="Last Name"
                         />
+                        {this.handleErrors('Last')}
                         <br />
                         <input type="password"
                             value={this.state.password}
@@ -90,37 +102,42 @@ class SignupForm extends React.Component {
                             placeholder="Password"
                             className="password-input"
                         />
+                        {this.handleErrors('Password must be at least')}
                         <br />
                         <input type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
                         />
+                        {this.handleErrors('Confirm')}
+                        {this.handleErrors('Passwords must match')}
                         <br />
                         <div className="signup-travel-radio">
-                            <p>Are you willing to travel?</p>
-                            <label> Yes
+                            <p className="quest">Are you willing to travel?</p>
+                            <div className ="radio-cont">
+                            <label> 
                                 <input type="radio"
                                     value="true"
                                     onChange={this.update('willTravel')}   
                                     className="radio"
                                     name="travel"
                                 />                                
-                            </label>
+                            </label>Yes
 
-                            <label> No
+                            <label> 
                                 <input type="radio"
                                     value="false"
                                     onChange={this.update('willTravel')}
                                     className="radio"
                                     name="travel"
                                 />
-                            </label>
+                            </label> No
+                            </div>
                             <br />
                         </div>
                         
                         <input className="form-submit" type="submit" value="Sign Up" />
-                        {this.renderErrors()}
+                      
                     </form>
                     <div className="switch-session">
                         <p>Already a member?</p>

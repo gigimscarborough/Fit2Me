@@ -60,4 +60,9 @@
    color: white;
    transform: transition(0.4s);
     border: solid black 1px;
+    
+}
+
+.session-btn:focus{
+outline: none;
 }
