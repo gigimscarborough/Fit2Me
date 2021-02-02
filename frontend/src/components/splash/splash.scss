@@ -1,17 +1,18 @@
+
 .splash-intro-container{
     margin: 0;
     display: flex;
     padding: 0;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+    height: 800px;
+    // justify-content: center;
+    // align-items: center;
     background: #25859b;
 }
 
 .slider{
-    width: 800px;
-    height: 500px;
-    border-radius: 10px;
+    width: 100%;
+    height: 800px;
+    // border-radius: 10px;
     overflow: hidden;
 }
 
@@ -19,6 +20,7 @@
     width: 500%;
     height: 500px;
     display: flex;
+
 }
 
 .slides input {
@@ -31,16 +33,21 @@
 }
 
 .slide img{
-    width: 800px;
-    height: 500px;
+    width: 100%;
+    height: 800px;
 }
 
+// .slide-image{
+//     width: 1000px;
+// }
+
 .navigation-manual{
-    position: absolute;
-    width: 800px;
-    margin-top: -40px;
+    position: relative;
+    // width: 800px;
+    // margin-top: -40px;
     display: flex;
     justify-content: center;
+    top: 248px;
 }
 
 .manual-btn{
@@ -77,10 +84,10 @@
 
 .navigation-auto{
     position: absolute;
-    display: flex;
-    width: 800px;
+    display: none;
+    width: 1109px;
     justify-content: center;
-    margin-top: 460px;
+    margin-top: 748px;
 }
 
 .navigation-auto div{
@@ -96,4 +103,31 @@
 
 #radio1:checked ~ .navigation-auto .auto-btn1{
     background: #25859b;
+}
+#radio1:checked ~ .navigation-auto .auto-btn2{
+    background: #25859b;
+}
+#radio1:checked ~ .navigation-auto .auto-btn3{
+    background: #25859b;
+}
+#radio1:checked ~ .navigation-auto .auto-btn4{
+    background: #25859b;
+}
+
+.slide-text-top{
+    position: relative;
+    color: white;
+    bottom: 720px;
+    left: 50px;
+    font-size: 20px;
+    font-family: 'Rubik';
+}
+
+.slide-text-bot{
+    position: relative;
+    color: white;
+    bottom: 150px;
+    left: 80px;
+    font-size: 20px;
+    font-family: 'Rubik';
 }
