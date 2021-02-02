@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 const bcrypt = require('bcryptjs');
 const Trainer = require('../../models/Trainer');
 const jwt = require('jsonwebtoken');
@@ -11,25 +11,14 @@ router.get('/', (req, res) => {
 })
 
 router.get('/search', (req, res) => {
-    return res.send(req.params.specialties)
     
-    // Trainer.where('specialties').equals(req.params.specialties)
-    //     .where('canTravel').equals(true)
-    //     .where('hasLocation').equals(false).then(trainers => {
+    Trainer.where('specialties').equals(req.query.specialties)
+        .where('canTravel').equals(req.query.hasLocation)
+        .where('hasLocation').equals(req.query.canTravel)
+        .then(trainers => {
         
-    //     return res.json({trainers})        
-    // })  
-
-    // if (req.params.canTravel !== null) {
-    //     allTrainers = allTrainers.where('canTravel').equals(req.params.canTravel)
-    // }
-
-    // if (req.params.hasLocation !== null) {
-    //     allTrainers = allTrainers.where('hasLocation').equals(req.params.hasLocation)
-    // }
-
-    
-
+        return res.json({trainers})        
+    })          
 })
 
 module.exports = router;
