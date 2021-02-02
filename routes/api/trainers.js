@@ -6,11 +6,9 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
-router.get('/test', (req, res) => {
-    res.send('Hello World')
-  })
 
-router.get('/:trainerId', (req, res) => {
+
+router.get('show/:trainerId', (req, res) => {
     Trainer.findById(req.params.trainerId)
 
     .then(trainer => res.json(trainer))
@@ -18,15 +16,15 @@ router.get('/:trainerId', (req, res) => {
 })
 
 router.get('/search', (req, res) => {
-    
-    Trainer.where('specialties').equals(req.query.specialties.toLowerCase())
-        .where('canTravel').equals(Boolean(req.query.hasLocation))
+    Trainer.find({'specialties': req.query.specialty.toLowerCase()})
+        Trainer.where('canTravel').equals(Boolean(req.query.hasLocation))
         .where('hasLocation').equals(Boolean(req.query.canTravel))
+        .where("experienceLevel").equals(req.query.experienceLevel)
         .then(trainers => {
-               
-        return res.json({trainers})     
-    })          
+        return res.json({trainers})       
+    })
 })
+
 
 router.post('/create', (req, res) => {
     
