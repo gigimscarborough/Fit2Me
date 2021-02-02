@@ -1,3 +1,63 @@
 .main-nav-div{
     display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+}
+
+.main-nav-div img{
+    height: 60px;
+    width: 240px;
+
+}
+
+.find-t{
+    color: #25859b;
+    font-family: 'Rubik', sans-serif;
+    border: solid #25859b 1px;
+    height: 40px;
+     border-radius: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     margin-right: 25px;
+}
+.find-t i{
+    font-size: 14px;
+    padding: 3px 8px;
+}
+.find-t span{
+ padding-right: 10px;
+}
+
+.find-t:hover{
+   background-color:black;
+   color: white;
+   transform: transition(0.4s);
+   border: solid black 1px;
+
+}
+
+.session-btn{
+    color:#25859b;
+    font-family: 'Rubik', sans-serif;
+    border: solid#25859b 1px;
+    border-radius: 20px;
+    background-color: white;
+    height: 40px;
+    font-weight: 600px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+.session-btn:hover{
+    background-color:black;
+   color: white;
+   transform: transition(0.4s);
+    border: solid black 1px;
 }

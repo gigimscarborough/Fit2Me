@@ -21,14 +21,14 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div>
-                    <button onClick={this.logoutUser}>Logout</button>
+                    <button className="session-btn" onClick={this.logoutUser}>LOGOUT</button>
                 </div>
             );
         } else {
             return (
                 <div>
-                    <button onClick={() => this.props.openModal('login')}>Sign In</button>
-                    <button onClick={() => this.props.openModal('signup')}>Create an Account</button>
+                    <button className="session-btn" onClick={() => this.props.openModal('login')}>SIGN IN</button>
+                    <button className="session-btn" onClick={() => this.props.openModal('signup')}>Create Account</button>
                 </div>
             );
         }
@@ -39,6 +39,12 @@ class NavBar extends React.Component {
             <div className="main-nav-div">
                 {this.getButton()}
                 <img src={fit2me} alt=""/>
+                <div className="find-t">
+                    <span>
+                        <i class="fas fa-search"></i>
+                        FIND A TRAINER
+                    </span>
+                </div>
             </div>
         );
     }
