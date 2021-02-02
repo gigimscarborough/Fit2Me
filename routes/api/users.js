@@ -13,6 +13,13 @@ router.get('/test', (req, res) => {
   res.send('Hello World')
 })
 
+router.get('show/:userId', (req, res) => {
+  User.findById(req.params.trainerId)
+
+  .then(user => res.json(user))
+  .catch(err => console.log(err));
+})
+
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
     res.json({
       id: req.user.id,
