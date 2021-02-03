@@ -7,8 +7,8 @@ class UserShow extends React.Component{
     }
 
     componentWillMount(){
-        debugger
-        console.log('test')
+ 
+        console.log('fetching user')
         this.props.fetchUser(this.props.currentUserId)
     }
 
@@ -20,7 +20,7 @@ class UserShow extends React.Component{
         
         return(
             <div>
-                <NextUserShowContainer/>
+                <NextUserShowContainer currentUserId={this.props.currentUserId}/>
             </div>
         )
     }

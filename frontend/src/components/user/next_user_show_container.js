@@ -7,8 +7,8 @@ import NextUserShow from './next_user_show';
 import modal from '../session/modal';
 
 const mSTP = (state, ownProps) => {
-    debugger
-    return { currentUser: state.entities.users[ownProps.match.params.userId] }
+
+    return { currentUser: state.entities.users }
 };
 
 const mDTP = dispatch => ({

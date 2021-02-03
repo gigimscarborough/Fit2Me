@@ -1,4 +1,6 @@
 import React from 'react'
+import './user.scss'
+import LocationForm from './location_form'
 
 
 class NextUserShow extends React.Component {
@@ -8,13 +10,35 @@ class NextUserShow extends React.Component {
 
 
     render() {
+        const currentUser = this.props.currentUser[this.props.currentUserId];
+
+        if (currentUser != null) {
 
 
-        return (
-            <div>
-                <h1>{this.props.currentUser.firstName}</h1>
-            </div>
-        )
+            return (
+                <div className="cont-div">
+                    <div className="dashboard">
+                        <h2>Dashboard</h2>
+                        <p>Add My Location</p>
+                        <p>View My Upcoming Workouts</p>
+                    </div>
+                    <div className="main-cont">
+                        <div className="header">
+                            <h1>Welcome {currentUser.firstName}!</h1>
+                        </div>
+                        <div className="loc-form-div">
+                            <LocationForm currentUser={this.props.currentUser[this.props.currentUserId]}/>
+                        </div>
+                        <div>
+                            <h2>My Upcoming Workouts</h2>
+                        </div>
+                    </div>
+
+                </div>
+            )
+        } else {
+            return null
+        }
     }
 }
 
