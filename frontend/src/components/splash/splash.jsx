@@ -21,7 +21,7 @@ class Splash extends React.Component {
             }
          }, 6000) 
     }
-
+    
     render(){
         return(
             <div className="splash-intro-container">
@@ -38,20 +38,27 @@ class Splash extends React.Component {
                                 <p>LACKING MOTIVATION WORKING OUT DURING THIS PANDEMIC?</p>
                             </div>
                             <div className="slide-text-bot">
-                                <p>NO PROFESSIONAL TRAINERS, NOT ENOUGH EQUIPMENT OR SPACE? </p>
+                                <p>..NO PROFESSIONAL TRAINERS, NOT ENOUGH EQUIPMENT OR SPACE? </p>
                             </div>
                         </div>
                         <div className="slide">
                             <img src={splashIntro} />
-                            <div className="slide-text1">
-                                <p></p>
+                            <div className="slide-text-intro">
+                                <p>WE HAVE A SOLUTION- FIT2ME!</p>
                             </div>
                         </div>
                         <div className="slide">
                             <img src={splashIntro2} />
+                            <div className="slide-text-main">
+                                <p className="slide-text-main-box">FIT2ME IS AN INNOVATIVE WEB APPLICATION THAT ALLOWS TRAINEES TO SEARCH AND FIND THEIR BEST MATCHED TRAINERS BASED ON LOCATION AND THEIR SPECIALTIES!</p>
+                            </div>
                         </div>
                         <div className="slide">
                             <img src={splashIntro3} />
+                            <Link className="reserve-link" to="/signup"><div className="slide-reserve-button">
+                                FIND YOUR TRAINER TODAY
+                            </div></Link>
+                            
                         </div>
 
                     </div>
