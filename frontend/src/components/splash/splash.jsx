@@ -11,16 +11,16 @@ class Splash extends React.Component {
         super(props);
         this.intervalId = 0;
     } 
-    
+
     componentDidMount(){
         let counter = 1;
         this.intervalId = setInterval(() => {
             document.getElementById('radio' + counter).checked = true;
             counter++;
             if(counter > 4) {
-                counter = 1;
+                counter = 1
             }
-         }, 6000) 
+         }, 5000) 
     }
 
     
@@ -62,8 +62,8 @@ class Splash extends React.Component {
                         </div>
                         <div className="slide">
                             <img src={splashIntro3} />
-                            <Link className="reserve-link" to="/signup"><div className="slide-reserve-button">
-                                FIND YOUR TRAINER TODAY
+                            <Link className="reserve-link" to="/trainers/:trainerId/reviews/create"><div className="slide-reserve-button">
+                                BOOK A TRAINER TODAY
                             </div></Link>
                             
                         </div>

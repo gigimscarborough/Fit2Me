@@ -9,9 +9,9 @@ export const fetchReviews = (trainerId) => {
 }
 
 export const createReview = (review, trainerId) => {
-    return axios.post(`/api/trainers/${trainerId}/reviews`)
+    return axios.post(`/api/trainers/${trainerId}/reviews`, review)
 }
 
 export const updateReview = (review, trainerId) => {
-    return axios.patch(`/api/trainers/${trainerId}/reviews/${}`)
+    return axios.patch(`/api/trainers/${trainerId}/reviews/${review.id}`, review)
 }

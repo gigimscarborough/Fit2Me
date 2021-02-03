@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './trainer_show.scss';
+import ReviewIndexContainer from '../review/review_index_container'
 
 class TrainerShow extends React.Component{
     constructor(props){
