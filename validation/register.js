@@ -40,6 +40,14 @@ module.exports = function validateRegisterInput(data) {
     errors.lastName = 'Last Name must be at least 2 characters';
   }
 
+  if (Validator.isEmpty(data.zipCode)) {
+    errors.lastName = 'Zip code field is required';
+  }
+
+  if (!Validator.isLength(data.zipCode, { min: 5, max: 5 })) {
+    errors.lastName = 'Zip Code must be 5 characters';
+  }
+
   if (Validator.isEmpty(data.password2)) {
     errors.password2 = 'Confirm Password field is required';
   }

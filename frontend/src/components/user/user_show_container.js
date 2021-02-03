@@ -7,7 +7,7 @@ import UserShow from './user_show';
 import modal from '../session/modal';
 
 const mSTP = (state, ownProps) => {
-    debugger
+
     return {currentUserId: ownProps.match.params.userId}
 };
 
