@@ -14,6 +14,7 @@ class SignupForm extends React.Component {
             password2: '',
             canTravel: "",
             hasLocation: "",
+            zipCode: "",
             errors: {},
 
         };
@@ -45,7 +46,8 @@ class SignupForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2,
             canTravel: this.state.canTravel,
-            hasLocation: this.state.hasLocation
+            hasLocation: this.state.hasLocation,
+            zipCode: this.state.zipCode
 
         };
         let sUser = {
@@ -119,7 +121,7 @@ class SignupForm extends React.Component {
                         {this.handleErrors('Confirm')}
                         {this.handleErrors('Passwords must match')}
                         <br />
-                        <div className="signup-travel-radio">
+                        {/* <div className="signup-travel-radio">
                             <p className="quest">Are you willing to travel?</p>
                             <div className ="radio-cont">
                             <label> 
@@ -139,9 +141,15 @@ class SignupForm extends React.Component {
                                     name="travel"
                                 />
                             </label> No
-                            </div>
+                            </div> */}
+                            {/* </div> */}
+                        <input type="text"
+                            value={this.state.zipCode}
+                            onChange={this.update('zipCode')}
+                            placeholder="Zip Code"
+                        />
+                        {this.handleErrors('Zip')}
                             <br />
-                        </div>
                         
                         <input className="form-submit" type="submit" value="Sign Up" />
                 

@@ -35,13 +35,11 @@ router.get('/search', (req, res) => {
         locationFlag1 = req.query.hasLocation === 'true' ? true : false
         locationFlag2 = req.query.hasLocation === 'true' ? true : false
     }
-
     Trainer.find({'specialties': req.query.specialty.toLowerCase()})
     .where("experienceLevel").equals(req.query.experienceLevel)
     .where("zipCode").equals(req.query.zipCode)
     .find({canTravel: {$in: [travelFlag1, travelFlag2]}})
     .find({hasLocation: {$in: [locationFlag1, locationFlag2]}})
-     
     .then(trainers => {
         return res.json({trainers})       
     })
