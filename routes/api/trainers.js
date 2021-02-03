@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
-router.get('show/:trainerId', (req, res) => {
+router.get('/show/:trainerId', (req, res) => {
     Trainer.findById(req.params.trainerId)
 
     .then(trainer => res.json(trainer))
