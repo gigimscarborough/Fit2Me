@@ -71,6 +71,7 @@ $fit2me-light-blue: #25859bef;
     padding-right: 20px;
     font-family: 'Rubik', sans-serif;
     margin-top: 40px;
+    padding-bottom: 20px;
 }
 
 .t-content-header h1{
@@ -107,11 +108,43 @@ transform: transition(0.4s);
 
 .trainer-div{
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
     border-bottom: solid #25859b 1px;
+    padding-bottom: 15px
 }
 .trainer-image{
-    height: 125px;
-    width: 125px;
-    border-radius: 4px;
+    height: 175px;
+    width: 175px;
+    border-radius: 5px;
 }
+
+.trainer-r{
+    padding-left: 15px;
+}
+
+.trainer-r a{
+    text-decoration: none;
+    color: #25859b
+}
+
+.trainer-r a:hover{
+    color: $fit2me-light-blue;
+}
+
+.trainer-l{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-decoration: none;
+color: #25859b
+}
+
+.trainer-link {
+text-decoration: none;
+color: #25859b
+}
+
+.trainer-link:hover {
+    color: $fit2me-light-blue;
+}
+

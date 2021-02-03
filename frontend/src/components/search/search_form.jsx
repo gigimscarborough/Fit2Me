@@ -1,5 +1,6 @@
 import React from 'react'
 import './search.scss'
+import {Redirect} from 'react-router-dom'
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -8,7 +9,9 @@ class SearchForm extends React.Component {
             canTravel: "",
             hasLocation: "",
             experienceLevel: "beginner",
-            specialty: "yoga"
+            specialty: "yoga",
+            // zipCode: this.props.currentUser.zip
+            didSubmit: false
 
         }
         this.handleLocation = this.handleLocation.bind(this)
@@ -41,15 +44,24 @@ class SearchForm extends React.Component {
         canTravel: this.state.canTravel,
         hasLocation: this.state.hasLocation,
         experienceLevel: this.state.experienceLevel,
-        specialty: this.state.specialty
+        specialty: this.state.specialty,
+        // zipCode: this.state.zipCode
       }
 
       this.props.searchTrainers(form)
       this.props.history.push("/search/results")
+        // this.setState({ didSubmit: true })
     }
 
 
     render() {
+        // if (this.state.didSubmit)
+        // {
+        //     return (
+        //         <Redirect to="/search/results" />
+        //     )
+        // } else {
+
         return (
             <div className="search-form">
                 <div className="search-form-inner">
@@ -95,6 +107,7 @@ class SearchForm extends React.Component {
                 </div>
             </div>
         )
+        // }
     }
 }
 

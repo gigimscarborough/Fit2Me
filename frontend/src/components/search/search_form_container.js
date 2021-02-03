@@ -6,7 +6,7 @@ import SearchForm from './search_form';
 
 
 const mSTP = state => {
-    return { currentUserId: state.session.user }
+    return { currentUser: state.entities.users[state.session.user] }
 };
 
 const mDTP = dispatch => ({
