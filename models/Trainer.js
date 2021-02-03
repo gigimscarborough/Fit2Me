@@ -33,7 +33,8 @@ const TrainerSchema = new Schema({
     imageUrl: {
       type: String,
       required: true
-    }
+    },
+    workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}]
   }, {
     timestamps: true
   })
