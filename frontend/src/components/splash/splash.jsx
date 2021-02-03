@@ -23,9 +23,6 @@ class Splash extends React.Component {
          }, 6000) 
     }
 
-    componentWillUnmount(){
-        clearInterval()
-    }
     
     componentWillUnmount() {
         clearInterval(this.intervalId)
