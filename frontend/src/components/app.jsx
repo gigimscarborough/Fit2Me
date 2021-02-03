@@ -17,6 +17,7 @@ const App = () => (
         <Route exact path="/" component={Splash} />
         <Route exact path="/trainers/:trainerId" component={TrainerShowContainer} />
         <Route exact path="/users/:userId" component={UserShowContainer} />
+        {/* <Route exact path="/search" component={SearchContainer} /> */}
     </Switch>
     </div>
 );

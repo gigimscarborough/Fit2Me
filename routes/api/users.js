@@ -13,8 +13,8 @@ router.get('/test', (req, res) => {
   res.send('Hello World')
 })
 
-router.get('show/:userId', (req, res) => {
-  User.findById(req.params.userId)
+router.get('/show/:userId', (req, res) => {
+  User.findById(req.params.userId).populate('workouts')
 
   .then(user => res.json(user))
   .catch(err => console.log(err));
