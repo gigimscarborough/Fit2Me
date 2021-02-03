@@ -13,7 +13,7 @@ router.get('/test', (req, res) => {
   res.send('Hello World')
 })
 
-router.get('show/:userId', (req, res) => {
+router.get('/show/:userId', (req, res) => {
   User.findById(req.params.userId)
 
   .then(user => res.json(user))

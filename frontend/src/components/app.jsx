@@ -15,6 +15,7 @@ const App = () => (
     <Switch>
         <Route exact path="/" component={Splash} />
         <Route exact path="/users/:userId" component={UserShowContainer} />
+        {/* <Route exact path="/search" component={SearchContainer} /> */}
     </Switch>
     </div>
 );
