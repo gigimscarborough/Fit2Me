@@ -25,7 +25,8 @@ const UserSchema = new Schema({
     canTravel: {
       type: Boolean,
       required: true
-    }
+    },
+    workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}]
   }, {
     timestamps: true
   })
