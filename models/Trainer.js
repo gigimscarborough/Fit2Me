@@ -34,7 +34,11 @@ const TrainerSchema = new Schema({
       type: String,
       required: true
     },
-    workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}]
+    zipCode: {
+      type: String,
+      required: true
+    },
+    workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}],
   }, {
     timestamps: true
   })
