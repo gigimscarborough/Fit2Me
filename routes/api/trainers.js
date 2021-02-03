@@ -59,6 +59,8 @@ router.post('/create', (req, res) => {
         experienceLevel: req.body.experienceLevel,
         specialties: req.body.specialties,
         imageUrl: req.body.imageUrl,
+        zipCode: req.body.zipCode,
+        bio: req.body.bio,
       })
       
     newTrainer.save()
