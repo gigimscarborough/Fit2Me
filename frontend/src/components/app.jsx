@@ -5,6 +5,8 @@ import NavBar from './nav/navbar_container'
 import Modal from './session/modal'
 import Splash from './splash/splash'
 import TrainerShowContainer from './trainer/trainer_show_container'
+import UserShowContainer from './user/user_show_container'
+
 
 const App = () => (
     <div>
@@ -14,6 +16,7 @@ const App = () => (
     <Switch>
         <Route exact path="/" component={Splash} />
         <Route exact path="/trainers/:trainerId" component={TrainerShowContainer} />
+        <Route exact path="/users/:userId" component={UserShowContainer} />
     </Switch>
     </div>
 );

@@ -1,18 +1,19 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import fit2me from '../../assets/images/fit2me.png'
+import { login } from '../../util/session_api_util';
 
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
-            first_name: '',
-            last_name: '',
+            firstName: '',
+            lastName: '',
             password: '',
             password2: '',
-            canTravel: false,
-            hasLocation: false,
+            canTravel: "",
+            hasLocation: "",
             errors: {},
 
         };
@@ -23,7 +24,7 @@ class SignupForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            this.props.history.push('/login');
+            // this.props.history.push('/');
         }
 
         this.setState({ errors: nextProps.errors })
@@ -39,16 +40,20 @@ class SignupForm extends React.Component {
         e.preventDefault();
         let user = {
             email: this.state.email,
-            first_name: this.state.first_name,
-            last_name: this.state.last_name,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
             password: this.state.password,
             password2: this.state.password2,
             canTravel: this.state.canTravel,
             hasLocation: this.state.hasLocation
 
         };
-
-        this.props.signup(user, this.props.history);
+        let sUser = {
+            email: this.state.email,
+            password: this.state.password
+        }
+ 
+        this.props.signup(user, this.props.history).then(() => this.props.login(sUser)).then(() => this.props.closeModal())
     }
 
     renderErrors() {
@@ -119,7 +124,7 @@ class SignupForm extends React.Component {
                             <div className ="radio-cont">
                             <label> 
                                 <input type="radio"
-                                    value={true}
+                                    value="true"
                                     onChange={this.update('willTravel')}   
                                     className="radio"
                                     name="travel"
@@ -128,7 +133,7 @@ class SignupForm extends React.Component {
 
                             <label> 
                                 <input type="radio"
-                                    value={false}
+                                    value=""
                                     onChange={this.update('willTravel')}
                                     className="radio"
                                     name="travel"

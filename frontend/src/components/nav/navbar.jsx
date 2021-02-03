@@ -18,11 +18,12 @@ class NavBar extends React.Component {
     }
 
     getButton() {
+        debugger
         if (this.props.loggedIn) {
             return (
                 <div>
                     <button className="session-btn" onClick={this.logoutUser}>LOGOUT</button>
-                    <i class="fas fa-user-alt"></i>
+                    <Link to={`/users/${this.props.currentUser.id}`}><i class=" user-icon fas fa-user-alt"></i></Link>
                 </div>
             );
         } else {
