@@ -3,12 +3,12 @@ import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions'
 import { fetchUser } from '../../actions/users_actions'
 
-import UserShow from './user_show';
+import NextUserShow from './next_user_show';
 import modal from '../session/modal';
 
 const mSTP = (state, ownProps) => {
     debugger
-    return {currentUserId: ownProps.match.params.userId}
+    return { currentUser: state.entities.users[ownProps.match.params.userId] }
 };
 
 const mDTP = dispatch => ({
@@ -20,4 +20,4 @@ const mDTP = dispatch => ({
 export default connect(
     mSTP,
     mDTP
-)(UserShow);
+)(NextUserShow);
