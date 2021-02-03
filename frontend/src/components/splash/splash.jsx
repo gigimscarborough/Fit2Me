@@ -13,13 +13,17 @@ class Splash extends React.Component {
     
     componentDidMount(){
         let counter = 1;
-        setInterval(() => {
+        const interval = setInterval(() => {
             document.getElementById('radio' + counter).checked = true;
             counter++;
             if(counter > 4) {
                 counter = 1;
             }
          }, 6000) 
+    }
+
+    componentWillUnmount(){
+        clearInterval()
     }
     
     render(){

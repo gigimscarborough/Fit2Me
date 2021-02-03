@@ -2,11 +2,13 @@ import TrainerShow from './trainer_show';
 import { connect } from 'react-redux';
 import { getTrainer } from '../../actions/trainer_actions'
 
-const msp = (state, ownProps) => (
-    {
-        trainer: state.entities.trainers[ownProps.match.params.trainerId]
+const msp = (state, ownProps) => {
+    debugger
+    return {
+        trainer: state.entities.trainers[ownProps.match.params.trainerId],
+        trainerId: ownProps.match.params.trainerId
     }
-)
+}
 
 const mdp = dispatch => (
     {
