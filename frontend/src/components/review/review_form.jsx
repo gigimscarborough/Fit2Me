@@ -21,7 +21,7 @@ class ReviewForm extends React.Component {
     }
 
     componentDidMount(){
-        debugger
+        
         this.props.getTrainer(this.props.match.params.trainerId)
         if (!this.props.user_id) {
             this.props.openModal("login").then()

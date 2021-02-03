@@ -14,7 +14,7 @@ router.get('/show/:trainerId', (req, res) => {
 })
 
 router.get('/search', (req, res) => {
-    debugger
+    
     let travelFlag1 
     let travelFlag2 
     let locationFlag1

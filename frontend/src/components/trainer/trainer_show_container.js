@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getTrainer } from '../../actions/trainer_actions'
 
 const msp = (state, ownProps) => {
-    debugger
+
     return {
         trainer: state.entities.trainers[ownProps.match.params.trainerId],
         trainerId: ownProps.match.params.trainerId
