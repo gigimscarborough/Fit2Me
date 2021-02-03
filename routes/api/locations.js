@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
-const Workout = require('../../models/Workout');
-const Trainer = require('../../models/Trainer');
-const User = require('../../models/User');
+const Location = require('../../models/Location');
 
 router.get('/test', (req, res) => {
     res.send('Hello World')
