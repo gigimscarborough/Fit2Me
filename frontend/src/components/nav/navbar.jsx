@@ -18,7 +18,7 @@ class NavBar extends React.Component {
     }
 
     getButton() {
-        debugger
+        //debugger
         if (this.props.loggedIn) {
             return (
                 <div>
