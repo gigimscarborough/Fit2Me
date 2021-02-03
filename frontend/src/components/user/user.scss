@@ -1,0 +1,82 @@
+$fit2me-blue: #25859b;
+$fit2me-light-blue: #25859bef;
+
+.cont-div{
+    display: flex;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.dashboard{
+    height: 200px;
+    margin-top: 140px;
+    margin-right: 20px;
+    box-shadow: 3px 3px 8px gray;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.dashboard h2{
+    text-align: center;
+    border-bottom: solid $fit2me-light-blue 1px;
+}
+.dashboard p{
+    // padding-left: 10px;
+    // padding-right: 10px;
+}
+
+.main-cont{
+    width:750px;
+    margin-top: 40px;
+    padding-left: 35px;
+    padding-right: 35px;
+    box-shadow: 3px 3px 8px gray;
+}
+.header{
+    border-bottom: solid $fit2me-light-blue 1px;
+}
+
+.loc-form input{
+    font-family: 'Rubik', sans-serif;
+    height: 40px;
+    width: 450px;
+    margin-bottom: 20px;
+    border: solid $fit2me-blue 1px;
+    border-radius: 3px;
+    padding-left: 10px;
+   
+
+}
+
+.loc-form input:focus{
+outline: none;
+}
+
+.loc-form button{
+    font-family: 'Rubik', sans-serif;
+    height: 40px;
+    width: 465px;
+    color: white;
+    background-color: $fit2me-blue;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.loc-form button:hover{
+    transform: transition(0.4s);
+    background-color: $fit2me-light-blue;
+
+}
+
+.loc-form button:focus{
+outline: none;
+}
+
+.loc-form-div{
+    border-bottom: solid $fit2me-light-blue 1px;
+}
+

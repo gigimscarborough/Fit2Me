@@ -42,10 +42,10 @@ class NavBar extends React.Component {
                 {this.getButton()}
                 <Link to="/"><img src={fit2me} alt="" /></Link>
                 <div className="find-t">
-                    <span>
+                    <Link to="/search"><span>
                         <i class="fas fa-search"></i>
                         FIND A TRAINER
-                    </span>
+                    </span></Link>
                 </div>
             </div>
         );

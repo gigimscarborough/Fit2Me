@@ -9,11 +9,12 @@ import splashIntro3 from '../../assets/images/splash_intro3.jpg'
 class Splash extends React.Component {
     constructor(props){
         super(props);
+        this.intervalId = 0;
     } 
     
     componentDidMount(){
         let counter = 1;
-        const interval = setInterval(() => {
+        this.intervalId = setInterval(() => {
             document.getElementById('radio' + counter).checked = true;
             counter++;
             if(counter > 4) {
@@ -22,9 +23,11 @@ class Splash extends React.Component {
          }, 6000) 
     }
 
-    componentWillUnmount(){
-        clearInterval()
+    
+    componentWillUnmount() {
+        clearInterval(this.intervalId)
     }
+
     
     render(){
         return(

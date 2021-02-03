@@ -1,0 +1,150 @@
+$fit2me-blue: #25859b;
+$fit2me-light-blue: #25859bef;
+
+.search-form{
+    display: flex;
+    justify-content: center;
+}
+
+.search-form-inner{
+    width: 60%;
+    box-shadow: 3px 3px 8px gray;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 40px;
+}
+.search-form-inner div{
+    margin-bottom: 40px;
+}
+
+.search-form-header h1{
+    text-align: center;
+}
+
+.search-form-inner select{
+    font-family: 'Rubik', sans-serif;
+    border: solid $fit2me-blue 1px;
+    height: 40px;
+    width: 400px;
+    padding-left: 15px;
+    border-radius: 4px;
+}
+.search-form-inner select:focus{
+    outline: none;
+}
+
+
+.search-form-btn{
+   background-color:#25859b;
+    font-family: 'Rubik', sans-serif;
+    border: none;
+    border-radius: 4px;
+    height: 50px;
+    width: 400px;
+    font-weight: 600px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    margin: 30px 0;
+}
+
+.search-btn-div{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.search-form-btn:hover{
+    transform: transition(0.4s);
+    background-color: $fit2me-light-blue;
+}
+
+.results-container{
+    display: flex;
+    justify-content: center;
+}
+
+.trainer-content{
+    width: 60%;
+    box-shadow: 3px 3px 8px gray;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+.t-content-header h1{
+text-align: center;
+font-size: 45px;
+
+}
+
+.t-content-header h1{
+text-align: center;
+font-size: 45px;
+
+}
+
+.matches{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid $fit2me-blue 1px;
+
+}
+.matches a{
+    text-decoration: none;
+    color: $fit2me-blue;
+    padding-right: 4px;
+}
+.matches a:hover{
+color: $fit2me-light-blue;
+transform: transition(0.4s);
+}
+.matches p{
+    padding-left: 4px;
+}
+
+.trainer-div{
+    display: flex;
+    margin-top: 15px;
+    border-bottom: solid #25859b 1px;
+    padding-bottom: 15px
+}
+.trainer-image{
+    height: 175px;
+    width: 175px;
+    border-radius: 5px;
+}
+
+.trainer-r{
+    padding-left: 15px;
+}
+
+.trainer-r a{
+    text-decoration: none;
+    color: #25859b
+}
+
+.trainer-r a:hover{
+    color: $fit2me-light-blue;
+}
+
+.trainer-l{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-decoration: none;
+color: #25859b
+}
+
+.trainer-link {
+text-decoration: none;
+color: #25859b
+}
+
+.trainer-link:hover {
+    color: $fit2me-light-blue;
+}
+
