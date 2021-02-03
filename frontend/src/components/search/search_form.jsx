@@ -101,7 +101,7 @@ class SearchForm extends React.Component {
                         </div >
                         <div>
                             <h2>Please Enter Your Zip Code</h2>
-                            <input  className="zipcode-inp" type="text" onChange={this.handleInput("zipCode")} placeholder="Zip Code"/>
+                            <input className="zipcode-inp" type="text" onChange={this.handleInput("zipCode")} placeholder="Zip Code"/>
                         </div >
                         <div className="search-btn-div">
                             <button className="search-form-btn">FIND MY TRAINER!</button>
