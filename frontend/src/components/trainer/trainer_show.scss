@@ -1,7 +1,7 @@
 .trainer-intro-container{
     display: flex;
     justify-content: center;
-    background-color: lightblue;
+    background-color: #25859b;
 }
 
 .trainer-profile{
@@ -36,6 +36,13 @@
     display: flex;
     justify-content: space-between;
 }
+
+.trainer-profile-box{
+    background-color: lightblue;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .trainer-review-button:visited{
     text-decoration: none;
 }
