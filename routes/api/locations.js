@@ -5,37 +5,29 @@ const Location = require('../../models/Location');
 router.get('/test', (req, res) => {
     res.send('Hello World')
   })
-  
 
-router.get('/show/:workoutId', (req, res) => {
-    Workout.findById(req.params.workoutId)
 
-    .then(workout => res.json(workout))
+router.get('/show/:locationId', (req, res) => {
+    Location.findById(req.params.locationId)
+
+    .then(location => res.json(location))
     .catch(err => console.log(err));
 })
 
 router.post('/create', (req, res) => {
             
-            const newWorkout = new Workout({
-                trainerId: req.body.trainerId,
-                userId: req.body.userId,
-                date: req.body.date,
-                time: req.body.time,
-                location: req.body.location,
+            const newLocation = new Location({
+                ownerId: req.body.ownerId,
+                address: req.body.address,
+                equipment: req.body.equipment
               })
         
-            newWorkout.save()
-            .then(workout => {
+            newLocation.save()
+            .then(location => {
+              
+              User.updateOne({'_id': location.ownerId}, {location}, { "upsert": false }).catch(err => console.log(err));
 
-                const update = {$push: {workouts: workout._id}}
-                const options = { "upsert": false };
-
-                Trainer.updateOne({'_id': workout.trainerId}, update, options).catch(err => console.log(err));
-                User.updateOne({'_id': workout.userId}, update, options).catch(err => console.log(err));
-
-
-
-                return res.json({workout})
+                return res.json(location)
                 })
                 .catch(err => console.log(err));
 

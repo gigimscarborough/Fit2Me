@@ -38,6 +38,7 @@ router.get('/search', (req, res) => {
 
     Trainer.find({'specialties': req.query.specialty.toLowerCase()})
     .where("experienceLevel").equals(req.query.experienceLevel)
+    .where("zipCode").equals(req.query.zipCode)
     .find({canTravel: {$in: [travelFlag1, travelFlag2]}})
     .find({hasLocation: {$in: [locationFlag1, locationFlag2]}})
      
@@ -58,6 +59,8 @@ router.post('/create', (req, res) => {
         experienceLevel: req.body.experienceLevel,
         specialties: req.body.specialties,
         imageUrl: req.body.imageUrl,
+        zipCode: req.body.zipCode,
+        bio: req.body.bio,
       })
       
     newTrainer.save()

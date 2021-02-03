@@ -26,7 +26,12 @@ const UserSchema = new Schema({
       type: Boolean,
       required: true
     },
-    workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}]
+    zipCode: {
+      type: String,
+      required: true
+    },
+    workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}],
+    location: {type: Schema.Types.ObjectId, ref: 'Location'}
   }, {
     timestamps: true
   })
