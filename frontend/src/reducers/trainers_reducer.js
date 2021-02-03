@@ -7,7 +7,7 @@ const TrainersReducer = (state = {}, action) => {
         case RECEIVE_TRAINER:
             return Object.assign({}, state, {[action.trainer.data.id]: action.trainer.data})
         case RECEIVE_TRAINERS:
-            return action.trainers.data
+            return action.trainers.data.trainers
         default:
             return state;
     }

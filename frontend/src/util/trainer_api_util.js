@@ -6,8 +6,7 @@ export const fetchTrainer = (trainerId) => {
 }
 
 export const searchTrainers = (search) => {
-    debugger
-    return axios.get(`/api/trainers/search`, search)
+    return axios.get(`/api/trainers/search`, { params: search })
 }
 
 

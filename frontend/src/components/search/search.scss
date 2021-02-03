@@ -58,3 +58,60 @@ $fit2me-light-blue: #25859bef;
     transform: transition(0.4s);
     background-color: $fit2me-light-blue;
 }
+
+.results-container{
+    display: flex;
+    justify-content: center;
+}
+
+.trainer-content{
+    width: 60%;
+    box-shadow: 3px 3px 8px gray;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 40px;
+}
+
+.t-content-header h1{
+text-align: center;
+font-size: 45px;
+
+}
+
+.t-content-header h1{
+text-align: center;
+font-size: 45px;
+
+}
+
+.matches{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid $fit2me-blue 1px;
+
+}
+.matches a{
+    text-decoration: none;
+    color: $fit2me-blue;
+    padding-right: 4px;
+}
+.matches a:hover{
+color: $fit2me-light-blue;
+transform: transition(0.4s);
+}
+.matches p{
+    padding-left: 4px;
+}
+
+.trainer-div{
+    display: flex;
+    margin-top: 10px;
+    border-bottom: solid #25859b 1px;
+}
+.trainer-image{
+    height: 125px;
+    width: 125px;
+    border-radius: 4px;
+}

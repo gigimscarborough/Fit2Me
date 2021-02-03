@@ -1,11 +1,9 @@
 import { connect } from 'react-redux';
-
-
-import SearchResults from './search_form';
+import SearchResults from './search_results';
 
 
 const mSTP = state => {
-    return{trainers: Object.values(state.entities.trainers)}
+    return{trainers: state.entities.trainers}
 };
 
 const mDTP = dispatch => ({
