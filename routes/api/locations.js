@@ -25,9 +25,9 @@ router.post('/create', (req, res) => {
             newLocation.save()
             .then(location => {
               
-              User.updateOne({'_id': workout.ownerId}, {location}, options).catch(err => console.log(err));
+              User.updateOne({'_id': location.ownerId}, {location}, { "upsert": false }).catch(err => console.log(err));
 
-                return res.json({location})
+                return res.json(location)
                 })
                 .catch(err => console.log(err));
 
