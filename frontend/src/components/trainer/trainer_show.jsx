@@ -8,10 +8,10 @@ class TrainerShow extends React.Component{
     }
 
     componentDidMount(){
-        this.props.getTrainer(this.props.match.params.trainerId)
+        this.props.getTrainer(this.props.trainer.id)
     }
 
-    render(){
+    render(){   
         return(
             <div>
                 <div className="trainer-intro-container">

@@ -4,7 +4,7 @@ import { getTrainer } from '../../actions/trainer_actions'
 
 const msp = (state, ownProps) => (
     {
-        trainer: state.trainers[ownProps.match.params.trainerId]
+        trainer: state.entities.trainers[ownProps.match.params.trainerId]
     }
 )
 

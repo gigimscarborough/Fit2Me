@@ -1,4 +1,4 @@
-import { getTrainer } from '../util/trainer_api_util';
+import * as TrainerApiUtil from '../util/trainer_api_util';
 
 export const RECEIVE_TRAINER = "RECEIVE_TRAINER";
 
@@ -8,7 +8,7 @@ const receiveTrainer = trainer => ({
 })
 
 export const getTrainer = trainerId => dispatch => (
-    getTrainer(trainerId)
+    TrainerApiUtil.fetchTrainer(trainerId)
         .then(trainer => dispatch(receiveTrainer(trainer)))
         .catch(err => console.log(err))
 )
