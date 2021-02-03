@@ -2,7 +2,6 @@ import { RECEIVE_TRAINER, RECEIVE_TRAINERS } from '../actions/trainer_actions';
 
 
 const TrainersReducer = (state = {}, action) => {
-    debugger
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_TRAINER:

@@ -30,7 +30,7 @@ class TrainerShow extends React.Component{
                             <div className="trainer-profile">
                                 <div className="trainer-profile-top">
                                     <p>Name: {this.props.trainer.firstName} {this.props.trainer.lastName}</p>
-                                    <Link className="trainer-review-button"to="">LEAVE A REVIEW</Link>
+                                    <Link className="trainer-review-button"to={`/trainers/${this.props.trainer._id}/reviews/create`}>LEAVE A REVIEW</Link>
                                 </div>
                                 <p>THIS IS WHERE THE AVG RATING GOES??</p>
                                 <p>Experience Level: {this.props.trainer.experienceLevel}</p>

@@ -30,6 +30,7 @@
 .slide{
     width: 20%;
     transition: 1s;
+    position: relative;
 }
 
 .slide img{
@@ -160,9 +161,10 @@
 }
 
 .slide-text-main-box{
-    position: relative;
+    position: absolute;
     width: 600px;
     margin: 30px;
+    right: 600px;
 }
 
 .slide-reserve-button{
@@ -174,8 +176,8 @@
     font-size: 25px;
     font-family: "Rubik";
     border: solid 2px white;
-    border-radius: 10px;
-    width: 330px;
+    border-radius: 16px;
+    width: 290px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 9px;

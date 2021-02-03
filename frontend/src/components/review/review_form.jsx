@@ -7,8 +7,8 @@ class ReviewForm extends React.Component {
         this.state = {
             body: '',
             rating: '',
-            user_id: this.props.user_id,
-            business_id: this.props.match.params.businessId,
+            userId: this.props.user_id,
+            trainerId: this.props.match.params.trainerId,
             workoutDate: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -22,21 +22,16 @@ class ReviewForm extends React.Component {
 
     componentDidMount(){
         debugger
-        this.props.getTrainer(this.props.match.params.trainerId)
-        if (!this.props.user_id) {
-            this.props.openModal("login").then()
-            return(
-                <Redirect to="/"/>
-            )
-        }
+        this.props.getTrainer(this.props.trainer.id)
     }
 
     handleSubmit(e){
         e.preventDefault(); 
-        this.props.createReview(this.state).then(()=> this.props.history.push(`/businesses/${this.state.business_id}`))
+        this.props.createReview(this.state).then(()=> this.props.history.push(`/trainers/${this.state.trainerId}`))
     }
 
     render(){
+        debugger
         if (!this.props.trainer) {
             return (
                 <div>Loading..</div>
