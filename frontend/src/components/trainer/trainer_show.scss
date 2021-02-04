@@ -1,7 +1,18 @@
+.holder{
+    height: 100%;
+    width: 100%;
+}
+
 .trainer-intro-container{
+position: fixed;
     display: flex;
     justify-content: center;
-    background-color: #25859b;
+    background-image: url(../../assets/images/garage_gym1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+
 }
 
 .trainer-profile{
@@ -15,32 +26,53 @@
 }
 
 .trainer-review-button{
-    border: 2px solid black;
     text-decoration: none;
-    color: black;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 18px;
-    height: 30px;
-    position: relative;
-    top: 12px;
+    color: #25859b;
 }
 
-.trainer-review-button:hover{
+.trainer-review-button button{
+    border: 2px solid#25859b;
+    text-decoration: none;
+    color: #25859b;
+    background-color:white;
+    height: 40px;
+    border-radius: 20px;
+    width: 175px;
+    font-size: 18px;
+
+}
+
+.trainer-review-button button:hover{
+    border: 2px solid black;
     background-color: black;
     color: white;
     cursor: pointer;
 }
+
+.trainer-review-button button:focus{
+  outline: none;
+}
+
 .trainer-profile-top{
     display: flex;
     justify-content: space-between;
 }
 
 .trainer-profile-box{
-    background-color: lightblue;
-    padding-left: 10px;
-    padding-right: 10px;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    margin-top: 40px;
+    box-shadow: 3px 3px 8px gray;
+    margin-right: 300px;
+}
+.trainer-profile-box img{
+    margin-top: 10px;
+    border-radius: 4px;
+    height: 235px;
+    width:235px;
+
 }
 
 .trainer-review-button:visited{
@@ -59,42 +91,97 @@
 //     box-shadow: black 1px 1px;
 // }
 
-.trainer-booleans:hover{
-    transition: 1s;
-    background-color: #25859b;
-}
+// .trainer-booleans:hover{
+//     transition: 1s;
+//     background-color: #25859b;
+// }
 
 // .trainer-booleans-option{
 //     // margin-left: 10px;
 // }
+.trainer-booleans{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.trainer-booleans p{
+font-family: "Rubik", sans-serif;
+}
 
 .trainer-booleans-title{
     // margin-left: 10px;
     text-decoration: underline;
     font-weight: bold;
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+
 }
 
 .trainer-workout-container{
     display: flex;
-    justify-content: space-between;
-    border-top: black solid 1px;
+    background-color: white;
+    box-shadow: 3px 3px 8px gray;
+    font-family: "Rubik", sans-serif;
+    flex-direction: column;
+    align-items: center;
+    height: 260px;
+    margin-top: 200px;
+    position: fixed;
+    margin-left: 800px;
 }
 
-.trainer-book-workout{
-    border: 2px solid black;
+.trainer-book-workout button{
+    border: 2px solid  #25859b;
     text-decoration: none;
-    color: black;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 18px;
-    height: 30px;
-    position: relative;
-    top: 48px;
+    color:  #25859b;
+    border-radius: 20px;
+    height: 40px;
+    font-family: "Rubik", sans-serif;
+    cursor: pointer;
+    background-color:white;
+    width: 175px;
+    font-size: 18px;
+    margin-top: 10px;
 }
 
-.trainer-book-workout:hover{
+.trainer-book-workout a{ 
+    text-decoration: none;
+    color:  #25859b;
+    font-family: "Rubik", sans-serif;
+}
+
+.trainer-book-workout button:hover{
+     border: 2px solid black;
     background-color: black;
     color: white;
     cursor: pointer;
 }
+.trainer-book-workout button:focus{
+    outline: none;
+}
+
+.trainer-pro-cont{
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: solid #25859b 1px;
+}
+
+.trainer-pro-l{
+    margin-right: 15px;
+
+}
+
+.trainer-revs{
+    display: flex;
+    flex-direction: column;
+    font-family: "Rubik", sans-serif;
+}
+
+.revs-head{
+    padding-bottom: 5px;
+    border-bottom: solid #25859b 1px;
+}
+
+
+
