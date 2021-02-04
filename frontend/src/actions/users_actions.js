@@ -23,6 +23,6 @@ export const fetchUser = user => dispatch => (
 
 export const createLocation = (location) => dispatch => (
     UsersUtil.createLocation(location).then(user => (
-        dispatch(receiveLocation(user))
+        dispatch(receiveUser(user))
     ))
 )

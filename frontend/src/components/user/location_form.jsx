@@ -14,6 +14,7 @@ class LocationForm extends React.Component {
             },
             equipment: ""
         }   
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleAddress(type) {
@@ -32,6 +33,7 @@ class LocationForm extends React.Component {
 
 
     handleSubmit(e) {
+        console.log("attemtping to submit location creation")
         e.preventDefault();
 
         let form = {
@@ -51,7 +53,7 @@ class LocationForm extends React.Component {
 
     render() {
         return(
-            <form className="loc-form">
+            <form className="loc-form" onSubmit={this.handleSubmit}>
                 <h2>Add Your Location</h2>
                 <input type="text" placeholder="Street Address" onChange={this.handleAddress("streetAddress")}/>
                 <br/>
