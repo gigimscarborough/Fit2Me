@@ -24,10 +24,14 @@ router.post('/create', (req, res) => {
         
             newLocation.save()
             .then(location => {
-              
-              User.updateOne({'_id': location.ownerId}, {location}, { "upsert": false }).catch(err => console.log(err));
+             
+               User.updateOne({'_id': location.ownerId}, {location}, { "upsert": false }).catch(err => console.log(err))
 
-                return res.json(location)
+               User.findById(location.ownerId).populate('workouts').populate("location")
+                .then(user => res.json(user))
+
+
+                
                 })
                 .catch(err => console.log(err));
 
