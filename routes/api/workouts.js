@@ -7,6 +7,13 @@ const User = require('../../models/User');
 router.get('/test', (req, res) => {
     res.send('Hello World')
   })
+
+  router.get('/index/', (req, res) => {
+    Workout.find()
+
+    .then(workouts => res.json(workouts))
+    .catch(err => console.log(err));
+})
   
 
 router.get('/show/:workoutId', (req, res) => {
