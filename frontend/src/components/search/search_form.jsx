@@ -10,7 +10,7 @@ class SearchForm extends React.Component {
             hasLocation: "",
             experienceLevel: "beginner",
             specialty: "yoga",
-            // zipCode: this.props.currentUser.zip
+            zipCode: "",
             didSubmit: false
 
         }
@@ -45,7 +45,7 @@ class SearchForm extends React.Component {
         hasLocation: this.state.hasLocation,
         experienceLevel: this.state.experienceLevel,
         specialty: this.state.specialty,
-        // zipCode: this.state.zipCode
+        zipCode: this.state.zipCode
       }
 
       this.props.searchTrainers(form)
@@ -98,6 +98,10 @@ class SearchForm extends React.Component {
                                 <option value="trainers">Trainer's Location</option>
                                 <option value="both">No Preference</option>
                             </select>
+                        </div >
+                        <div>
+                            <h2>Please Enter Your Zip Code</h2>
+                            <input className="zipcode-inp" type="text" onChange={this.handleInput("zipCode")} placeholder="Zip Code"/>
                         </div >
                         <div className="search-btn-div">
                             <button className="search-form-btn">FIND MY TRAINER!</button>

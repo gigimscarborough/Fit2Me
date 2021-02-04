@@ -11,7 +11,14 @@ const passport = require('passport');
 const User = require('./models/User');
 const keys = require('./config/keys');
 const AWS = require('aws-sdk');
+const path = require('path')
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 // start of AWS S3
 app.get('/',(req,res)=>{
