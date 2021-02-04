@@ -16,6 +16,12 @@ router.get('/show/:workoutId', (req, res) => {
     .catch(err => console.log(err));
 })
 
+router.delete('/delete/:workoutId', (req, res) => {
+  Workout.deleteOne({_id: req.params.workoutId})
+  .then(workout => res.json(workout))
+  .catch((error) => (res.status(400).json({error})))
+});
+
 router.post('/create', (req, res) => {
             
             const newWorkout = new Workout({
@@ -42,6 +48,8 @@ router.post('/create', (req, res) => {
                 .catch(err => console.log(err));
 
 })
+
+
 
 
 
