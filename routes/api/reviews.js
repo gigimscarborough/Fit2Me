@@ -2,10 +2,6 @@ const express = require("express");
 const router = express.Router({ mergeParams: true });
 const Review = require('../../models/Review');
 
-router.get('/test', (req, res) => {
-    res.send('Hello World')
-  })
-
 
 router.get('/show/:reviewId', (req, res) => {
   Review.findById(req.params.reviewId)
