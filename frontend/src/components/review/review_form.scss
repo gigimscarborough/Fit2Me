@@ -4,26 +4,45 @@
     resize: none;
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
-    border: 2px #25859B solid;
-    border-radius: 16px;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
     outline: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-left: none;
+    border-right: none;
+    padding-top: 10px;
+}
+
+.review-body{
+    font-family: "Rubik", sans-serif;
+    margin-left: 5px;
+    margin-bottom: 6px;
 }
 
 .review-container{
     display: flex;
     justify-content: center;
+    background-image: url('../../assets/images/home_gym3.png');
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
 }
+
 .review-form-trainer-name{
     font-size: 32px;
     font-weight: bold;
     font-family: sans-serif, "Rubik";
-    color: black
+    color: black;
+    margin: 30px;
 }
 .review-post-button{
     font-family: sans-serif, "Rubik";
     font-size: 20px;
-    color: #25859B;
-    border: 2px #25859B solid;
+    color: black;
+    border: 2px black solid;
     padding: 10px;
     background-color: white;
     border-radius: 16px;
@@ -31,6 +50,13 @@
     position: relative;
     left: 180px;
     margin-top: 10px;
+}
+
+.review-post-button:hover{
+    color: white;
+    background-color: black;
+    transition: 0.7s;
+    cursor: pointer;
 }
 
 .review-trainer-pic{
@@ -42,10 +68,39 @@
 .review-form-texts{
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .review-content{
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+.review-form-main{
+    background-color: white;
+    margin-top: 40px;
+}
+
+.select-rating-text{
+    font-family: sans-serif, 'Rubik';
+    margin-left: 7px;
+    font-size: 16px;
+}
+
+td{
+    font-family: sans-serif, 'Rubik';
+    font-size: 16px;
+}
+
+.rating-radio-button{
+    font-family: sans-serif, "Rubik";
+}
+
+
+.review-content:first-child{
+    margin-left: 10px;
+}
+
+.radio-button:hover{
+    cursor: pointer;
 }
