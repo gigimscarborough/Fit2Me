@@ -29,6 +29,8 @@ class SearchResults extends React.Component {
                     </div>
                     <div className="trainer-r">
                         <Link to={`/trainers/${trainer._id}`}>{trainer.firstName} {trainer.lastName}</Link>
+                        <p><i>"{trainer.bio}"</i></p>
+
 
                     </div>
 

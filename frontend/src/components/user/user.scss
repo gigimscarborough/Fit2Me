@@ -5,6 +5,11 @@ $fit2me-light-blue: #25859bef;
     display: flex;
     justify-content: center;
     font-family: 'Rubik', sans-serif;
+    background-image: url(../../assets/images/red_gym1.png);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
 }
 
 .dashboard{
@@ -14,6 +19,7 @@ $fit2me-light-blue: #25859bef;
     box-shadow: 3px 3px 8px gray;
     padding-left: 10px;
     padding-right: 10px;
+    background-color:white;
 
 }
 .dashboard h2{
@@ -31,6 +37,8 @@ $fit2me-light-blue: #25859bef;
     padding-left: 35px;
     padding-right: 35px;
     box-shadow: 3px 3px 8px gray;
+    background-color:white;
+
 }
 .header{
     border-bottom: solid $fit2me-light-blue 1px;
