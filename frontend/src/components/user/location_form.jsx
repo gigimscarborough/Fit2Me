@@ -5,7 +5,7 @@ class LocationForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            ownerId: this.props.currentUser.id,
+            ownerId: this.props.currentUser["_id"],
             address: {
                 streetAddress: "",
                 city: "",
@@ -13,7 +13,7 @@ class LocationForm extends React.Component {
                 zip: ""
             },
             equipment: ""
-        }
+        }   
     }
 
     handleAddress(type) {
@@ -45,7 +45,7 @@ class LocationForm extends React.Component {
             equipment: this.state.equipment.split(", ")
         };
 
-        
+        this.props.createLocation(form)  
     }
 
 
