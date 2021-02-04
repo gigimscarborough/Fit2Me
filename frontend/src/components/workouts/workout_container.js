@@ -9,6 +9,7 @@ const msp = (state, ownProps) => {
         trainer: state.entities.trainers[ownProps.match.params.trainerId],
         trainerId: ownProps.match.params.trainerId,
         currentUserId: state.session.user.id,
+    
 
     }
 }

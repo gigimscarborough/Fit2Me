@@ -132,13 +132,8 @@ class Workout extends React.Component {
                                             {dateOptions}
                                         </select>
                                     </div>
-                                    <div>
-                                        {/* <p>Select A Time:</p>
-                                        <select onChange={this.handleInput('time')}>
-                                            <option disabled selected value=""> --- Select A Time --- </option>   */}
                                         {this.timeOptions()}
-                                        {/* </select> */}
-                                    </div>
+                                    <button>BOOK MY WORKOUT!</button>
                                     
 
 
