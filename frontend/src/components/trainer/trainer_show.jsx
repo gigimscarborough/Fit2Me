@@ -37,8 +37,10 @@ class TrainerShow extends React.Component {
                                     <div className="trainer-profile">
                                         <div className="trainer-profile-top">
                                             <p><strong>Name:</strong> {this.props.trainer.firstName} {this.props.trainer.lastName}</p>
+                                            <p className="show-page-bio"><i>{this.props.trainer.bio}</i></p>
                                         </div>
                                         <p>THIS IS WHERE THE AVG RATING GOES??</p>
+                                        {/* <p>{this.props.trainer.dailyAvailability}</p> */}
                                         <p><strong>Experience Level:</strong> {this.props.trainer.experienceLevel}</p>
                                         <div >
                                             <div className="trainer-specialties"><strong>Specialties:</strong>

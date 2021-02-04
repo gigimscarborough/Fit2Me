@@ -15,7 +15,7 @@ class SearchResults extends React.Component {
         if (Object.keys(this.props.trainers).length === 0) {
             return null
         }
-
+        
         const trainers = this.props.trainers.map(trainer =>
             <div className="trainers-container">
                 <div className="trainer-div" >

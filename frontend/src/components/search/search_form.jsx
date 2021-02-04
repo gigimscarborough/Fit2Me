@@ -50,6 +50,7 @@ class SearchForm extends React.Component {
 
       this.props.searchTrainers(form)
       .then(() => this.props.history.push("/search/results"))
+      
         // this.setState({ didSubmit: true })
     }
 

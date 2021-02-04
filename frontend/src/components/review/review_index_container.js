@@ -4,7 +4,7 @@ import { fetchReviews } from '../../actions/review_actions';
 
 const msp = (state, ownProps) => (
     {
-        reviews: state.entities.trainers
+        reviews: state.entities.trainers.reviews
     }
 )
 
