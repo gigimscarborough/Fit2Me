@@ -6,6 +6,9 @@ $fit2me-light-blue: #25859bef;
     justify-content: center;
     background-image: url(../../assets/images/attic_gym1.jpg);
     background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
     
 }
 
@@ -33,17 +36,22 @@ $fit2me-light-blue: #25859bef;
     width: 400px;
     padding-left: 15px;
     border-radius: 4px;
+    color: gray;
 }
 .search-form-inner select:focus{
     outline: none;
 }
 .zipcode-inp{
     font-family: 'Rubik', sans-serif;
-    height: 40px;
-     width: 400px;
+    height: 36px;
+     width: 381px;
      border-radius: 4px;
      padding-left: 15px;
      border: solid $fit2me-blue 1px;
+}
+
+.zipcode-inp:focus{
+    outline: none;
 }
 
 
@@ -71,9 +79,23 @@ $fit2me-light-blue: #25859bef;
     background-color: $fit2me-light-blue;
 }
 
+.holder{
+    height: 100%;
+    width: 100%;
+}
+
 .results-container{
+    position: fixed;
     display: flex;
     justify-content: center;
+    background-image: url(../../assets/images/home_gym1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: 100%;
+    width: 100%;
+
+
 }
 
 .trainer-content{
@@ -84,6 +106,7 @@ $fit2me-light-blue: #25859bef;
     font-family: 'Rubik', sans-serif;
     margin-top: 40px;
     padding-bottom: 20px;
+    background-color:white;
 }
 
 .t-content-header h1{
@@ -158,5 +181,10 @@ color: #25859b
 
 .trainer-link:hover {
     color: $fit2me-light-blue;
+}
+
+.invis{
+    position: relative;
+    height:200px;
 }
 
