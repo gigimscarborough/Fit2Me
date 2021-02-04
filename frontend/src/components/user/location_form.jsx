@@ -6,22 +6,18 @@ class LocationForm extends React.Component {
         super(props);
         this.state = {
             ownerId: this.props.currentUser["_id"],
-            address: {
-                streetAddress: "",
-                city: "",
-                state: "",
-                zip: ""
-            },
+            streetAddress: "",
+            city: "",
+            state: "",
+            zip: "",
             equipment: ""
         }   
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleAddress(type) {
-        return e => this.setState({
-            address:{
-                [type]: e.currentTarget.value
-            }
+        return e => this.setState({     
+            [type]: e.currentTarget.value
         });
     }
 
@@ -39,10 +35,10 @@ class LocationForm extends React.Component {
         let form = {
             ownerId: this.state.ownerId,
             address: {
-                streetAddress: this.state.address.streetAddress,
-                city: this.state.address.city,
-                state: this.state.address.city,
-                zip: this.state.address.city
+                streetAddress: this.state.streetAddress,
+                city: this.state.city,
+                state: this.state.state,
+                zip: this.state.zip
             },
             equipment: this.state.equipment.split(", ")
         };
