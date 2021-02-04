@@ -5,7 +5,7 @@ class LocationForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            ownerId: this.props.currentUser.id,
+            ownerId: this.props.currentUser["_id"],
             address: {
                 streetAddress: "",
                 city: "",
@@ -13,7 +13,8 @@ class LocationForm extends React.Component {
                 zip: ""
             },
             equipment: ""
-        }
+        }   
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleAddress(type) {
@@ -32,6 +33,7 @@ class LocationForm extends React.Component {
 
 
     handleSubmit(e) {
+        console.log("attemtping to submit location creation")
         e.preventDefault();
 
         let form = {
@@ -45,13 +47,13 @@ class LocationForm extends React.Component {
             equipment: this.state.equipment.split(", ")
         };
 
-        
+        this.props.createLocation(form)  
     }
 
 
     render() {
         return(
-            <form className="loc-form">
+            <form className="loc-form" onSubmit={this.handleSubmit}>
                 <h2>Add Your Location</h2>
                 <input type="text" placeholder="Street Address" onChange={this.handleAddress("streetAddress")}/>
                 <br/>

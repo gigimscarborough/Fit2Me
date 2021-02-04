@@ -43,6 +43,8 @@ const TrainerSchema = new Schema({
     },
     workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}],
     reviews: [{type: Schema.Types.ObjectId, ref: 'Review'}],
+    location: {type: Schema.Types.ObjectId, ref: 'Location'}
+
   }, {
     timestamps: true
   })
