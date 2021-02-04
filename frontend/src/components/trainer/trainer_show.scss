@@ -54,7 +54,7 @@ position: fixed;
 }
 
 .trainer-profile-top{
-    display: flex;
+    // display: flex;
     justify-content: space-between;
 }
 
@@ -183,5 +183,13 @@ font-family: "Rubik", sans-serif;
     border-bottom: solid #25859b 1px;
 }
 
-
-
+.show-page-bio{
+    font-size: 12px;
+    width: 300px;
+    // border: 1px #25859b solid;
+    padding: 5px;
+    border-radius: 12px;
+    // margin-top: 10px;
+    color: rgb(80, 80, 80);
+    margin-left: 15px;
+}
