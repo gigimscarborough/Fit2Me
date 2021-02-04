@@ -4,6 +4,9 @@ $fit2me-light-blue: #25859bef;
 .search-form{
     display: flex;
     justify-content: center;
+    background-image: url(../../assets/images/attic_gym1.jpg);
+    background-size: cover;
+    
 }
 
 .search-form-inner{
@@ -13,6 +16,7 @@ $fit2me-light-blue: #25859bef;
     padding-right: 15px;
     font-family: 'Rubik', sans-serif;
     margin-top: 40px;
+    background-color:white;
 }
 .search-form-inner div{
     margin-bottom: 40px;
@@ -32,6 +36,14 @@ $fit2me-light-blue: #25859bef;
 }
 .search-form-inner select:focus{
     outline: none;
+}
+.zipcode-inp{
+    font-family: 'Rubik', sans-serif;
+    height: 40px;
+     width: 400px;
+     border-radius: 4px;
+     padding-left: 15px;
+     border: solid $fit2me-blue 1px;
 }
 
 
