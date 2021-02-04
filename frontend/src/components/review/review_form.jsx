@@ -23,7 +23,7 @@ class ReviewForm extends React.Component {
 
     componentDidMount(){
         debugger
-        this.props.getTrainer(this.props.trainer.id)
+        this.props.getTrainer(this.props.match.params.trainerId)
     }
 
     handleSubmit(e){
@@ -44,10 +44,11 @@ class ReviewForm extends React.Component {
                         <form onSubmit={this.handleSubmit}>
                             <div className="review-form-box">
                                 <div className="review-form-texts">
-                                    <span className="review-form-trainer-name">{this.props.trainer.name}</span>
+                                   <img className="review-trainer-pic" src={this.props.trainer.imageUrl} alt=""/>
+                                    <span className="review-form-trainer-name">{this.props.trainer.firstName} {this.props.trainer.lastName}</span>
                                 </div>
                                 <div className="review-content-box">
-                                    <div className="">
+                                    <div className="review-content">
                                         <p className="select-rating-text">Select your rating</p>
                                         <input type="number" min="1" max="5" className="rating-number"value={this.state.rating} onChange={this.handleChange("rating")}/>
                                     </div>                                   
