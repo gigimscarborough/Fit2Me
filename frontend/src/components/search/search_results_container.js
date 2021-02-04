@@ -3,7 +3,7 @@ import SearchResults from './search_results';
 
 
 const mSTP = state => {
-    return{trainers: state.entities.trainers}
+    return {trainers: state.entities.trainers}
 };
 
 const mDTP = dispatch => ({

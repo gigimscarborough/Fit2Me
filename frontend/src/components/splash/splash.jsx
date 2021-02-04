@@ -20,9 +20,15 @@ class Splash extends React.Component {
             if(counter > 4) {
                 counter = 1
             }
-         }, 5000) 
+        }, 5000) 
+
     }
 
+    componentDidUpdate() {
+        if (typeof(this.props.currentUser) != "undefined" && Object.keys(this.props.currentUser).length > 0) {
+            this.props.fetchUser(this.props.currentUser.id)
+        }
+    }
     
     componentWillUnmount() {
         clearInterval(this.intervalId)
