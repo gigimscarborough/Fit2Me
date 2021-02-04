@@ -7,7 +7,7 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 
 router.get('/show/:trainerId', (req, res) => {
-    Trainer.findById(req.params.trainerId).populate("workouts")
+    Trainer.findById(req.params.trainerId).populate("workouts").populate("reviews").populate("location")
     
     .then(trainer => res.json(trainer))
     .catch(err => console.log(err));
