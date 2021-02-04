@@ -44,7 +44,7 @@ class TrainerShow extends React.Component {
                                             <div className="trainer-specialties"><strong>Specialties:</strong>
                                        &nbsp;{this.props.trainer.specialties.join(", ")}</div>
                                         </div>
-                                        <Link className="trainer-review-button" to=''><button>LEAVE A REVIEW</button></Link>
+                                        <Link className="trainer-review-button" to={`/trainers/${this.props.trainer._id}/reviews/create`}><button>LEAVE A REVIEW</button></Link>
                                     </div>
                                 </div>
                             </div>
