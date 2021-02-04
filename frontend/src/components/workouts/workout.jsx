@@ -10,10 +10,13 @@ class Workout extends React.Component {
             userId: this.props.currentUserId,
             date: "",
             time: "",
-            location: ""
+            location: "",
+            trainerName: this.props.trainer.firstName + " " + this.props.trainer.lastName,
+            trainerImage: this.props.trainer.imageUrl
         }
         this.date = new Date()
         this.timeOptions = this.timeOptions.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
@@ -69,10 +72,13 @@ class Workout extends React.Component {
             userId: this.state.userId,
             date: this.state.date,
             time: this.state.time,
-            location: this.state.location
+            location: this.state.location,
+            trainerName: this.state.trainerName,
+            trainerImage: this.state.trainerImage
         }
 
-        this.props.createWorkout(workout).then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
+        this.props.createWorkout(workout)
+        // .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
 
 
     }
@@ -130,13 +136,13 @@ class Workout extends React.Component {
                                 </div>
                             </div>
                             <div >
-                                <form>
+                                <form onSubmit={this.handleSubmit}>
                                     <div>
                                         <p>Select A Location:</p>
                                         <select onChange={this.handleInput('location')}>
                                             <option disabled selected value=""> --- Select A Location --- </option>
-                                            {this.props.trainer.location ? <option value={this.props.trainer.location}>Trainer's Location</option> : null}
-                                            {this.props.currentUser.location ? <option value={this.props.currentUser.location}>My Location</option> : null}
+                                            {this.props.trainer.location ? <option value={this.props.trainer.location.address.streetAddress}>Trainer's Location</option> : null}
+                                            {this.props.currentUser.location ? <option value={this.props.currentUser.location.address.streetAddress}>My Location</option> : null}
                                         </select>
                                     </div>
                                     <div>

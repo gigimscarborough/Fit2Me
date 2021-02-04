@@ -10,7 +10,7 @@ const workoutsReducer = (state = {}, action) => {
         case RECEIVE_WORKOUTS:
             return action.workouts.data
         case RECEIVE_WORKOUT:
-            return Object.assign({}, state, { [action.workout.data['_id']]: action.workout.data })
+            return Object.assign({}, state, { [action.workout.data.workout['_id']]: action.workout.data.workout })
         default:
             return state;
     }

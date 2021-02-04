@@ -28,7 +28,19 @@ const removeWorkout = workoutId => (
 
 
 
+export const fetchWorkout = (workoutId) => dispatch => (
+    WorkoutApiUtil.createWorkout(workoutId)
+        .then(workout => dispatch(receiveWorkout(workout)))
+)
+
 export const createWorkout = (workout) => dispatch => (
     WorkoutApiUtil.createWorkout(workout)
         .then(workout => dispatch(receiveWorkout(workout)))
 )
+
+export const deleteWorkout = (workoutId) => dispatch => (
+    WorkoutApiUtil.deleteWorkout(workoutId)
+        .then(() => dispatch(removeWorkout(workoutId)))
+)
+
+
