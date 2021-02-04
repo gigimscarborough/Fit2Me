@@ -9,7 +9,6 @@ class TrainerShow extends React.Component {
     }
 
     componentDidMount() {
-
         this.props.getTrainer(this.props.trainerId)
     }
 
@@ -20,6 +19,13 @@ class TrainerShow extends React.Component {
                 <div>Loading..</div>
             )
         } else {
+            const reviews = this.props.trainer.reviews.map((review) => (
+                <ul>
+                    <ul>{review.body}</ul>
+                    <ul>{review.workoutDate}</ul>
+                    <ul>{review.rating}</ul>
+                </ul>
+            ))
             const hasLocation = this.props.trainer.hasLocation ? "YES" : "NO"
             const canTravel = this.props.trainer.canTravel ? "YES" : "NO"
             return (
@@ -53,7 +59,11 @@ class TrainerShow extends React.Component {
                             <div className="trainer-revs">
                                 <div className="revs-head">
                                     <h2>CLIENT REVIEWS</h2>
-                                    <ReviewIndexContainer trainer={this.props.trainer} />
+                                </div>
+                                <div className="revs-main">
+                                    <div>
+                                        {reviews}
+                                    </div>
                                 </div>
                             </div>
                         </div>
