@@ -12,7 +12,7 @@ class SearchResults extends React.Component {
 
 
     render() {
-        if (Object.keys(this.props.trainers).length === 0){
+        if (Object.keys(this.props.trainers).length === 0) {
             return null
         }
         
@@ -28,7 +28,9 @@ class SearchResults extends React.Component {
                         </Link>
                     </div>
                     <div className="trainer-r">
-                        <Link to={`/trainers/${trainer._id}`}>{trainer.firstName} { trainer.lastName }</Link>
+                        <Link to={`/trainers/${trainer._id}`}>{trainer.firstName} {trainer.lastName}</Link>
+                        <p><i>"{trainer.bio}"</i></p>
+
 
                     </div>
 
@@ -38,21 +40,19 @@ class SearchResults extends React.Component {
         )
 
         return (
-            <div className="results-container">
-                <div className="trainer-content">
+            <div className="holder">
+                <div className="results-container">
+                    <div className="trainer-content">
                     <div className="t-content-header">
                         <h1>TRAINER SEARCH</h1>
                         <div className="matches">
-                            <p>You matched with {this.props.trainers.length} trainers in your area</p>
-                            <Link to="/search">New Search</Link>
+                                <p>You matched with {this.props.trainers.length} {this.props.trainers.length <= 1 ? "trainer" : "trainers"} in your area</p>
+                        <Link to="/search">New Search</Link>
                         </div>
-                    </div>
+                        </div>
                     {trainers}
+                    </div>
                 </div>
-                <div>
-
-                </div>
-
             </div>
         )
     }
