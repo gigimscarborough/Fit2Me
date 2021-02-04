@@ -1,6 +1,5 @@
 import React from 'react'
 import './search.scss'
-import {Redirect} from 'react-router-dom'
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -9,9 +8,7 @@ class SearchForm extends React.Component {
             canTravel: "",
             hasLocation: "",
             experienceLevel: "beginner",
-            specialty: "yoga",
-            zipCode: "",
-            didSubmit: false
+            specialty: "yoga"
 
         }
         this.handleLocation = this.handleLocation.bind(this)
@@ -44,24 +41,15 @@ class SearchForm extends React.Component {
         canTravel: this.state.canTravel,
         hasLocation: this.state.hasLocation,
         experienceLevel: this.state.experienceLevel,
-        specialty: this.state.specialty,
-        zipCode: this.state.zipCode
+        specialty: this.state.specialty
       }
 
       this.props.searchTrainers(form)
       this.props.history.push("/search/results")
-        // this.setState({ didSubmit: true })
     }
 
 
     render() {
-        // if (this.state.didSubmit)
-        // {
-        //     return (
-        //         <Redirect to="/search/results" />
-        //     )
-        // } else {
-
         return (
             <div className="search-form">
                 <div className="search-form-inner">
@@ -73,21 +61,21 @@ class SearchForm extends React.Component {
                             <h2>Select Your Workout Type</h2>
                             <select onChange={this.handleInput("specialty")}>
                                 <option value="" disabled selected> --- Workout Type --- </option>
-                                <option value="Cardio">Cardio</option>
-                                <option value="Yoga">Yoga</option>
-                                <option value="High Intensity Interval Training">High Intensity Interval Training</option>
-                                <option value="Weight Training"> Weight Training</option>
-                                <option value="Kickboxing">Kickboxing</option>
-                                <option value="Tabata">Tabata</option>
+                                <option value="cardio">Cardio</option>
+                                <option value="yoga">Yoga</option>
+                                <option value="hiit">High Intensity Interval Training</option>
+                                <option value="weight training"> Weight Training</option>
+                                <option value="kickboxing">Kickboxing</option>
+                                <option value="tabata">Tabata</option>
                             </select>
                         </div>
                         <div>
                             <h2>Select Your Trainers Experience Level</h2>
                             <select onChange={this.handleInput("experienceLevel")}>
                                 <option value="" disabled selected> --- Experience Level --- </option>
-                                <option value="Beginner">Beginner</option>
-                                <option value="Intermediate">Intermediate</option>
-                                <option value="Master">Master</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="master">Master</option>
                             </select>
                         </div>
                         <div>
@@ -99,10 +87,6 @@ class SearchForm extends React.Component {
                                 <option value="both">No Preference</option>
                             </select>
                         </div >
-                        <div>
-                            <h2>Please Enter Your Zip Code</h2>
-                            <input className="zipcode-inp" type="text" onChange={this.handleInput("zipCode")} placeholder="Zip Code"/>
-                        </div >
                         <div className="search-btn-div">
                             <button className="search-form-btn">FIND MY TRAINER!</button>
                         </div>
@@ -111,7 +95,6 @@ class SearchForm extends React.Component {
                 </div>
             </div>
         )
-        // }
     }
 }
 

@@ -4,9 +4,6 @@ $fit2me-light-blue: #25859bef;
 .search-form{
     display: flex;
     justify-content: center;
-    background-image: url(../../assets/images/attic_gym1.jpg);
-    background-size: cover;
-    
 }
 
 .search-form-inner{
@@ -16,7 +13,6 @@ $fit2me-light-blue: #25859bef;
     padding-right: 15px;
     font-family: 'Rubik', sans-serif;
     margin-top: 40px;
-    background-color:white;
 }
 .search-form-inner div{
     margin-bottom: 40px;
@@ -36,14 +32,6 @@ $fit2me-light-blue: #25859bef;
 }
 .search-form-inner select:focus{
     outline: none;
-}
-.zipcode-inp{
-    font-family: 'Rubik', sans-serif;
-    height: 40px;
-     width: 400px;
-     border-radius: 4px;
-     padding-left: 15px;
-     border: solid $fit2me-blue 1px;
 }
 
 
@@ -80,10 +68,9 @@ $fit2me-light-blue: #25859bef;
     width: 60%;
     box-shadow: 3px 3px 8px gray;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 15px;
     font-family: 'Rubik', sans-serif;
     margin-top: 40px;
-    padding-bottom: 20px;
 }
 
 .t-content-header h1{
@@ -97,66 +84,3 @@ text-align: center;
 font-size: 45px;
 
 }
-
-.matches{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: solid $fit2me-blue 1px;
-
-}
-.matches a{
-    text-decoration: none;
-    color: $fit2me-blue;
-    padding-right: 4px;
-}
-.matches a:hover{
-color: $fit2me-light-blue;
-transform: transition(0.4s);
-}
-.matches p{
-    padding-left: 4px;
-}
-
-.trainer-div{
-    display: flex;
-    margin-top: 15px;
-    border-bottom: solid #25859b 1px;
-    padding-bottom: 15px
-}
-.trainer-image{
-    height: 175px;
-    width: 175px;
-    border-radius: 5px;
-}
-
-.trainer-r{
-    padding-left: 15px;
-}
-
-.trainer-r a{
-    text-decoration: none;
-    color: #25859b
-}
-
-.trainer-r a:hover{
-    color: $fit2me-light-blue;
-}
-
-.trainer-l{
-display: flex;
-flex-direction: column;
-align-items: center;
-text-decoration: none;
-color: #25859b
-}
-
-.trainer-link {
-text-decoration: none;
-color: #25859b
-}
-
-.trainer-link:hover {
-    color: $fit2me-light-blue;
-}
-
