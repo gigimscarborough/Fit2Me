@@ -1,5 +1,5 @@
 /node_modules
-/config/keys_prod.js
+# /config/keys.js
 /frontend/node_modules
 /frontend/.eslintcache
 /config/keys_dev.js
