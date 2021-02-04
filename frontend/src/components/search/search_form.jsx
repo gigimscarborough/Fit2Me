@@ -73,21 +73,21 @@ class SearchForm extends React.Component {
                             <h2>Select Your Workout Type</h2>
                             <select onChange={this.handleInput("specialty")}>
                                 <option value="" disabled selected> --- Workout Type --- </option>
-                                <option value="cardio">Cardio</option>
-                                <option value="yoga">Yoga</option>
-                                <option value="hiit">High Intensity Interval Training</option>
-                                <option value="weight training"> Weight Training</option>
-                                <option value="kickboxing">Kickboxing</option>
-                                <option value="tabata">Tabata</option>
+                                <option value="Cardio">Cardio</option>
+                                <option value="Yoga">Yoga</option>
+                                <option value="High Intensity Interval Training">High Intensity Interval Training</option>
+                                <option value="Weight Training"> Weight Training</option>
+                                <option value="Kickboxing">Kickboxing</option>
+                                <option value="Tabata">Tabata</option>
                             </select>
                         </div>
                         <div>
                             <h2>Select Your Trainers Experience Level</h2>
                             <select onChange={this.handleInput("experienceLevel")}>
                                 <option value="" disabled selected> --- Experience Level --- </option>
-                                <option value="beginner">Beginner</option>
-                                <option value="intermediate">Intermediate</option>
-                                <option value="master">Master</option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Master">Master</option>
                             </select>
                         </div>
                         <div>

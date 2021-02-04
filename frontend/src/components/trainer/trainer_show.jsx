@@ -9,12 +9,12 @@ class TrainerShow extends React.Component{
     }
 
     componentDidMount(){
-        debugger
+   
         this.props.getTrainer(this.props.trainerId)
     }
 
     render(){   
-        debugger
+    
         if (!this.props.trainer) {
             return (
                 <div>Loading..</div>
