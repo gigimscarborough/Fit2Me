@@ -5,18 +5,24 @@ import './search.scss'
 class SearchResults extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            trainers: this.props.trainers
+        }
 
     }
 
-   
+    componentDidMount() {
+        console.log("REMOUNTING")
+        console.log(sessionStorage.getItem("trainer"))
+    }
 
 
     render() {
         debugger
         if (Object.keys(this.props.trainers).length === 0) {
-            return null
+            return <h1>ARE WE HERE</h1>
         }
-        
+        sessionStorage.setItem("trainer", this.props.trainers)
         const trainers = this.props.trainers.map(trainer =>
             <div className="trainers-container">
                 <div className="trainer-div" >
@@ -39,6 +45,7 @@ class SearchResults extends React.Component {
 
             </div>
         )
+
 
         return (
             <div className="holder">
