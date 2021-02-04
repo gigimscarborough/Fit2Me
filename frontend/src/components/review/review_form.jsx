@@ -7,7 +7,7 @@ class ReviewForm extends React.Component {
         super(props)
         this.state = {
             body: '',
-            rating: '',
+            rating: null,
             userId: this.props.user_id,
             trainerId: this.props.match.params.trainerId,
             workoutDate: ''
@@ -39,7 +39,6 @@ class ReviewForm extends React.Component {
     }
 
     render(){
-        debugger
         if (!this.props.trainer) {
             return (
                 <div>Loading..</div>

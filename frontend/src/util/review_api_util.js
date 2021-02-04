@@ -8,8 +8,8 @@ export const fetchReviews = (trainerId) => {
     return axios.get(`/api/trainers/${trainerId}/reviews`)
 }
 
-export const createReview = (review, trainerId) => {
-    return axios.post(`/api/trainers/${trainerId}/reviews`, review)
+export const createReview = (review) => {
+    return axios.post(`/api/reviews/create`, review)
 }
 
 export const updateReview = (review, trainerId) => {
