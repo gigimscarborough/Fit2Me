@@ -8,7 +8,7 @@ class SearchResults extends React.Component {
 
     }
 
-
+   
 
 
     render() {
