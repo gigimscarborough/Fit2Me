@@ -11,7 +11,7 @@ const ReviewSchema = new Schema({
       required: true
     },
     body: {
-        type: Text,
+        type: String,
       required: true
     },
     workoutDate: {
