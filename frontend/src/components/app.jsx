@@ -3,7 +3,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch } from 'react-router-dom';
 import NavBar from './nav/navbar_container'
 import Modal from './session/modal'
-import SplashContainer from './splash/splash_container'
+import Splash from './splash/splash'
 import TrainerShowContainer from './trainer/trainer_show_container'
 import UserShowContainer from './user/user_show_container'
 import SearchFormContainer from './search/search_form_container'
@@ -17,7 +17,7 @@ const App = () => (
     <Modal/>
     <NavBar/>
     <Switch>
-        <Route exact path="/" component={SplashContainer} />
+        <Route exact path="/" component={Splash} />
         <Route exact path="/trainers/:trainerId" component={TrainerShowContainer} />
         <Route exact path="/users/:userId" component={UserShowContainer} />
         <ProtectedRoute exact path='/trainers/:trainerId/reviews/create' component={ReviewFormContainer}/>
