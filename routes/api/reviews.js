@@ -10,7 +10,7 @@ router.get('/test', (req, res) => {
 router.get('/show/:reviewId', (req, res) => {
     Review.findById(req.params.reviewId)
 
-    .then(location => res.json(location))
+    .then(review => res.json(review))
     .catch(err => console.log(err));
 })
 
