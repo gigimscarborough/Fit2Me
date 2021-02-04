@@ -16,20 +16,24 @@ router.get('/show/:locationId', (req, res) => {
 
 router.post('/create', (req, res) => {
             
-            const newLocation = new Location({
-                ownerId: req.body.ownerId,
-                address: req.body.address,
-                equipment: req.body.equipment
-              })
-        
-            newLocation.save()
-            .then(location => {
-              
-              User.updateOne({'_id': location.ownerId}, {location}, { "upsert": false }).catch(err => console.log(err));
+          const newLocation = new Location({
+              ownerId: req.body.ownerId,
+              address: req.body.address,
+              equipment: req.body.equipment
+            })
+      
+          newLocation.save()
+          .then(location => {
+            
+              User.updateOne({'_id': location.ownerId}, {location}, { "upsert": false }).catch(err => console.log(err))
 
-                return res.json(location)
-                })
-                .catch(err => console.log(err));
+              User.findById(location.ownerId).populate('workouts').populate("location")
+              .then(user => res.json(user))
+
+
+              
+              })
+              .catch(err => console.log(err));
 
 })
 

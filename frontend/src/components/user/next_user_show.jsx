@@ -1,6 +1,7 @@
 import React from 'react'
 import './user.scss'
 import LocationForm from './location_form'
+import LocationFormContainer from "./location_form_container"
 
 
 class NextUserShow extends React.Component {
@@ -27,7 +28,7 @@ class NextUserShow extends React.Component {
                             <h1>Welcome {currentUser.firstName}!</h1>
                         </div>
                         <div className="loc-form-div">
-                            <LocationForm currentUser={this.props.currentUser[this.props.currentUserId]}/>
+                            <LocationFormContainer currentUser={this.props.currentUser[this.props.currentUserId]}/>
                         </div>
                         <div>
                             <h2>My Upcoming Workouts</h2>
