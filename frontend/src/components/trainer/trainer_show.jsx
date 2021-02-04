@@ -14,7 +14,7 @@ class TrainerShow extends React.Component {
     }
 
     render() {
-
+        debugger
         if (!this.props.trainer) {
             return (
                 <div>Loading..</div>
@@ -40,7 +40,7 @@ class TrainerShow extends React.Component {
                                             <p className="show-page-bio"><i>{this.props.trainer.bio}</i></p>
                                         </div>
                                         <p>THIS IS WHERE THE AVG RATING GOES??</p>
-                                        {/* <p>{this.props.trainer.dailyAvailability}</p> */}
+                                        <p>{this.props.trainer.dailyAvailability}</p>
                                         <p><strong>Experience Level:</strong> {this.props.trainer.experienceLevel}</p>
                                         <div >
                                             <div className="trainer-specialties"><strong>Specialties:</strong>
@@ -53,7 +53,7 @@ class TrainerShow extends React.Component {
                             <div className="trainer-revs">
                                 <div className="revs-head">
                                     <h2>CLIENT REVIEWS</h2>
-
+                                    <ReviewIndexContainer trainer={this.props.trainer} />
                                 </div>
                             </div>
                         </div>

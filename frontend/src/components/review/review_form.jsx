@@ -10,7 +10,7 @@ class ReviewForm extends React.Component {
             rating: null,
             userId: this.props.user_id,
             trainerId: this.props.match.params.trainerId,
-            workoutDate: ''
+            workoutDate: 'march 10 2020'
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -34,8 +34,16 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e){
         debugger
-        e.preventDefault(); 
-        this.props.createReview(this.state).then(()=> this.props.history.push(`/trainers/${this.props.trainer.id}`))
+        e.preventDefault();
+        let form = {
+            body: this.state.body,
+            rating: parseInt(this.state.rating),
+            userId: this.state.userId,
+            trainerId: this.state.trainerId,
+            workoutDate: this.state.workoutDate
+        } 
+        debugger
+        this.props.createReview(form).then(()=> this.props.history.push(`/trainers/${this.props.trainer['_id']}`))
     }
 
     render(){
@@ -58,23 +66,23 @@ class ReviewForm extends React.Component {
                                         <p className="select-rating-text">How would you rate your workout with him? (must choose one)</p>
                                         <div className="radio-button-container">
                                             <span className="rating-radio-button">
-                                                <input className="radio-button" type="radio" name="trainer-rating" id="1" value={this.state.rating} onChange={this.handleChange('rating')}/>
+                                                <input className="radio-button" type="radio" name="trainer-rating" id="1" value={1} onChange={this.handleChange('rating')}/>
                                                 <label htmlFor="1">{1}</label>
                                             </span>
                                             <span className="rating-radio-button">
-                                                <input className="radio-button"type="radio" name="trainer-rating" id="2" value={this.state.rating} onChange={this.handleChange('rating')} />
+                                                <input className="radio-button"type="radio" name="trainer-rating" id="2" value={2} onChange={this.handleChange('rating')} />
                                                 <label htmlFor="2">{2}</label>
                                             </span>
                                             <span className="rating-radio-button">
-                                                <input className="radio-button"type="radio" name="trainer-rating" id="3" value={this.state.rating} onChange={this.handleChange('rating')}/>
+                                                <input className="radio-button"type="radio" name="trainer-rating" id="3" value={3} onChange={this.handleChange('rating')}/>
                                                 <label htmlFor="3">{3}</label>
                                             </span>
                                             <span className="rating-radio-button">
-                                                <input className="radio-button"type="radio" name="trainer-rating" id="4" value={this.state.rating} onChange={this.handleChange('rating')}/>
+                                                <input className="radio-button"type="radio" name="trainer-rating" id="4" value={4} onChange={this.handleChange('rating')}/>
                                                 <label htmlFor="4">{4}</label>
                                             </span>
                                             <span className="rating-radio-button">
-                                                <input className="radio-button"type="radio" name="trainer-rating" id="5" value={this.state.rating} onChange={this.handleChange('rating')}/>
+                                                <input className="radio-button"type="radio" name="trainer-rating" id="5" value={5} onChange={this.handleChange('rating')}/>
                                                 <label htmlFor="5">{5}</label>
                                             </span>
                                         </div>

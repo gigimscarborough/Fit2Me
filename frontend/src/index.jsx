@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
 
         store = configureStore(preloadedState);
-
+        
         const currentTime = Date.now() / 1000;
 
         // If the user's token has expired
@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // If this is a first time user, start with an empty store
         store = configureStore({});
     }
+    window.getState = store.getState
     // Render our root component and pass in the store as a prop
     const root = document.getElementById('root');
 
