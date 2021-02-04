@@ -32,7 +32,7 @@ router.patch('/update/:workoutId', (req, res) => {
 })
 
 router.delete('/delete/:workoutId', (req, res) => {
-  Workout.deleteOne({_id: req.params.workoutId})
+  Workout.findOneAndDelete({_id: req.params.workoutId})
   .then(workout => res.json(workout))
   .catch((error) => (res.status(400).json({error})))
 });
