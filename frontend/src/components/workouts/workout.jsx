@@ -10,15 +10,18 @@ class Workout extends React.Component {
             userId: this.props.currentUserId,
             date: "",
             time: "",
-            location: ""
+            location: "",
+            trainerName: this.props.trainer.firstName + " " + this.props.trainer.lastName,
+            trainerImage: this.props.trainer.imageUrl
         }
         this.date = new Date()
         this.timeOptions = this.timeOptions.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
         this.props.getTrainer(this.props.trainerId)
-        this.props.fetchUser(this.props.currentUserId)
+        // this.props.fetchUser(this.props.currentUserId)
 
 
 
@@ -27,10 +30,10 @@ class Workout extends React.Component {
     timeOptions() {
 
         if (this.state.date) {
-
+        
             const dateAvail = this.props.trainer.dailyAvailability.split(", ").filter(
                 avail => avail.includes(this.state.date.split(" ")[0]))[0]
-
+         
             const fullTime = dateAvail.split("-")[1]
             const twoTimes = fullTime.split(" to ").map(time => parseInt(time))
             //    const finalTimes = twoTimes.map(time => time.split(":").slice(0, 1))
@@ -44,7 +47,7 @@ class Workout extends React.Component {
                     <p>Select A Time:</p>
                     <select onChange={this.handleInput('time')}>
                         <option disabled selected value=""> --- Select A Time --- </option>
-                       timeOptions
+                       {timeOptions}
                     </select>
                 </div>
             )
@@ -59,7 +62,26 @@ class Workout extends React.Component {
             [type]: e.currentTarget.value
         });
     }
+    
 
+
+    handleSubmit(e){
+        e.preventDefault()
+        let workout = {
+            trainerId: this.state.trainerId,
+            userId: this.state.userId,
+            date: this.state.date,
+            time: this.state.time,
+            location: this.state.location,
+            trainerName: this.state.trainerName,
+            trainerImage: this.state.trainerImage
+        }
+
+        this.props.createWorkout(workout)
+        // .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
+
+
+    }
 
 
 
@@ -95,7 +117,7 @@ class Workout extends React.Component {
 
 
         // }
-
+        debugger
         return (
             <div className="holder">
                 <div className="workout-cont">
@@ -114,13 +136,13 @@ class Workout extends React.Component {
                                 </div>
                             </div>
                             <div >
-                                <form>
+                                <form onSubmit={this.handleSubmit}>
                                     <div>
                                         <p>Select A Location:</p>
                                         <select onChange={this.handleInput('location')}>
                                             <option disabled selected value=""> --- Select A Location --- </option>
-                                            {this.props.trainer.location ? <option value={this.props.trainer.location}>Trainer's Location</option> : null}
-                                            {/* {this.props.trainer.location ? <option value={this.props.trainer.location}>Trainer's Location</option> : null} */}
+                                            {this.props.trainer.location ? <option value={this.props.trainer.location.address.streetAddress}>Trainer's Location</option> : null}
+                                            {this.props.currentUser.location ? <option value={this.props.currentUser.location.address.streetAddress}>My Location</option> : null}
                                         </select>
                                     </div>
                                     <div>
@@ -132,13 +154,10 @@ class Workout extends React.Component {
                                             {dateOptions}
                                         </select>
                                     </div>
-                                    <div>
-                                        {/* <p>Select A Time:</p>
-                                        <select onChange={this.handleInput('time')}>
-                                            <option disabled selected value=""> --- Select A Time --- </option>   */}
                                         {this.timeOptions()}
                                         {/* </select> */}
-                                    </div>
+                                 
+                                    <button>BOOK MY WORKOUT!</button>
                                     
 
 
