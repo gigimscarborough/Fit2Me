@@ -45,6 +45,8 @@ router.post('/create', (req, res) => {
             
             const newWorkout = new Workout({
                 trainerId: req.body.trainerId,
+                trainerName: req.body.trainerName,
+                trainerImage: req.body.trainerImage,
                 userId: req.body.userId,
                 date: req.body.date,
                 time: req.body.time,
