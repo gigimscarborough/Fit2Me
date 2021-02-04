@@ -16,6 +16,21 @@ router.get('/show/:workoutId', (req, res) => {
     .catch(err => console.log(err));
 })
 
+router.patch('/update/:workoutId', (req, res) => {
+
+
+    const updatedWorkout = {
+      date: req.body.date,
+      time: req.body.time,
+      location: req.body.location
+    }
+
+    Workout.findOneAndUpdate({'_id': req.params.workoutId}, {$set: updatedWorkout}, {new: true})
+
+    .then(workout => res.json(workout))
+    .catch(err => console.log(err));
+})
+
 router.delete('/delete/:workoutId', (req, res) => {
   Workout.deleteOne({_id: req.params.workoutId})
   .then(workout => res.json(workout))
