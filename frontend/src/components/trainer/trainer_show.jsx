@@ -10,6 +10,7 @@ class TrainerShow extends React.Component {
 
     componentDidMount() {
         this.props.getTrainer(this.props.trainerId)
+        this.props.fetchUser(this.props.currentUserId)
     }
 
     render() {
@@ -33,13 +34,10 @@ class TrainerShow extends React.Component {
                     <div className="trainer-intro-container">
                         <div className="trainer-profile-box">
                             <div className="trainer-pro-cont">
-
                                 <div className="trainer-pro-l">
                                     <img src={this.props.trainer.imageUrl} />
-
                                 </div>
                                 <div className="trainer-pro-r">
-
                                     <div className="trainer-profile">
                                         <div className="trainer-profile-top">
                                             <p><strong>Name:</strong> {this.props.trainer.firstName} {this.props.trainer.lastName}</p>
@@ -67,16 +65,14 @@ class TrainerShow extends React.Component {
                                 </div>
                             </div>
                         </div>
-
-
                         <div className="trainer-workout-container trainer-booleans">
                             <h2 className="trainer-booleans-title">Workout Options</h2>
                             <p className="trainer-booleans-option">Workout Location Available? {hasLocation}</p>
                             <p className="trainer-booleans-option">Trainer Available At Your Location? {canTravel}</p>
-                            <Link className="trainer-book-workout" to={`/trainers/${this.props.trainer._id}/workout`}><button>BOOK A WORKOUT!</button></Link>
+                            <Link className="trainer-book-workout" to={{pathname: `/trainers/${this.props.trainer._id}/workout`, currentUser: this.props.currentUser}}>
+                                <button>BOOK A WORKOUT!</button>
+                                </Link>
                         </div>
-
-
                     </div>
                     {/* <div className="trainer-review-container">
                         <h4 className="recommended-reviews">Recommended Reviews</h4>
