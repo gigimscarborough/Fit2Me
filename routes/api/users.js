@@ -9,9 +9,6 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get('/test', (req, res) => {
-  res.send('Hello World')
-})
 
 router.get('/show/:userId', (req, res) => {
   User.findById(req.params.userId).populate('workouts').populate("location")

@@ -2,10 +2,6 @@ const express = require("express");
 const router = express.Router({ mergeParams: true });
 const Location = require('../../models/Location');
 
-router.get('/test', (req, res) => {
-    res.send('Hello World')
-  })
-
 
 router.get('/show/:locationId', (req, res) => {
     Location.findById(req.params.locationId)

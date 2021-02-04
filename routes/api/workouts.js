@@ -4,9 +4,6 @@ const Workout = require('../../models/Workout');
 const Trainer = require('../../models/Trainer');
 const User = require('../../models/User');
 
-router.get('/test', (req, res) => {
-    res.send('Hello World')
-  })
 
   router.get('/index/', (req, res) => {
     Workout.find()
