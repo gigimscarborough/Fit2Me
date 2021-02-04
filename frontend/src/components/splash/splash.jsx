@@ -40,7 +40,7 @@ class Splash extends React.Component {
                         <input type="radio" name="radio-btn" id="radio3"/>
                         <input type="radio" name="radio-btn" id="radio4"/>
                         <div className="slide first">
-                            <img className="slide-image" src={fitnessFail} />
+                            <img id="slidepic" className="slide-image" src={fitnessFail} />
                             <div className="slide-text-top">
                                 <p>LACKING MOTIVATION WORKING OUT DURING THIS PANDEMIC?</p>
                             </div>
@@ -49,19 +49,19 @@ class Splash extends React.Component {
                             </div>
                         </div>
                         <div className="slide">
-                            <img src={splashIntro} />
+                            <img id="slidepic" src={splashIntro} />
                             <div className="slide-text-intro">
                                 <p>WE HAVE A SOLUTION- FIT2ME!</p>
                             </div>
                         </div>
                         <div className="slide">
-                            <img src={splashIntro2} />
+                            <img id="slidepic" src={splashIntro2} />
                             <div className="slide-text-main">
                                 <p className="slide-text-main-box">FIT2ME IS AN INNOVATIVE WEB APPLICATION THAT ALLOWS TRAINEES TO SEARCH AND FIND THEIR BEST MATCHED TRAINERS BASED ON LOCATION AND THEIR SPECIALTIES!</p>
                             </div>
                         </div>
                         <div className="slide">
-                            <img src={splashIntro3} />
+                            <img id="slidepic" src={splashIntro3} />
                             <Link className="reserve-link" to="/trainers/:trainerId/reviews/create"><div className="slide-reserve-button">
                                 BOOK A TRAINER TODAY
                             </div></Link>

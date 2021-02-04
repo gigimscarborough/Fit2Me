@@ -1,0 +1,19 @@
+.workout-cont{
+    display: flex;
+    justify-content: center;
+    background-image: url(../../assets/images/attic_gym1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.workout-inner{
+    width: 60%;
+    box-shadow: 3px 3px 8px gray;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 40px;
+    background-color:white;
+} 
