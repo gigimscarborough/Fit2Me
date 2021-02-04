@@ -65,7 +65,6 @@ class Splash extends React.Component {
                             <Link className="reserve-link" to="/trainers/:trainerId/reviews/create"><div className="slide-reserve-button">
                                 BOOK A TRAINER TODAY
                             </div></Link>
-                            
                         </div>
 
                     </div>

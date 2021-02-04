@@ -4,12 +4,13 @@ import { createReview } from '../../actions/review_actions';
 import { getTrainer } from '../../actions/trainer_actions';
 import { openModal } from '../../actions/modal_actions'
 
-const msp = (state, ownProps) => (
-    {
+const msp = (state, ownProps) => {
+    debugger
+    return {
         trainer: state.entities.trainers[ownProps.match.params.trainerId],
         user_id: state.session.id
     }
-)
+}
 
 const mdp = dispatch => (
     {

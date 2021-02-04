@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom'
+import './review_form.scss'
 
 class ReviewForm extends React.Component {
     constructor(props){
@@ -7,8 +8,8 @@ class ReviewForm extends React.Component {
         this.state = {
             body: '',
             rating: '',
-            user_id: this.props.user_id,
-            business_id: this.props.match.params.businessId,
+            userId: this.props.user_id,
+            trainerId: this.props.match.params.trainerId,
             workoutDate: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,26 +34,30 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault(); 
-        this.props.createReview(this.state).then(()=> this.props.history.push(`/businesses/${this.state.business_id}`))
+        this.props.createReview(this.state).then(()=> this.props.history.push(`/trainers/${this.props.trainer.id}`))
     }
 
     render(){
+        debugger
         if (!this.props.trainer) {
             return (
                 <div>Loading..</div>
             )
         } else {
             return(
-                <div>
+                <div className="review-container">
                     <div className="review-form-main">
                         <form onSubmit={this.handleSubmit}>
                             <div className="review-form-box">
                                 <div className="review-form-texts">
-                                    <span className="review-form-trainer-name">{this.props.trainer.name}</span>
+                                   <img className="review-trainer-pic" src={this.props.trainer.imageUrl} alt=""/>
+                                    <span className="review-form-trainer-name">{this.props.trainer.firstName} {this.props.trainer.lastName}</span>
                                 </div>
                                 <div className="review-content-box">
-                                    <p className="select-rating-text">Select your rating</p>
-                                    <input type="number" min="1" max="5" className="rating-number"value={this.state.rating} onChange={this.handleChange("rating")}/>
+                                    <div className="review-content">
+                                        <p className="select-rating-text">Select your rating</p>
+                                        <input type="number" min="1" max="5" className="rating-number"value={this.state.rating} onChange={this.handleChange("rating")}/>
+                                    </div>                                   
                                     <textarea className="text-area-text"value={this.state.body} onChange={this.handleChange("body")} 
                                     placeholder="If it weren't for Jim, I don't know how I would have kept my body this way during the Covid! He is so fantastic with the equipment, and his workout routine helped me get in shape even during this time!!"></textarea>
                                 </div>

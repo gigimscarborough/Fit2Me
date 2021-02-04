@@ -1,0 +1,51 @@
+.text-area-text{
+    width: 500px;
+    height: 300px;
+    resize: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    border: 2px #25859B solid;
+    border-radius: 16px;
+    outline: none;
+}
+
+.review-container{
+    display: flex;
+    justify-content: center;
+}
+.review-form-trainer-name{
+    font-size: 32px;
+    font-weight: bold;
+    font-family: sans-serif, "Rubik";
+    color: black
+}
+.review-post-button{
+    font-family: sans-serif, "Rubik";
+    font-size: 20px;
+    color: #25859B;
+    border: 2px #25859B solid;
+    padding: 10px;
+    background-color: white;
+    border-radius: 16px;
+    outline: none;
+    position: relative;
+    left: 180px;
+    margin-top: 10px;
+}
+
+.review-trainer-pic{
+    width: 100px;
+    border: none;
+    border-radius: 16px;
+}
+
+.review-form-texts{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.review-content{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
