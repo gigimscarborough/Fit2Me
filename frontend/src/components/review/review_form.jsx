@@ -89,7 +89,7 @@ class ReviewForm extends React.Component {
                                     </div>
                                     <h3 className="review-body">WRITE YOUR REVIEW</h3>                                   
                                     <textarea className="text-area-text"value={this.state.body} onChange={this.handleChange("body")} 
-                                    placeholder="If it weren't for Jim, I don't know how I would have kept my body this way during the Covid! He is so fantastic with the equipment, and his workout routine helped me get in shape even during this time!!"></textarea>
+                                    placeholder="Your Review Goes Here!"></textarea>
                                 </div>
                             </div>
                             <button className="review-post-button">Post Review</button>
