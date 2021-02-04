@@ -85,6 +85,7 @@
     font-family: sans-serif, 'Rubik';
     margin-left: 7px;
     font-size: 16px;
+    text-align: center;
 }
 
 td{
@@ -103,4 +104,9 @@ td{
 
 .radio-button:hover{
     cursor: pointer;
+}
+
+.radio-button-container{
+    display: flex;
+    justify-content: space-evenly;
 }

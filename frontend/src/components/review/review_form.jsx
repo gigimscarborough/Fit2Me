@@ -56,27 +56,29 @@ class ReviewForm extends React.Component {
                                 </div>
                                 <div className="review-content-box">
                                     <div className="review-content">
-                                        <p className="select-rating-text">How would you rate your workout with him?</p>
-                                        <span className="rating-radio-button">
-                                            <input className="radio-button" type="radio" name="trainer-rating" id="1" value={this.state.rating} onChange={this.handleChange('rating')}/>
-                                            <label htmlFor="1">{1}</label>
-                                        </span>
-                                        <span className="rating-radio-button">
-                                            <input className="radio-button"type="radio" name="trainer-rating" id="2" value={this.state.rating} onChange={this.handleChange('rating')} />
-                                            <label htmlFor="2">{2}</label>
-                                        </span>
-                                        <span className="rating-radio-button">
-                                            <input className="radio-button"type="radio" name="trainer-rating" id="3" value={this.state.rating} onChange={this.handleChange('rating')}/>
-                                            <label htmlFor="3">{3}</label>
-                                        </span>
-                                        <span className="rating-radio-button">
-                                            <input className="radio-button"type="radio" name="trainer-rating" id="4" value={this.state.rating} onChange={this.handleChange('rating')}/>
-                                            <label htmlFor="4">{4}</label>
-                                        </span>
-                                        <span className="rating-radio-button">
-                                            <input className="radio-button"type="radio" name="trainer-rating" id="5" value={this.state.rating} onChange={this.handleChange('rating')}/>
-                                            <label htmlFor="5">{5}</label>
-                                        </span>
+                                        <p className="select-rating-text">How would you rate your workout with him? (must choose one)</p>
+                                        <div className="radio-button-container">
+                                            <span className="rating-radio-button">
+                                                <input className="radio-button" type="radio" name="trainer-rating" id="1" value={this.state.rating} onChange={this.handleChange('rating')}/>
+                                                <label htmlFor="1">{1}</label>
+                                            </span>
+                                            <span className="rating-radio-button">
+                                                <input className="radio-button"type="radio" name="trainer-rating" id="2" value={this.state.rating} onChange={this.handleChange('rating')} />
+                                                <label htmlFor="2">{2}</label>
+                                            </span>
+                                            <span className="rating-radio-button">
+                                                <input className="radio-button"type="radio" name="trainer-rating" id="3" value={this.state.rating} onChange={this.handleChange('rating')}/>
+                                                <label htmlFor="3">{3}</label>
+                                            </span>
+                                            <span className="rating-radio-button">
+                                                <input className="radio-button"type="radio" name="trainer-rating" id="4" value={this.state.rating} onChange={this.handleChange('rating')}/>
+                                                <label htmlFor="4">{4}</label>
+                                            </span>
+                                            <span className="rating-radio-button">
+                                                <input className="radio-button"type="radio" name="trainer-rating" id="5" value={this.state.rating} onChange={this.handleChange('rating')}/>
+                                                <label htmlFor="5">{5}</label>
+                                            </span>
+                                        </div>
                                     </div>
                                     <h3 className="review-body">WRITE YOUR REVIEW</h3>                                   
                                     <textarea className="text-area-text"value={this.state.body} onChange={this.handleChange("body")} 
