@@ -64,9 +64,21 @@ class SearchResults extends React.Component {
                         <Link to={`/trainers/${trainer._id}`}>{trainer.firstName} {trainer.lastName}</Link>
                         <p><i>"{trainer.bio}"</i></p>
                     
-                        {/* <span>{this.sumRating(trainer.reviews)}</span>
-                        console.log(trainer.reviews)
-                        console.log(trainer) */}
+                        <span>
+                            {/* {this.sumRating(trainer.reviews) > 0 && this.sumRating(trainer.reviews) <= 0.5 ? hStar 
+                            : this.sumRating(trainer.reviews) > 0.5 && this.sumRating(trainer.reviews) <= 1 ? oneStar
+                            : this.sumRating(trainer.reviews) > 1 && this.sumRating(trainer.reviews) <= 1.5 ? oneStarH
+                            : this.sumRating(trainer.reviews) > 1.5 && this.sumRating(trainer.reviews) <= 2 ? twoStar
+                            : this.sumRating(trainer.reviews) > 2 && this.sumRating(trainer.reviews) <= 2.5 ? twoStarH
+                            : this.sumRating(trainer.reviews) > 2.5 && this.sumRating(trainer.reviews) <= 3 ? threeStar
+                            : this.sumRating(trainer.reviews) > 3 && this.sumRating(trainer.reviews) <= 3.5 ? threeStarH
+                            : this.sumRating(trainer.reviews) > 3.5 && this.sumRating(trainer.reviews) <= 4 ? fourStar
+                            : this.sumRating(trainer.reviews) > 4 && this.sumRating(trainer.reviews) <= 4.5 ? fourStarH
+                            : this.sumRating(trainer.reviews) > 4.5 && this.sumRating(trainer.reviews) <= 5 ? fiveStar: null}
+                             */}
+                    
+                        Rating: {this.sumRating(trainer.reviews)}</span>
+                        
                     </div>
 
                 </div>
