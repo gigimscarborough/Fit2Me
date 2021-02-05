@@ -18,9 +18,8 @@ class SearchResults extends React.Component {
 
 
     render() {
-        debugger
         if (Object.keys(this.props.trainers).length === 0) {
-            return <h1>ARE WE HERE</h1>
+            return <div className = "no-search-results"><h1>No Results Match Your Search</h1></div>
         }
         sessionStorage.setItem("trainer", this.props.trainers)
         const trainers = this.props.trainers.map(trainer =>
