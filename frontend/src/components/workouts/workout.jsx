@@ -43,7 +43,7 @@ class Workout extends React.Component {
             }
 
             return (
-                <div>
+                <div className="loc-div">
                     <p>Select A Time:</p>
                     <select onChange={this.handleInput('time')}>
                         <option disabled selected value=""> --- Select A Time --- </option>
@@ -78,8 +78,9 @@ class Workout extends React.Component {
         }
 
         this.props.createWorkout(workout)
-        // .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
-
+        
+        .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
+    
 
     }
 
@@ -137,7 +138,7 @@ class Workout extends React.Component {
                             </div>
                             <div >
                                 <form onSubmit={this.handleSubmit}>
-                                    <div>
+                                    <div className="loc-div">
                                         <p>Select A Location:</p>
                                         <select onChange={this.handleInput('location')}>
                                             <option disabled selected value=""> --- Select A Location --- </option>
@@ -145,7 +146,7 @@ class Workout extends React.Component {
                                             {this.props.currentUser.location ? <option value={this.props.currentUser.location.address.streetAddress}>My Location</option> : null}
                                         </select>
                                     </div>
-                                    <div>
+                                    <div className="loc-div">
                                         <p>Select A Date:</p>
                                         <select onChange={this.handleInput('date')}>
                                             <option disabled selected value=""> --- Select A Date --- </option>
@@ -157,7 +158,7 @@ class Workout extends React.Component {
                                         {this.timeOptions()}
                                         {/* </select> */}
                                  
-                                    <button>BOOK MY WORKOUT!</button>
+                                    <button className="book-btn">BOOK MY WORKOUT!</button>
                                     
 
 
