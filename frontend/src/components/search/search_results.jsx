@@ -47,7 +47,7 @@ class SearchResults extends React.Component {
             )
         }
         sessionStorage.setItem("trainer", this.props.trainers)
-        debugger
+
         const trainers = this.props.trainers.map(trainer =>
             
             <div className="trainers-container">

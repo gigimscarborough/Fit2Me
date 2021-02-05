@@ -10,7 +10,7 @@ class SearchForm extends React.Component {
             hasLocation: "",
             experienceLevel: "beginner",
             specialty: "yoga",
-            zipCode: "",
+            zipCode: this.props.currentUser ? this.props.currentUser.location ? this.props.currentUser.location.address.zip : null : null,
             didSubmit: false
 
         }
