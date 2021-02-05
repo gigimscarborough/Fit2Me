@@ -14,19 +14,16 @@ class SignupForm extends React.Component {
             password2: '',
             canTravel: "",
             hasLocation: "",
-            zipCode: "",
+            // zipCode: "",
             errors: {},
 
         };
-
+        this.handleDemo = this.handleDemo.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false;
+       
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
-            // this.props.history.push('/');
-        }
 
         this.setState({ errors: nextProps.errors })
     }
@@ -47,15 +44,35 @@ class SignupForm extends React.Component {
             password2: this.state.password2,
             canTravel: this.state.canTravel,
             hasLocation: this.state.hasLocation,
-            zipCode: this.state.zipCode
-
+            // zipCode: this.state.zipCode
+            
         };
-        let sUser = {
-            email: this.state.email,
-            password: this.state.password
-        }
+   
  
-        this.props.signup(user, this.props.history).then(() => this.props.login(sUser)).then(() => this.props.closeModal())
+        this.props.signup(user, this.props.history).then(
+            (output) => {
+                console.log(output.errors)
+                if (output.errors == undefined) {
+                    let sUser = {
+                        email: this.state.email,
+                        password: this.state.password
+                    }
+                    this.props.login(sUser)
+                    this.props.closeModal()
+                }
+            }
+        )
+    }
+
+    handleDemo() {
+        let user = {
+            email: "hey@hey.com",
+            password: "pass1234"
+        }
+
+        this.props.login(user)
+        this.props.closeModal()
+        
     }
 
     renderErrors() {
@@ -143,16 +160,17 @@ class SignupForm extends React.Component {
                             </label> No
                             </div> */}
                             {/* </div> */}
-                        <input type="text"
+                        {/* <input type="text"
                             value={this.state.zipCode}
                             onChange={this.update('zipCode')}
                             placeholder="Zip Code"
                         />
                         {this.handleErrors('Zip')}
-                            <br />
+                            <br /> */}
                         
                         <input className="form-submit" type="submit" value="Sign Up" />
-                
+                        <br />
+                        <button className="demo-button" onClick={this.handleDemo}>Login with Demo User</button>
                     </form>
                     <div className="switch-session">
                         <p>Already a member?</p>

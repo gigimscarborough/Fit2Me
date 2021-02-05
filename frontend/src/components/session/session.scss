@@ -2,6 +2,8 @@ $fit2me-blue: #25859b;
 $fit2me-light-blue: #25859bef;
 
 
+
+
 .behind-modal{
    position: fixed;
    top: 0;
@@ -83,8 +85,27 @@ $fit2me-light-blue: #25859bef;
       input.form-submit:hover {
          background-color: $fit2me-light-blue;
       }
-      
+      .demo-button {
+         cursor: pointer;
+         height: 30px;
+         width: 214px;
+         background-color: $fit2me-blue;
+         border: none;
+         color: white;
+         font-weight: bold;
+         font-family: 'Rubik', sans-serif;
+         border-radius: 5px;
+
+      }
+         
+         
+
+      .demo-button:hover {
+         background-color: $fit2me-light-blue;
+        
+      }
    }
+
 
    .switch-session {
       display: flex;
@@ -137,6 +158,7 @@ $fit2me-light-blue: #25859bef;
        margin: 0 0 3px 0;
 
    }
-   
 }
+   
+
 
