@@ -65,10 +65,40 @@ class TrainerShow extends React.Component {
                                             <div className="trainer-specialties"><strong>Specialties:</strong>
                                        &nbsp;{this.props.trainer.specialties.join(", ")}</div>
                                         </div>
-                                        <p><strong>Daily dailyAvailability: </strong>{this.props.trainer.dailyAvailability.split(", ").map(available => (
-                                            availiable.split("")
-                                        ))}</p>
-                                        <Link className="trainer-review-button" to={`/trainers/${this.props.trainer._id}/reviews/create`}><button>LEAVE A REVIEW</button></Link>
+                                        <p><strong>Daily dailyAvailability: </strong>{this.props.trainer.dailyAvailability.split(", ").map(available => {
+                                            const day = available.split('-')[0]
+                                            let firstTime = available.split('-')[1].split(' to ')[0]
+                                            let secondTime = available.split('-')[1].split(' to ')[1]
+                                            firstTime = firstTime.split(':').map(time => {
+                                                if (parseInt(time) > 12) {
+                                                    return parseInt(time) - 12
+                                                } else {
+                                                    return time;
+                                                    };
+                                            }).join(':')
+                                            secondTime = secondTime.split(':').map(time => {
+                                                if (parseInt(time) > 12) {
+                                                    return parseInt(time) - 12;
+                                                } else {
+                                                    return time;
+                                                };
+                                            }).join(':')
+                                            if (firstTime.split(':')[0] > 12) {
+                                                firstTime = firstTime + ' PM'
+                                            } else {
+                                                firstTime = firstTime + ' AM'
+                                            }
+                                            if (secondTime.split(':')[0] > 12) {
+                                                secondTime = secondTime + ' PM'
+                                            } else {
+                                                secondTime = secondTime + ' AM'
+                                            }
+                                            return (
+                                                <p className="available-times">{day} - {firstTime} to {secondTime}</p>
+                                            )
+
+                                        })}</p>
+                                        <Link className="trainer-review-button" to={`/trainers/${this.props.trainer._id}/reviews/create`}><button className="leave-review-button">LEAVE A REVIEW</button></Link>
                                     </div>
                                 </div>
                             </div>
