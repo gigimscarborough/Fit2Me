@@ -14,10 +14,20 @@ class LoginForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this)
     
     }
 
-   
+    handleDemo() {
+        let user = {
+            email: "hey@hey.com",
+            password: "pass1234"
+        }
+
+        this.props.login(user)
+        this.props.closeModal()
+        
+    }
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
             this.props.closeModal()
@@ -81,6 +91,8 @@ class LoginForm extends React.Component {
                         <br />
                         <input type="submit" value="Login" className="form-submit"/>
                         {/* {this.renderErrors()} */}
+                        <br />
+                        <button className="demo-button" onClick={this.handleDemo}>Login with Demo User</button>
                     </form>
                     <div className="switch-session">
                         <p >Not Yet A Member?</p>

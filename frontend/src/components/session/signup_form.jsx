@@ -18,7 +18,7 @@ class SignupForm extends React.Component {
             errors: {},
 
         };
-
+        this.handleDemo = this.handleDemo.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
        
     }
@@ -47,18 +47,32 @@ class SignupForm extends React.Component {
             // zipCode: this.state.zipCode
             
         };
-        let sUser = {
-            email: this.state.email,
-            password: this.state.password
-        }
+   
  
         this.props.signup(user, this.props.history).then(
             (output) => {
-                if (output.errors != undefined) {
-                    this.props.login
+                console.log(output.errors)
+                if (output.errors == undefined) {
+                    let sUser = {
+                        email: this.state.email,
+                        password: this.state.password
+                    }
+                    this.props.login(sUser)
+                    this.props.closeModal()
                 }
             }
         )
+    }
+
+    handleDemo() {
+        let user = {
+            email: "hey@hey.com",
+            password: "pass1234"
+        }
+
+        this.props.login(user)
+        this.props.closeModal()
+        
     }
 
     renderErrors() {
@@ -155,7 +169,8 @@ class SignupForm extends React.Component {
                             <br /> */}
                         
                         <input className="form-submit" type="submit" value="Sign Up" />
-                
+                        <br />
+                        <button className="demo-button" onClick={this.handleDemo}>Login with Demo User</button>
                     </form>
                     <div className="switch-session">
                         <p>Already a member?</p>
