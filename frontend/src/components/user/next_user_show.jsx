@@ -25,7 +25,7 @@ class NextUserShow extends React.Component {
                         <span><strong>Time:</strong> {workout.time}</span><br />
                         <span><strong>Location: </strong>{workout.location}</span><br />
                         <div className="wkc-links">
-                            <span>Update</span>
+                            <span><Link to={`/users/${this.props.currentUserId}/update/${workout._id}`}>Update</Link></span>
                             <span onClick={() => this.props.deleteWorkout(workout._id).then(() => window.location.reload())}>Delete</span>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ const ReviewShow = props => {
     let fourStar = (<div><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str-g"></i></div>)
     let fiveStar = (<div><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i></div>)
     
-    debugger
+    
     let ratingStar = "";
     if (props.review.rating === 1) {
         ratingStar = oneStar
