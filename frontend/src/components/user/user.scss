@@ -45,7 +45,7 @@ text-align: center;
     border-bottom: solid $fit2me-light-blue 1px;
 }
 
-.loc-form input{
+.loc-form input[type=text]{
     font-family: 'Rubik', sans-serif;
     height: 40px;
     width: 450px;
@@ -53,8 +53,6 @@ text-align: center;
     border: solid $fit2me-blue 1px;
     border-radius: 3px;
     padding-left: 10px;
-   
-
 }
 
 .loc-form input:focus{
@@ -126,3 +124,30 @@ outline: none;
     padding-bottom: 20px;
 }
 
+.checkbox-outer-cont{
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-row{
+    display: flex;
+}
+.checkbox-inner-cont{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    width: 150px;
+    justify-content: space-between;
+}
+.checkbox-inner-cont  p{
+    width: max-content;
+    text-align: center;
+}
+.checkbox-location{
+    font-family: 'Rubik', sans-serif;
+    height: 25px;
+    width: 40px;
+    border: solid $fit2me-blue 1px;
+    border-radius: 3px;
+    padding: 30px;
+}

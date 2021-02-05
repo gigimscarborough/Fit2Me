@@ -13,7 +13,15 @@ class LocationForm extends React.Component {
             city: "",
             state: "",
             zip: "",
-            equipment: ""
+            equipment: {
+                "Squat Rack": "",
+                "Weight Set": "",
+                "Medicine Balls": "",
+                "Resistance Bands": "",
+                "Treadmill": "",
+                "Stationary Bike": "",
+                "Pull-Up Bar": ""
+            }
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -30,10 +38,22 @@ class LocationForm extends React.Component {
         });
     }
 
+    handleEqipment(type) {
+        return () => {
+            const equipment = Object.assign({}, this.state.equipment)
+            const value = this.state.equipment[type] === type ? "" : type
+
+            equipment[type] = value
+            this.setState({ equipment: equipment })
+
+        }
+    }
+
 
     handleSubmit(e) {
-        console.log("attemtping to submit location creation")
         e.preventDefault();
+
+        const equipment = Object.values(this.state.equipment).filter(type => type)
 
         let form = {
             ownerId: this.state.ownerId,
@@ -43,16 +63,16 @@ class LocationForm extends React.Component {
                 state: this.state.state,
                 zip: this.state.zip
             },
-            equipment: this.state.equipment.split(", ")
+            equipment
         };
+        
 
         this.props.createLocation(form)
-        .then(() => window.location.reload())
+            .then(() => window.location.reload())
     }
 
 
     render() {
-
         if (this.props.currentUser.location) {
             return (
                 <div className="loc-form">
@@ -60,21 +80,21 @@ class LocationForm extends React.Component {
                     <span>
                         <strong>Street Address:</strong> {this.props.currentUser.location.address.streetAddress}
                     </span>
-                    <br/>
                     <br />
-                    
+                    <br />
+
                     <span>
                         <strong>City:</strong> {this.props.currentUser.location.address.city}
 
                     </span>
                     <br />
-                    <br/>
+                    <br />
                     <span>
                         <strong>State:</strong> {this.props.currentUser.location.address.state}
 
                     </span>
                     <br />
-                    <br/>
+                    <br />
                     <span><strong>Zip Code:</strong> {this.props.currentUser.location.address.zip}
 
                     </span>
@@ -83,7 +103,7 @@ class LocationForm extends React.Component {
 
                 </div>
             )
-        } else {}
+        } else { }
 
         return (
             <form className="loc-form" onSubmit={this.handleSubmit}>
@@ -96,7 +116,46 @@ class LocationForm extends React.Component {
                 <br />
                 <input type="text" placeholder="Zip Code" onChange={this.handleAddress("zip")} />
                 <br />
-                <input type="text" placeholder="Please enter all available equipment seperated by a comma and space" onChange={this.handleInput("equipment")} />
+                {/* <input type="text" placeholder="Please enter all available equipment seperated by a comma and space" onChange={this.handleInput("equipment")} /> */}
+
+
+                <div className="checkbox-outer-cont">
+                    <div className="checkbox-row">
+                        <div className="checkbox-inner-cont">
+                            <p>Squat Rack</p>
+                            <input className="checkbox-location" type="checkbox" onChange={this.handleEqipment("Squat Rack")} />
+                        </div>
+                        <div className="checkbox-inner-cont">
+                            <p>Medicine Balls</p>
+                            <input className="checkbox-location" type="checkbox" onChange={this.handleEqipment("Medicine Balls")} />
+                        </div>
+                        <div className="checkbox-inner-cont">
+                            <p>Weight Set</p>
+                            <input className="checkbox-location" type="checkbox" onChange={this.handleEqipment("Weight Set")} />
+                        </div>
+                        <div className="checkbox-inner-cont">
+                            <p>Resistance Bands</p>
+                            <input className="checkbox-location" type="checkbox" onChange={this.handleEqipment("Resistance Bands")} />
+                        </div>
+
+                    </div>
+
+                    <div className="checkbox-row">
+                        <div className="checkbox-inner-cont">
+                            <p>Treadmill</p>
+                            <input className="checkbox-location" type="checkbox" onChange={this.handleEqipment("Treadmill")} />
+                        </div>
+
+                        <div className="checkbox-inner-cont">
+                            <p>Stationary Bike</p>
+                            <input className="checkbox-location" type="checkbox" onChange={this.handleEqipment("Stationary Bike")} />
+                        </div>
+                        <div className="checkbox-inner-cont">
+                            <p>Pull-Up Bar</p>
+                            <input className="checkbox-location" type="checkbox" onChange={this.handleEqipment("Pull-Up Bar")} />
+                        </div>
+                    </div>
+                </div>
                 <br />
                 <button>ADD MY LOCATION</button>
             </form>
