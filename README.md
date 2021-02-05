@@ -1,5 +1,5 @@
 # Fit2Me
-
+![alt text](https://raw.githubusercontent.com/gigimscarborough/Fit2Me/main/frontend/src/assets/images/fit2me.png "Logo Title Text 1")
 ### Fit2Me 
 Fit2Me is a web application that allows fitness seekers to connect with trainers in their area at outdoor or home locations.
 
