@@ -5,7 +5,7 @@ import fitnessFail from '../../assets/images/fitness_fail.jpg'
 import splashIntro from '../../assets/images/splash_intro.jpg';
 import splashIntro2 from '../../assets/images/splash_intro2.jpg';
 import splashIntro3 from '../../assets/images/splash_intro3.jpg'
-
+import About from '../about';
 class Splash extends React.Component {
     constructor(props){
         super(props);
@@ -84,10 +84,9 @@ class Splash extends React.Component {
                         <label for="radio4" className="manual-btn"></label>
                     </div>
                 </div>
-
-                <script type="text/javascript">
-                    
-                </script>
+                <div>
+                    <About/>
+                </div>
             </div>
             
         )
