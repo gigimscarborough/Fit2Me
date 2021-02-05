@@ -120,6 +120,8 @@ class LocationForm extends React.Component {
 
 
                 <div className="checkbox-outer-cont">
+                <h2>Equipment</h2>
+
                     <div className="checkbox-row">
                         <div className="checkbox-inner-cont">
                             <p>Squat Rack</p>
