@@ -1,7 +1,7 @@
-# Fit2Me
-
+# Fit2Me 
+![alt text](https://raw.githubusercontent.com/gigimscarborough/Fit2Me/main/frontend/src/assets/images/fit2me.png)(https://fit2me.herokuapp.com/)
 ### Fit2Me 
-Fit2Me is a web application that allows fitness seekers to connect with trainers in their area at outdoor or home locations.
+Fit2Me is a web application that allows fitness seekers to connect with trainers in their area at outdoor or home locations. Please visit [our website](https://fit2me.herokuapp.com/) to try it out.
 
 ## Background and Overview
 In the post CoronaVirus era many of us are still practicing social distancing and are having difficulty finding space and or equipment to workout freely. A healthy excercise routine is an integral part of many of our lives that is severely lacking during this pandemic. Fit2Me aims to accomodate the needs of its users by creating a platform where fitness seeker can not only connect with trainers but choose a location where the feel most safe and comfortable as well as sourcing the various workout equipment available to them.
