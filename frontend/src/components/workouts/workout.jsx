@@ -3,6 +3,7 @@ import './workouts.scss'
 
 
 class Workout extends React.Component {
+    debugger
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +15,7 @@ class Workout extends React.Component {
             trainerName: this.props.trainer.firstName + " " + this.props.trainer.lastName,
             trainerImage: this.props.trainer.imageUrl,
             trainerAvailability: this.props.trainer.dailyAvailability,
-            trainerLocaton: this.props.trainer.location
+            trainerLocaton: this.props.trainer.location.address.streetAddress
         }
         this.date = new Date()
         this.timeOptions = this.timeOptions.bind(this)
