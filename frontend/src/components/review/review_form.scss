@@ -82,7 +82,7 @@
 
 .review-content:hover{
     background-color: #25859b;
-    transition: 1s;
+    transition: 0.7s;
 }
 
 .review-form-main{
@@ -117,4 +117,32 @@ td{
 .radio-button-container{
     display: flex;
     justify-content: space-evenly;
+}
+
+.rating-workout-date{
+    text-align: right;
+    font-size: 16px;
+    font-family: sans-serif, "Rubik";
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.rating-workout-d{
+    border: 2px solid #25859b;
+    font-size: 20px;
+    font-family: sans-serif, "Rubik";
+    border-radius: 10px;
+    outline: none;
+    text-decoration: none;
+    position: relative;
+    right: 10px;
+}
+.rating-workout-d:hover{
+    cursor: pointer;
+    border: 2px solid lightblue;
+    transition: 0.7s
+}
+.last-workout-date{
+    position: relative;
+    right: 10px;
 }

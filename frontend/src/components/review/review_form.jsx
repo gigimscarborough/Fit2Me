@@ -87,6 +87,10 @@ class ReviewForm extends React.Component {
                                             </span>
                                         </div>
                                     </div>
+                                    <div className="rating-workout-date">
+                                        <span className="last-workout-date">last workout date </span>
+                                        <input className="rating-workout-d" type="date" value={this.state.workoutDate} onChange={this.handleChange("workoutDate")}/>
+                                    </div>
                                     <h3 className="review-body">WRITE YOUR REVIEW</h3>                                   
                                     <textarea className="text-area-text"value={this.state.body} onChange={this.handleChange("body")} 
                                     placeholder="Your Review Goes Here!"></textarea>
