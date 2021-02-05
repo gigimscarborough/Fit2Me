@@ -65,6 +65,9 @@ class TrainerShow extends React.Component {
                                             <div className="trainer-specialties"><strong>Specialties:</strong>
                                        &nbsp;{this.props.trainer.specialties.join(", ")}</div>
                                         </div>
+                                        <p><strong>Daily dailyAvailability: </strong>{this.props.trainer.dailyAvailability.split(", ").map(available => (
+                                            availiable.split("")
+                                        ))}</p>
                                         <Link className="trainer-review-button" to={`/trainers/${this.props.trainer._id}/reviews/create`}><button>LEAVE A REVIEW</button></Link>
                                     </div>
                                 </div>
