@@ -63,7 +63,7 @@ class ReviewForm extends React.Component {
                                 </div>
                                 <div className="review-content-box">
                                     <div className="review-content">
-                                        <p className="select-rating-text">How would you rate your workout with him? (must choose one)</p>
+                                        <p className="select-rating-text">How would you rate your workout with them? (must choose one)</p>
                                         <div className="radio-button-container">
                                             <span className="rating-radio-button">
                                                 <input className="radio-button" type="radio" name="trainer-rating" id="1" value={1} onChange={this.handleChange('rating')}/>

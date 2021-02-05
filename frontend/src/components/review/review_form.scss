@@ -4,20 +4,22 @@
     resize: none;
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
-    border-top: 2px #25859b solid;
-    border-bottom: 2px #25859b solid;
+    border: 2px #25859b solid;
     outline: none;
     margin-left: 5px;
     margin-right: 5px;
-    border-left: none;
-    border-right: none;
+    border-radius: 15px;
     padding-top: 10px;
 }
 
+.text-area-text:hover{
+    border: 2px lightblue solid;
+}
 .review-body{
     font-family: "Rubik", sans-serif;
-    margin-left: 5px;
+    margin-left: 30px;
     margin-bottom: 6px;
+    margin-top: -11px;
 }
 
 .review-container{
@@ -72,6 +74,13 @@
 .review-content{
     margin-top: 25px;
     margin-bottom: 25px;
+    padding: 10px;
+    background-color: lightblue;
+}
+
+.review-content:hover{
+    background-color: #25859b;
+    transition: 1s;
 }
 
 .review-form-main{
@@ -95,10 +104,6 @@ td{
     font-family: sans-serif, "Rubik";
 }
 
-
-.review-content:first-child{
-    margin-left: 10px;
-}
 
 .radio-button:hover{
     cursor: pointer;

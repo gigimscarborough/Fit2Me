@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './trainer_show.scss';
 import ReviewIndexContainer from '../review/review_index_container'
+import goldBadge from '../../assets/images/gold_badge.png';
 
 class TrainerShow extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class TrainerShow extends React.Component {
     }
 
     componentDidMount() {
+
         this.props.getTrainer(this.props.trainerId)
         this.props.fetchUser(this.props.currentUserId)
     }
@@ -20,6 +22,12 @@ class TrainerShow extends React.Component {
                 <div>Loading..</div>
             )
         } else {
+            let sumRating = 0;
+            for (let i = 0; i < this.props.trainer.reviews.length; i++) {
+                sumRating += this.props.trainer.reviews[i].rating;
+            }
+            let avgRating = sumRating / this.props.trainer.reviews.length;
+            let finalRating = avgRating.toFixed(2);
             const reviews = this.props.trainer.reviews.map((review) => (
                 <ul>
                     <ul>{review.body}</ul>
@@ -35,7 +43,7 @@ class TrainerShow extends React.Component {
                         <div className="trainer-profile-box">
                             <div className="trainer-pro-cont">
                                 <div className="trainer-pro-l">
-                                    <img src={this.props.trainer.imageUrl} />
+                                    <img className="trainer-prof-pic"src={this.props.trainer.imageUrl} />
                                 </div>
                                 <div className="trainer-pro-r">
                                     <div className="trainer-profile">
@@ -43,8 +51,14 @@ class TrainerShow extends React.Component {
                                             <p><strong>Name:</strong> {this.props.trainer.firstName} {this.props.trainer.lastName}</p>
                                             <p className="show-page-bio"><i>{this.props.trainer.bio}</i></p>
                                         </div>
-                                        <p>THIS IS WHERE THE AVG RATING GOES??</p>
-                                        <p>{this.props.trainer.dailyAvailability}</p>
+                                        <div className="ratings-box">
+                                            <img src={goldBadge}/>
+                                            <div className="rating-image-box">
+                                                <p className="avg-score">Avg Score:</p>
+                                                <p className="avg-score-trainer">{finalRating}</p>
+                                            </div>   
+                                        </div>
+                                        {/* <p>{this.props.trainer.dailyAvailability}</p> */}
                                         <p><strong>Experience Level:</strong> {this.props.trainer.experienceLevel}</p>
                                         <div >
                                             <div className="trainer-specialties"><strong>Specialties:</strong>
@@ -58,11 +72,7 @@ class TrainerShow extends React.Component {
                                 <div className="revs-head">
                                     <h2>CLIENT REVIEWS</h2>
                                 </div>
-                                <div className="revs-main">
-                                    <div>
-                                        {reviews}
-                                    </div>
-                                </div>
+                                <div className="review-index-container"><ReviewIndexContainer trainer={this.props.trainer}/></div>
                             </div>
                         </div>
                         <div className="trainer-workout-container trainer-booleans">
@@ -74,10 +84,6 @@ class TrainerShow extends React.Component {
                                 </Link>
                         </div>
                     </div>
-                    {/* <div className="trainer-review-container">
-                        <h4 className="recommended-reviews">Recommended Reviews</h4>
-                        {/* <ReviewIndexContainer trainer={this.props.trainer} /> */}
-                    {/* </div>  */}
                 </div>
             )
         }

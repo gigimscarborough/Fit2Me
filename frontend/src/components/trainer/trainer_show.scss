@@ -67,14 +67,16 @@
     box-shadow: 3px 3px 8px gray;
     margin-right: 300px;
 }
-.trainer-profile-box img{
-    margin-top: 10px;
+.trainer-prof-pic{
+    margin-top: 21px;
     border-radius: 4px;
-    height: 235px;
+    height: 300px;
     width:235px;
 
 }
-
+.review-index-container{
+    background-color: rgb(255, 250, 245);
+}
 .trainer-review-button:visited{
     text-decoration: none;
 }
@@ -193,3 +195,23 @@ font-family: "Rubik", sans-serif;
     color: rgb(80, 80, 80);
     margin-left: 15px;
 }
+.ratings-box{
+    display: flex;
+    position: relative;
+}
+.avg-score{
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+.avg-score-trainer{
+    margin-top: -11px;
+    font-size: 24px;
+}
+
+.rating-image-box{
+    position: relative;
+    right: 75px;
+    top: 5px;
+}
+
