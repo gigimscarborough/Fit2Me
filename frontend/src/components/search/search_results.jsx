@@ -12,7 +12,20 @@ class SearchResults extends React.Component {
     }
 
     componentDidMount() {
+    
 
+    }
+
+
+    sumRating(reviews){
+        // debugger
+        let sumRating = 0;
+        for (let i = 0; i < reviews.length; i++) {
+            sumRating += reviews[i].rating;
+        }
+        let avgRating = sumRating / reviews.length;
+
+        return avgRating.toFixed(2);
     }
 
 
@@ -34,7 +47,9 @@ class SearchResults extends React.Component {
             )
         }
         sessionStorage.setItem("trainer", this.props.trainers)
+        debugger
         const trainers = this.props.trainers.map(trainer =>
+            
             <div className="trainers-container">
                 <div className="trainer-div" >
                     <div className="trainer-l">
@@ -48,14 +63,93 @@ class SearchResults extends React.Component {
                     <div className="trainer-r">
                         <Link to={`/trainers/${trainer._id}`}>{trainer.firstName} {trainer.lastName}</Link>
                         <p><i>"{trainer.bio}"</i></p>
-
-
+                    
+                        {/* <span>{this.sumRating(trainer.reviews)}</span>
+                        console.log(trainer.reviews)
+                        console.log(trainer) */}
                     </div>
 
                 </div>
 
             </div>
+        
         )
+
+        const hStar = (<div >
+            <i class="fas fa-star-half str-h"></i>
+            <i class="fas fa-star-half str-h-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+        </div>)
+        const oneStar = (<div >
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            </div>)
+        const oneStarH = (<div >
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star-half str-h"></i>
+            <i class="fas fa-star-half str-h-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+        </div>)
+        const twoStar = (<div>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+        </div>)
+        const twoStarH = (<div >
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star-half str-h"></i>
+            <i class="fas fa-star-half str-h-g"></i>
+            <i class="fas fa-star str2-g"></i>
+            <i class="fas fa-star str2-g"></i>
+        </div>)
+        const threeStar = (<div>
+            <i class="fas fa-star str"></i>
+            <i class="fas fa-star str"></i>
+            <i class="fas fa-star str"></i>
+            <i class="fas fa-star str-g"></i>
+            <i class="fas fa-star str-g"></i>
+            </div>)
+        const threeStarH = (<div >
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star-half str-h"></i>
+            <i class="fas fa-star-half str-h-g"></i>
+            <i class="fas fa-star str2-g"></i>
+        </div>)
+        const fourStar = (<div>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2-g"></i>
+            </div>)
+        const fourStarH = (<div >
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star-half str-h"></i>
+            <i class="fas fa-star-half str-h-g"></i>
+        </div>)
+        const fiveStar = (<div>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            <i class="fas fa-star str2"></i>
+            </div>)
 
 
         return (
