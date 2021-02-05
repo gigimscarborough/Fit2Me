@@ -17,7 +17,7 @@ class NextUserShow extends React.Component {
             const workouts = currentUser.workouts.map(workout =>
                 <div className='wkc'>
                     <div className='work-left'>
-                        <img src={workout.trainerImage}/>
+                        <Link to={`/trainers/${workout.trainerId}`}><img src={workout.trainerImage} /></Link>
                     </div>
                     <div className='work-right'>
                         <span><strong>Your Workout With: </strong>{workout.trainerName}</span><br/>

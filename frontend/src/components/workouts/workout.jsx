@@ -1,9 +1,10 @@
 import React from 'react'
 import './workouts.scss'
+import {Link} from 'react-router-dom'
 
 
 class Workout extends React.Component {
-    debugger
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -15,7 +16,7 @@ class Workout extends React.Component {
             trainerName: this.props.trainer.firstName + " " + this.props.trainer.lastName,
             trainerImage: this.props.trainer.imageUrl,
             trainerAvailability: this.props.trainer.dailyAvailability,
-            trainerLocaton: this.props.trainer.location.address.streetAddress
+            trainerLocation: this.props.trainer.location.address.streetAddress
         }
         this.date = new Date()
         this.timeOptions = this.timeOptions.bind(this)
@@ -81,7 +82,7 @@ class Workout extends React.Component {
             trainerName: this.state.trainerName,
             trainerImage: this.state.trainerImage,
             trainerAvailability: this.state.trainerAvailability,
-            trainerLocaton: this.state.trainerLocaton
+            trainerLocation: this.state.trainerLocation
         }
 
         this.props.createWorkout(workout)
@@ -137,10 +138,10 @@ class Workout extends React.Component {
                             <p>You Selected:</p>
                             <div className="t-cont">
                                 <div className="t-l">
-                                    <img src={this.props.trainer.imageUrl} />
+                                    <Link to={`/trainers/${this.props.trainer._id}`}><img src={this.props.trainer.imageUrl} /></Link>
                                 </div>
                                 <div className="t-r">
-                                    <p>{this.props.trainer.firstName} {this.props.trainer.lastName}</p>
+                                    <Link to={`/trainers/${this.props.trainer._id}`}><p>{this.props.trainer.firstName} {this.props.trainer.lastName}</p></Link>
                                 </div>
                             </div>
                             <div >

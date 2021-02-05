@@ -8,7 +8,6 @@ class UserShow extends React.Component{
 
     componentWillMount(){
  
-        console.log('fetching user')
         this.props.fetchUser(this.props.currentUserId)
     }
 

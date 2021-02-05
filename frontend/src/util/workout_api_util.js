@@ -1,8 +1,7 @@
 import axios from 'axios'
 
 export const createWorkout = (workout) => {
-    console.log('create workout api')
-    console.log(workout)
+
     return axios.post(`/api/workouts/create`, workout)
 }
 
@@ -17,7 +16,7 @@ export const fetchWorkout = (workoutId) => {
 }
 
 export const updateWorkout = (workout) => {
-    return axios.patch(`/api/workouts/update/${workout.id}`)
+    return axios.patch(`/api/workouts/update/${workout.id}`, workout)
 }
 
 

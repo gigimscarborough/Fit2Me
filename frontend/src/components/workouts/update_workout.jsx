@@ -1,5 +1,6 @@
 import React from 'react';
 import './workouts.scss'
+import { Link } from 'react-router-dom'
 
 class UpdateWorkout extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class UpdateWorkout extends React.Component {
             location: "",
         }
         this.date = new Date()
+        this.handleSubmit = this.handleSubmit.bind(this)
 
     }
 
@@ -24,22 +26,22 @@ class UpdateWorkout extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         let workout = {
-            id: this.state.id,
+            _id: this.state.id,
             date: this.state.date,
             time: this.state.time,
             location: this.state.location,
         }
-
+        
         this.props.updateWorkout(workout)
 
-            .then(() => this.props.history.push(`/users/${this.props.currentUser._id}`))
+            .then(() => this.props.history.push(`/users/${this.props.currentUser['_id']}`))
 
 
     }
     timeOptions() {
 
         if (this.state.date) {
-            const thisWorkout = this.props.currentUser.workouts.filter(workout => workout._id === this.props.workoutId)[0]
+            const thisWorkout = this.props.currentUser.workouts.filter(workout => workout['_id'] === this.props.workoutId)[0]
 
             const dateAvail = thisWorkout.trainerAvailability.split(", ").filter(
                 avail => avail.includes(this.state.date.split(" ")[0]))[0]
@@ -73,7 +75,7 @@ class UpdateWorkout extends React.Component {
 
     render() {
 
-        const workout = this.props.currentUser.workouts.filter(workout => workout._id === this.props.workoutId)[0]
+        const workout = this.props.currentUser.workouts.filter(workout => workout['_id'] === this.props.workoutId)[0]
         
         const dateOptions = []
 
@@ -101,10 +103,10 @@ class UpdateWorkout extends React.Component {
                             <p>Your Workout With:</p>
                             <div className="t-cont">
                                 <div className="t-l">
-                                    <img src={workout.trainerImage} />
+                                    <Link to={`/trainers/${workout.trainerId}`}><img src={workout.trainerImage} /></Link>
                                 </div>
                                 <div className="t-r">
-                                    <p>{workout.trainerName}</p>
+                                    <Link to={`/trainers/${workout.trainerId}`}><p>{workout.trainerName}</p></Link>
                                 </div>
                                 </div>
                                 <div >

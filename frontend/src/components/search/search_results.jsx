@@ -12,8 +12,7 @@ class SearchResults extends React.Component {
     }
 
     componentDidMount() {
-        console.log("REMOUNTING")
-        console.log(sessionStorage.getItem("trainer"))
+
     }
 
 

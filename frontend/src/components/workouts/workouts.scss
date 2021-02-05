@@ -50,6 +50,18 @@ $fit2me-light-blue: #25859bef;
     padding-left: 20px;
 }
 
+.t-r a{
+    text-decoration: none;
+    color: black;
+}
+
+.t-r a:hover{
+    color: #25859b
+}
+.t-r p:hover{
+    color: #25859b
+}
+
 .t-cont{
     display: flex;
     align-items: center;
@@ -71,7 +83,7 @@ $fit2me-light-blue: #25859bef;
     cursor: pointer;
     font-size: 16px;
 
-    margin-top: 25px;
+    margin-top: 40px;
     border: none;
     border-radius: 8px;
     width: 400px
