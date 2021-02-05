@@ -111,3 +111,15 @@ outline: none;
 .loc-div select:focus{
     outline: none;
 }
+
+
+.workout-cont2{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-image: url(../../assets/images/home_gym1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+}

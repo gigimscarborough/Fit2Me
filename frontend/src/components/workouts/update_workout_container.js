@@ -1,4 +1,4 @@
-import UpdateWorkout from './workout';
+import UpdateWorkout from './update_workout';
 import { connect } from 'react-redux';
 import {updateWorkout} from '../../actions/workout_actions'
 
