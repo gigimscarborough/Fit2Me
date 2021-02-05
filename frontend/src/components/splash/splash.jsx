@@ -20,7 +20,7 @@ class Splash extends React.Component {
             if(counter > 4) {
                 counter = 1
             }
-        }, 5000) 
+        }, 6000) 
 
     }
 
@@ -45,31 +45,29 @@ class Splash extends React.Component {
                             <div className="slide first">
                                 <img id="slidepic" className="slide-image" src={fitnessFail} />
                                 <div className="slide-text-top">
-                                    LACKING MOTIVATION WORKING OUT DURING THIS PANDEMIC?
+                                    LOOKING FOR THAT EXTRA PUSH TO GET YOU THROUGH THOSE QUARANTINE WORKOUTS?
                                 </div>
                                 <div className="slide-text-bot">
-                                    ..NO PROFESSIONAL TRAINERS, NOT ENOUGH EQUIPMENT OR SPACE? 
+                                    LET OUR TRAINERS MOTIVATE YOU TO STAY ON TRACK! 
                                 </div>
                             </div>
                             <div className="slide">
                                 <img id="slidepic" src={splashIntro} />
                                 <div className="slide-text-intro">
-                                    WE HAVE A SOLUTION- FIT2ME!
+                                    FIT2ME IS YOUR ON DEMAND SOLUTION FOR BEATING THE WORKOUT BLUES
                                 </div>
                             </div>
                             <div className="slide">
                                 <img id="slidepic" src={splashIntro2} />
                                 <div className="slide-text-main">
-                                    <p>FIT2ME IS AN INNOVATIVE WEB APPLICATION THAT ALLOWS</p> 
-                                    <p>TRAINEES TO SEARCH AND FIND THEIR BEST MATCHED TRAINERS</p>
-                                    <p>BASED ON LOCATION AND THEIR SPECIALTIES!</p>
+                                    FIT2ME BRINGS A FULL WORKOUT EXPERIENCE DIRECTLY TO YOUR FRONT DOOR, BACKYARD, OR A VARIETY OF OUTDOOR LOCATIONS SURE TO BE THE NEXT SETTING FOR YOUR PERFECT WORKOUT! 
                                 </div>
                             </div>
                             <div className="slide">
                                 <img id="slidepic" src={splashIntro3} />
-                                {/* <Link className="reserve-link" to="/trainers/:trainerId/reviews/create"><div className="slide-reserve-button">
-                                    BOOK A TRAINER TODAY
-                                </div></Link> */}
+                                <div className="slide-text-con">
+                                    NO MATTER YOUR AGE, EXPERIENCE, OR FITNESS LEVEL, FIT2ME'S CUTTING EDGE TECHNOLOGY WILL ENSURE YOU A MATCH WITH THE RIGHT TRAINER. 
+                                </div>
                             </div>
 
                         </div>

@@ -6,7 +6,7 @@
     height: 800px;
     // justify-content: center;
     // align-items: center;
-    background: rgb(179, 179, 179);
+    background: rgb(20, 20, 20);
     // margin-top: 30px;
 }
 #slidepic{
@@ -15,7 +15,8 @@
     object-fit: cover;
     height: 140%F;
     -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
-    filter: blur(3px);
+    filter: blur(2px);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
 }
 .slider{
     width: 100%;
@@ -127,9 +128,9 @@
 .slide-text-top{
     position: absolute;
     color: white;
-    bottom: 400px;
+    bottom: 242px;
     left: 20px;
-    font-size: 36px;
+    font-size: 70px;
     font-family: 'Rubik', sans-serif;
     width: 100%;
 }
@@ -137,12 +138,12 @@
 .slide-text-bot{
     position: absolute;
     color: white;
-    top: 650px;
-    left: 130px;
-    font-size: 36px;
+    top: 598px;
+    font-size: 46px;
     font-family: 'Rubik', sans-serif;
     // margin-right: 20px;
     width: 100%;
+    text-align: center;
 }
 
 .slide-text-intro{
@@ -150,12 +151,14 @@
     position: absolute;
     color: white;
     font-weight: 900;
-    bottom: 30px;
-    left: 130px;
+    bottom: 265px;
+    // left: 130px;
     font-size: 80px;
     font-family: 'Rubik', sans-serif;
     // margin-right: 20px;
     width: 100%;
+    text-align: right;
+    right: 15px;
 }
 
 .slide-text-main{
@@ -163,11 +166,13 @@
     position: absolute;
     color: white;
     font-weight: bold;
-    bottom: 280px;
-    left: 35px;
-    font-size: 25px;
+    bottom: 350px;
+    // left: px;
+    font-size: 34px;
     font-family: 'Rubik', sans-serif;
     // margin-right: 20px;
+    text-align: right;
+    right: 15px;
 }
 
 .slide-text-main-box{
@@ -175,6 +180,19 @@
     width: 600px;
     margin: 30px;
     right: 600px;
+}
+
+.slide-text-con{
+    width: 100%;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    bottom: 350px;
+    // left: px;
+    font-size: 34px;
+    font-family: 'Rubik', sans-serif;
+    // margin-right: 20px;
+    text-align: center;
 }
 
 .slide-reserve-button{
