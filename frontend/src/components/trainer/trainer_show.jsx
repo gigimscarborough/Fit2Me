@@ -16,7 +16,7 @@ class TrainerShow extends React.Component {
     }
 
     render() {
-        debugger
+        
         if (!this.props.trainer) {
             return (
                 <div>Loading..</div>

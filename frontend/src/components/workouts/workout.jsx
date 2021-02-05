@@ -12,7 +12,9 @@ class Workout extends React.Component {
             time: "",
             location: "",
             trainerName: this.props.trainer.firstName + " " + this.props.trainer.lastName,
-            trainerImage: this.props.trainer.imageUrl
+            trainerImage: this.props.trainer.imageUrl,
+            trainerAvailability: this.props.trainer.dailyAvailability,
+            trainerLocaton: this.props.trainer.location
         }
         this.date = new Date()
         this.timeOptions = this.timeOptions.bind(this)
@@ -43,12 +45,14 @@ class Workout extends React.Component {
             }
 
             return (
-                <div className="loc-div">
+                <div>
                     <p>Select A Time:</p>
+                <div className="loc-div">
                     <select onChange={this.handleInput('time')}>
                         <option disabled selected value=""> --- Select A Time --- </option>
                        {timeOptions}
                     </select>
+                </div>
                 </div>
             )
 
@@ -74,7 +78,9 @@ class Workout extends React.Component {
             time: this.state.time,
             location: this.state.location,
             trainerName: this.state.trainerName,
-            trainerImage: this.state.trainerImage
+            trainerImage: this.state.trainerImage,
+            trainerAvailability: this.state.trainerAvailability,
+            trainerLocaton: this.state.trainerLocaton
         }
 
         this.props.createWorkout(workout)
@@ -118,7 +124,7 @@ class Workout extends React.Component {
 
 
         // }
-        debugger
+        
         return (
             <div className="holder">
                 <div className="workout-cont">
@@ -138,16 +144,16 @@ class Workout extends React.Component {
                             </div>
                             <div >
                                 <form onSubmit={this.handleSubmit}>
-                                    <div className="loc-div">
                                         <p>Select A Location:</p>
+                                    <div className="loc-div">
                                         <select onChange={this.handleInput('location')}>
                                             <option disabled selected value=""> --- Select A Location --- </option>
                                             {this.props.trainer.location ? <option value={this.props.trainer.location.address.streetAddress}>Trainer's Location</option> : null}
                                             {this.props.currentUser.location ? <option value={this.props.currentUser.location.address.streetAddress}>My Location</option> : null}
                                         </select>
                                     </div>
-                                    <div className="loc-div">
                                         <p>Select A Date:</p>
+                                    <div className="loc-div">
                                         <select onChange={this.handleInput('date')}>
                                             <option disabled selected value=""> --- Select A Date --- </option>
                                             {this.props.trainer.dailyAvailability.includes(this.date.toDateString().split(" ").slice(0, 1)) ? <option value={this.date.toDateString()}>{this.date.toDateString()}</option> : null}
@@ -157,8 +163,10 @@ class Workout extends React.Component {
                                     </div>
                                         {this.timeOptions()}
                                         {/* </select> */}
-                                 
+                                    <div className="btn-div">
+
                                     <button className="book-btn">BOOK MY WORKOUT!</button>
+                                    </div>
                                     
 
 
