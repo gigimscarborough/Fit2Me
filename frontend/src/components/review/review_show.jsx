@@ -1,27 +1,52 @@
 import React from 'react';
+import oneStar from '../../assets/images/rating_star/blue-1-star.png';
+import twoStar from '../../assets/images/rating_star/blue-2-star.png';
+import threeStar from '../../assets/images/rating_star/blue-3-star.png';
+import fourStar from '../../assets/images/rating_star/blue-4-star.png';
+import fiveStar from '../../assets/images/rating_star/blue-5-star.png';
+import './review_show.scss'
 
 const ReviewShow = props => {
-
-    let date = new Date(props.review.created_at);
-    const realDate = date.getMonth() + "1" + "/" + date.getDate() + "/" + date.getFullYear();
+    debugger
+    let ratingStar = "";
+    if (props.review.rating === 1) {
+        ratingStar = oneStar
+    } else if (props.review.rating === 2) {
+        ratingStar = twoStar; 
+    } else if (props.review.rating === 3) {
+        ratingStar = threeStar;
+    } else if (props.review.rating === 4) {
+        ratingStar = fourStar;
+    } else {
+        ratingStar = fiveStar;
+    }
+    let date = new Date(props.review.createdAt);
+    const realDate = `${parseInt(date.getMonth()) + 1}` + "/" + date.getDate() + "/" + date.getFullYear();
     return (
         <div>
-            <div>
-                <div className="profile-box">
-                    <img src="" alt=""/>
-                    <div className="user-info">
-                        {/* <li>{props.review.user.fname} {props.review.user.lname.slice(0,1)}</li>
-                        <li>{props.review.user.zip_code}</li> */}
+            <div className="review-box">
+                <div className="review-left">
+                    <div className="rating-top">
+                        <div>
+                            <span className="review-created-time">{realDate} </span>
+                            <span className="review-upload">upload date</span>
+                        </div>
+                        <div className="rating-date-box">
+                            <img className ="rating-star" src={ratingStar} alt=""/>
+                        </div>
                     </div>
+                    <div className="workout-date">
+                        <p className="workout-date-date">Last Workout Date: </p>
+                        <p>{props.review.workoutDate}</p>
+                    </div>
+
                 </div>
-                <div className="rating-date-box">
-                    <span className="review-rating">
-                        {/* <img src={ratingStar} alt=""/> */}
-                    </span>
-                    <span className="review-created-time">{realDate}</span>
-                </div>
-                <div className="review-main-box">
-                    {props.review.body}
+                
+                
+                <div className="review-right">
+                    <p className="message-text">Message:</p>
+                    <div className="review-body">{props.review.body}</div>
+                    
                 </div>
             </div>
         </div>

@@ -18,6 +18,7 @@ class SearchResults extends React.Component {
 
 
     render() {
+        debugger
         if (Object.keys(this.props.trainers).length === 0) {
             return <h1>ARE WE HERE</h1>
         }
