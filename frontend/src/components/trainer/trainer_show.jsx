@@ -22,19 +22,20 @@ class TrainerShow extends React.Component {
                 <div>Loading..</div>
             )
         } else {
-            let sumRating = 0;
-            for (let i = 0; i < this.props.trainer.reviews.length; i++) {
-                sumRating += this.props.trainer.reviews[i].rating;
+            let finalRating = 0;
+            if (this.props.trainer.reviews.length === 0) {
+                finalRating = 5.00.toFixed(2);
+            } else {
+                let sumRating = 0;
+                let avgRating = 0;
+                for (let i = 0; i < this.props.trainer.reviews.length; i++) {
+                    debugger
+                    sumRating += this.props.trainer.reviews[i].rating;
+                    debugger
+                }
+                avgRating = sumRating / this.props.trainer.reviews.length;
+                finalRating = avgRating.toFixed(2);               
             }
-            let avgRating = sumRating / this.props.trainer.reviews.length;
-            let finalRating = avgRating.toFixed(2);
-            const reviews = this.props.trainer.reviews.map((review) => (
-                <ul>
-                    <ul>{review.body}</ul>
-                    <ul>{review.workoutDate}</ul>
-                    <ul>{review.rating}</ul>
-                </ul>
-            ))
             const hasLocation = this.props.trainer.hasLocation ? "YES" : "NO"
             const canTravel = this.props.trainer.canTravel ? "YES" : "NO"
             return (

@@ -13,7 +13,9 @@
     opacity: 0.7;
     filter: alpha(opacity=40); /* msie */
     object-fit: cover;
-    height: 140%ƒ;
+    height: 140%F;
+    -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+    filter: blur(3px);
 }
 .slider{
     width: 100%;
@@ -71,7 +73,7 @@
 }
 
 .manual-btn:hover{
-    background: rgb(196, 196, 196);
+    background: rgb(227, 227, 227);
 }
 
 #radio1:checked ~ .first{
@@ -123,45 +125,48 @@
 }
 
 .slide-text-top{
-    position: relative;
+    position: absolute;
     color: white;
-    bottom: 720px;
-    left: 50px;
-    font-size: 24px;
-    font-family: 'Rubik';
+    bottom: 400px;
+    left: 20px;
+    font-size: 36px;
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
 }
 
 .slide-text-bot{
-    position: relative;
+    position: absolute;
     color: white;
-    bottom: 170px;
-    left: 80px;
-    font-size: 24px;
-    font-family: 'Rubik';
+    top: 650px;
+    left: 130px;
+    font-size: 36px;
+    font-family: 'Rubik', sans-serif;
     // margin-right: 20px;
+    width: 100%;
 }
 
 .slide-text-intro{
     
-    position: relative;
+    position: absolute;
     color: white;
-    font-weight: bold;
-    bottom: 220px;
-    left: 80px;
-    font-size: 60px;
-    font-family: 'Rubik';
+    font-weight: 900;
+    bottom: 30px;
+    left: 130px;
+    font-size: 80px;
+    font-family: 'Rubik', sans-serif;
     // margin-right: 20px;
+    width: 100%;
 }
 
 .slide-text-main{
-    
-    position: relative;
+    width: 100%;
+    position: absolute;
     color: white;
     font-weight: bold;
     bottom: 280px;
-    left: 600px;
+    left: 35px;
     font-size: 25px;
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     // margin-right: 20px;
 }
 
@@ -196,4 +201,6 @@
     color: black;
     background-color: white;
     transition: 0.7s;
+    position: relative;
+    width: 100%;
 }
