@@ -20,13 +20,13 @@ const App = () => (
     <Switch>
         <Route exact path="/" component={Splash} />
         <Route exact path="/trainers/:trainerId" component={TrainerShowContainer} />
-        <Route exact path="/users/:userId" component={UserShowContainer} />
+        <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
         <ProtectedRoute exact path='/trainers/:trainerId/reviews\/create' component={ReviewFormContainer}/>
         {/* <Route exact path="/search" component={SearchContainer} /> */}
         <Route exact path="/search" component={SearchFormContainer} />
         <Route exact path="/search/results" component={SearchResultsContainer} />
-        <Route exact path="/trainers/:trainerId/workout" component={WorkoutContainer} />
-        <Route exact path="/users/:userId/update/:workoutId" component={UpdateWorkoutContainer} />
+        <ProtectedRoute exact path="/trainers/:trainerId/workout" component={WorkoutContainer} />
+        <ProtectedRoute exact path="/users/:userId/update/:workoutId" component={UpdateWorkoutContainer} />
     </Switch>
     </div>
 );

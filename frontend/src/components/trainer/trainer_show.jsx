@@ -29,9 +29,9 @@ class TrainerShow extends React.Component {
                 let sumRating = 0;
                 let avgRating = 0;
                 for (let i = 0; i < this.props.trainer.reviews.length; i++) {
-                    debugger
+                    
                     sumRating += this.props.trainer.reviews[i].rating;
-                    debugger
+                    
                 }
                 avgRating = sumRating / this.props.trainer.reviews.length;
                 finalRating = avgRating.toFixed(2);               

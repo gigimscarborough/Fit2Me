@@ -70,7 +70,7 @@ class SearchForm extends React.Component {
                         <div className="search-form-header">
                             <h1>Select Your Trainer Preferences</h1>
                         </div>
-                        <div>
+                        <div className="search-form-d">
                             <h2>Select Your Workout Type</h2>
                             <select onChange={this.handleInput("specialty")}>
                                 <option value="" disabled selected> --- Workout Type --- </option>
@@ -82,7 +82,7 @@ class SearchForm extends React.Component {
                                 <option value="Tabata">Tabata</option>
                             </select>
                         </div>
-                        <div>
+                        <div className="search-form-d"> 
                             <h2>Select Your Trainers Experience Level</h2>
                             <select onChange={this.handleInput("experienceLevel")}>
                                 <option value="" disabled selected> --- Experience Level --- </option>
@@ -91,7 +91,7 @@ class SearchForm extends React.Component {
                                 <option value="Master">Master</option>
                             </select>
                         </div>
-                        <div>
+                        <div className="search-form-d">
                             <h2>Would You Prefer A Workout At Your Own Location Or Your Trainers?</h2>
                             <select onChange={this.handleLocation}>
                                 <option value="" disabled selected> --- Location Preference --- </option>
@@ -100,7 +100,7 @@ class SearchForm extends React.Component {
                                 <option value="both">No Preference</option>
                             </select>
                         </div >
-                        <div>
+                        <div className="search-form-d">
                             <h2>Please Enter Your Zip Code</h2>
                             <input className="zipcode-inp" type="text" onChange={this.handleInput("zipCode")} placeholder="Zip Code"/>
                         </div >

@@ -29,7 +29,7 @@ router.patch('/update/:workoutId', (req, res) => {
       location: req.body.location
     }
 
-    Workout.findOneAndUpdate({'_id': req.params.workoutId}, {$set: updatedWorkout}, {new: true})
+    Workout.findOneAndUpdate({'_id': req.body['_id']}, {$set: updatedWorkout}, {new: true})
 
     .then(workout => res.json(workout))
     .catch(err => console.log(err));
