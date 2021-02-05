@@ -29,7 +29,14 @@ const WorkoutSchema = new Schema({
     trainerImage: {
       type: String,
       required: true
-    }
+    },
+    trainerAvailability: {
+      type: String,
+      required: true
+    },
+    trainerLocation: {
+      type: String,
+    },
   }, {
     timestamps: true
   })
