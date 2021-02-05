@@ -11,8 +11,8 @@ class ReviewIndex extends React.Component {
         return(
             <div>
                 <ul className="review-boxes-container">
-                    {Object.values(this.props.trainer.reviews).map(review => (
-                        <div key={review.id}>
+                    {Object.values(this.props.trainer.reviews).map((review, i) => (
+                        <div key={i}>
                             <ReviewShow review={review} currentUser={this.props.currentUser}/>
                         </div>
                     ))}
