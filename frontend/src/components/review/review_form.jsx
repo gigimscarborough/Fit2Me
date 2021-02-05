@@ -33,7 +33,7 @@ class ReviewForm extends React.Component {
     }
 
     handleSubmit(e){
-        debugger
+        
         e.preventDefault();
         let form = {
             body: this.state.body,
@@ -42,7 +42,7 @@ class ReviewForm extends React.Component {
             trainerId: this.state.trainerId,
             workoutDate: this.state.workoutDate
         } 
-        debugger
+       
         this.props.createReview(form).then(()=> this.props.history.push(`/trainers/${this.props.trainer['_id']}`))
     }
 

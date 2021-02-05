@@ -16,9 +16,9 @@ export const fetchWorkout = (workoutId) => {
     return axios.get(`/api/workouts/show/${workoutId}`)
 }
 
-// export const updateWorkouts = (workout) => {
-//     return axios.patch(`/api/trainers/${trainerId}/reviews/${review.id}`)
-// }
+export const updateWorkout = (workout) => {
+    return axios.patch(`/api/workouts/update/${workout.id}`)
+}
 
 
 export const deleteWorkout = (workoutId) => {

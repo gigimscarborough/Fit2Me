@@ -10,6 +10,7 @@ import SearchFormContainer from './search/search_form_container'
 import SearchResultsContainer from './search/search_results_container'
 import ReviewFormContainer from './review/review_form_container';
 import WorkoutContainer from './workouts/workout_container'
+import UpdateWorkoutContainer from './workouts/update_workout_container'
 
 const App = () => (
     <div>
@@ -25,6 +26,7 @@ const App = () => (
         <Route exact path="/search" component={SearchFormContainer} />
         <Route exact path="/search/results" component={SearchResultsContainer} />
         <Route exact path="/trainers/:trainerId/workout" component={WorkoutContainer} />
+        <Route exact path="/users/:userId/update/:workoutId" component={UpdateWorkoutContainer} />
     </Switch>
     </div>
 );

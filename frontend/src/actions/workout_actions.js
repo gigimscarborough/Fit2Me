@@ -38,6 +38,11 @@ export const createWorkout = (workout) => dispatch => (
         .then(workout => dispatch(receiveWorkout(workout)))
 )
 
+export const updateWorkout = (workout) => dispatch => (
+    WorkoutApiUtil.updateWorkout(workout)
+        .then(workout => dispatch(receiveWorkout(workout)))
+)
+
 export const deleteWorkout = (workoutId) => dispatch => (
     WorkoutApiUtil.deleteWorkout(workoutId)
         .then(() => dispatch(removeWorkout(workoutId)))
