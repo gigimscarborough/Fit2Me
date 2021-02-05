@@ -19,6 +19,8 @@ Objectives:
 
 * Trainees can search for trainers based on location equipment or trainer ratings and workout specialties
 
+![alt text](https://raw.githubusercontent.com/gigimscarborough/Fit2Me/main/frontend/src/assets/images/fit2me-trainer-search-ss.PNG =400x)
+
 * Trainers will have profile pages listing their location, experience level, average client satisfaction, workout specialties, reviews, and a link to book a workout 
 
 * Trainees can schedule a workout with a selected trainer by filling out a form with available time and date dropdowns and workout type
