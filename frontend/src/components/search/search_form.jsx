@@ -62,6 +62,7 @@ class SearchForm extends React.Component {
         //         <Redirect to="/search/results" />
         //     )
         // } else {
+         
 
 
         return (
