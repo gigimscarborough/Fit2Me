@@ -130,6 +130,15 @@ font-size: 45px;
     border-bottom: solid $fit2me-blue 1px;
 
 }
+.no-search-results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid $fit2me-blue 1px;
+    border-bottom: solid $fit2me-blue 1px;
+    height: 100px
+}
+
 .matches a{
     text-decoration: none;
     color: $fit2me-blue;
