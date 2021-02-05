@@ -32,6 +32,7 @@
     "mongoose": "^5.11.14",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-router-hash-link": "^2.3.1",
     "react-slideshow-image": "^3.4.3",
     "validator": "^13.5.2"
   },
