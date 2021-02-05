@@ -6,7 +6,6 @@ import SearchForm from './search_form';
 
 
 const mSTP = state => {
-    debugger
     return { currentUser: state.entities.users[state.session.user.id] }
 };
 
