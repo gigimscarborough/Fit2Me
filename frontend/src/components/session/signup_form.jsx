@@ -20,14 +20,10 @@ class SignupForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false;
+       
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
-            // this.props.history.push('/');
-            this.props.closeModal()
-        }
 
         this.setState({ errors: nextProps.errors })
     }
@@ -49,14 +45,20 @@ class SignupForm extends React.Component {
             canTravel: this.state.canTravel,
             hasLocation: this.state.hasLocation,
             // zipCode: this.state.zipCode
-
+            
         };
         let sUser = {
             email: this.state.email,
             password: this.state.password
         }
  
-        this.props.signup(user, this.props.history).then(() => this.props.login(sUser))
+        this.props.signup(user, this.props.history).then(
+            (output) => {
+                if (output.errors != undefined) {
+                    this.props.login
+                }
+            }
+        )
     }
 
     renderErrors() {
