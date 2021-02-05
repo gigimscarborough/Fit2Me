@@ -23,6 +23,13 @@ class NavBar extends React.Component {
         }
     }
 
+    componentDidMount(){
+        if (typeof (this.props.currentUser) != "undefined" && Object.keys(this.props.currentUser).length > 0) {
+            this.props.fetchUser(this.props.currentUser.id)
+        }
+    
+    }
+
     getButton() {
         
         if (this.props.loggedIn) {
