@@ -62,6 +62,7 @@ class SearchForm extends React.Component {
         //         <Redirect to="/search/results" />
         //     )
         // } else {
+            debugger
 
         return (
             <div className="search-form">
@@ -102,7 +103,7 @@ class SearchForm extends React.Component {
                         </div >
                         <div className="search-form-d">
                             <h2>Please Enter Your Zip Code</h2>
-                            <input className="zipcode-inp" type="text" onChange={this.handleInput("zipCode")} placeholder="Zip Code"/>
+                            <input className="zipcode-inp" type="text" defaultValue={this.props.currentUser ? this.props.currentUser.location ? this.props.currentUser.location.address.zip : null : null} onChange={this.handleInput("zipCode")} placeholder="Zip Code"/>
                         </div >
                         <div className="search-btn-div">
                             <button className="search-form-btn">FIND MY TRAINER!</button>
