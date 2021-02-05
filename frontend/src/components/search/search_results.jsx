@@ -19,7 +19,20 @@ class SearchResults extends React.Component {
 
     render() {
         if (Object.keys(this.props.trainers).length === 0) {
-            return <h1>ARE WE HERE</h1>
+            return(
+                <div className="holder">
+                    <div className="results-container">
+                        <div className="trainer-content">
+                        <div className="t-content-header">
+                            <h1>TRAINER SEARCH</h1>
+                            <div className="no-search-results">
+                                <h2>Your Search Did Not Return Any Results</h2>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
         }
         sessionStorage.setItem("trainer", this.props.trainers)
         const trainers = this.props.trainers.map(trainer =>

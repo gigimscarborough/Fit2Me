@@ -7,6 +7,7 @@ import {fetchUser} from '../../actions/users_actions'
 const mapStateToProps = (state) => {
     return {
         errors: state.errors.session,
+        currentUser: state.session.isAuthenticated
 }};
 
 const mapDispatchToProps = (dispatch) => {

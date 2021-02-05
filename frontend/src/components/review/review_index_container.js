@@ -4,7 +4,8 @@ import { fetchReviews } from '../../actions/review_actions';
 
 const msp = (state, ownProps) => (
     {
-        reviews: state.entities.trainers.reviews
+        reviews: state.entities.trainers.reviews,
+        currentUser: state.entities.users[state.session.user.id]
     }
 )
 

@@ -44,7 +44,6 @@ router.post('/register', (req, res) => {
             password2: req.body.password2,
             firstName: req.body.firstName,
             lastName: req.body.lastName,
-            zipCode: req.body.zipCode,
             hasLocation: Boolean(req.body.hasLocation),
             canTravel: Boolean(req.body.canTravel),
           })

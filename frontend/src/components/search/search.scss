@@ -1,6 +1,7 @@
 $fit2me-blue: #25859b;
 $fit2me-light-blue: #25859bef;
 
+
 .search-form{
     display: flex;
     justify-content: center;
@@ -93,7 +94,7 @@ $fit2me-light-blue: #25859bef;
     background-size: cover;
     background-attachment: fixed;
 
-    height: 100%;
+    height: 100vh;
     width: 100%;
 
 
@@ -129,6 +130,15 @@ font-size: 45px;
     border-bottom: solid $fit2me-blue 1px;
 
 }
+.no-search-results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid $fit2me-blue 1px;
+    border-bottom: solid $fit2me-blue 1px;
+    height: 100px
+}
+
 .matches a{
     text-decoration: none;
     color: $fit2me-blue;

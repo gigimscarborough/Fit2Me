@@ -26,10 +26,6 @@ const UserSchema = new Schema({
       type: Boolean,
       required: true
     },
-    zipCode: {
-      type: String,
-      required: true
-    },
     workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}],
     location: {type: Schema.Types.ObjectId, ref: 'Location'}
   }, {
