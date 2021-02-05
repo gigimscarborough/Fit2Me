@@ -9,6 +9,7 @@ class NavBar extends React.Component {
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
         this.getButton = this.getButton.bind(this)
+        this.handleDemo = this.handleDemo.bind(this)
         
     }
 
@@ -30,6 +31,16 @@ class NavBar extends React.Component {
     
     }
 
+    handleDemo() {
+        let user = {
+            email: "hey@hey.com",
+            password: "pass1234"
+        }
+
+        this.props.login(user)
+        
+    }
+
     getButton() {
         
         if (this.props.loggedIn) {
@@ -44,6 +55,7 @@ class NavBar extends React.Component {
                 <div>
                     <button className="session-btn" onClick={() => this.props.openModal('login')}>SIGN IN</button>
                     <button className="session-btn" onClick={() => this.props.openModal('signup')}>JOIN US</button>
+                    <button className="session-btn" onClick={this.handleDemo}>DEMO LOGIN</button>
                 </div>
             );
         }

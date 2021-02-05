@@ -14,7 +14,7 @@ class SignupForm extends React.Component {
             password2: '',
             canTravel: "",
             hasLocation: "",
-            zipCode: "",
+            // zipCode: "",
             errors: {},
 
         };
@@ -26,6 +26,7 @@ class SignupForm extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
             // this.props.history.push('/');
+            this.props.closeModal()
         }
 
         this.setState({ errors: nextProps.errors })
@@ -47,7 +48,7 @@ class SignupForm extends React.Component {
             password2: this.state.password2,
             canTravel: this.state.canTravel,
             hasLocation: this.state.hasLocation,
-            zipCode: this.state.zipCode
+            // zipCode: this.state.zipCode
 
         };
         let sUser = {
@@ -55,7 +56,7 @@ class SignupForm extends React.Component {
             password: this.state.password
         }
  
-        this.props.signup(user, this.props.history).then(() => this.props.login(sUser)).then(() => this.props.closeModal())
+        this.props.signup(user, this.props.history).then(() => this.props.login(sUser))
     }
 
     renderErrors() {
@@ -143,13 +144,13 @@ class SignupForm extends React.Component {
                             </label> No
                             </div> */}
                             {/* </div> */}
-                        <input type="text"
+                        {/* <input type="text"
                             value={this.state.zipCode}
                             onChange={this.update('zipCode')}
                             placeholder="Zip Code"
                         />
                         {this.handleErrors('Zip')}
-                            <br />
+                            <br /> */}
                         
                         <input className="form-submit" type="submit" value="Sign Up" />
                 
