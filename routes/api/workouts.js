@@ -47,6 +47,8 @@ router.post('/create', (req, res) => {
                 trainerId: req.body.trainerId,
                 trainerName: req.body.trainerName,
                 trainerImage: req.body.trainerImage,
+                trainerAvailability: req.body.trainerAvailability,
+                trainerLocation: req.body.trainerLocation,
                 userId: req.body.userId,
                 date: req.body.date,
                 time: req.body.time,
