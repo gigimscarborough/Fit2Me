@@ -1,12 +1,24 @@
 import React from 'react';
-import oneStar from '../../assets/images/rating_star/blue-1-star.png';
-import twoStar from '../../assets/images/rating_star/blue-2-star.png';
-import threeStar from '../../assets/images/rating_star/blue-3-star.png';
-import fourStar from '../../assets/images/rating_star/blue-4-star.png';
-import fiveStar from '../../assets/images/rating_star/blue-5-star.png';
+// import oneStar from '../../assets/images/rating_star/blue-1-star.png';
+// import twoStar from '../../assets/images/rating_star/blue-2-star.png';
+// import threeStar from '../../assets/images/rating_star/blue-3-star.png';
+// import fourStar from '../../assets/images/rating_star/blue-4-star.png';
+// import fiveStar from '../../assets/images/rating_star/blue-5-star.png';
 import './review_show.scss'
 
 const ReviewShow = props => {
+    let oneStar = (<div ><i class="fas fa-star str"></i><i class="fas fa-star str-g"></i><i class="fas fa-star str-g"></i><i class="fas fa-star str-g"></i><i class="fas fa-star str-g"></i></div>)
+    let twoStar = (<div>
+                        <i class="fas fa-star str"></i>
+                        <i class="fas fa-star str"></i>
+                        <i class="fas fa-star str-g"></i>
+                        <i class="fas fa-star str-g"></i>
+                        <i class="fas fa-star str-g"></i>
+                    </div>)
+    let threeStar = (<div><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str-g"></i><i class="fas fa-star str-g"></i></div>)
+    let fourStar = (<div><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str-g"></i></div>)
+    let fiveStar = (<div><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i></div>)
+    
     debugger
     let ratingStar = "";
     if (props.review.rating === 1) {
@@ -32,7 +44,8 @@ const ReviewShow = props => {
                             <span className="review-upload">upload date</span>
                         </div>
                         <div className="rating-date-box">
-                            <img className ="rating-star" src={ratingStar} alt=""/>
+                            {/* <img className ="rating-star" src={ratingStar} alt=""/> */}
+                            {ratingStar}
                         </div>
                     </div>
                     <div className="workout-date">

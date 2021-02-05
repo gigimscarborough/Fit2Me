@@ -5,9 +5,9 @@ import {createLocation} from "../../actions/users_actions"
 
 
 
-// const mSTP = (state) => {
-//     return { currentUser: state.entities.users }
-// };
+const mSTP = (state, ownProps) => {
+    return { currentUser: state.entities.users[ownProps.match.params.userId] }
+};
 
 const mDTP = dispatch => ({
     createLocation: location => dispatch(createLocation(location))

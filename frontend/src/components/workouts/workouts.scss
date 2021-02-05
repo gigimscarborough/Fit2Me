@@ -56,3 +56,34 @@ $fit2me-light-blue: #25859bef;
     padding-left: 90px;
 }
 
+.book-btn{
+  color:#25859b;
+    font-family: 'Rubik', sans-serif;
+   color:white;
+    background-color: #25859b;
+    height: 40px;
+    font-weight: 600px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 25px;
+    border: none;
+    border-radius: 8px;
+    width: 400px
+}
+
+.book-btn:hover{
+    background-color:#25859bef;
+   color: white;
+   transform: transition(0.4s);
+
+    
+}
+
+.book-btn:focus{
+outline: none;   
+}
+
+.loc-div{
+    
+}
+
