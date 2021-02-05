@@ -72,7 +72,7 @@
     border-radius: 4px;
     height: 300px;
     width:235px;
-
+    object-fit: cover;
 }
 .review-index-container{
     background-color: rgb(255, 250, 245);
@@ -218,3 +218,11 @@ font-family: "Rubik", sans-serif;
     top: 5px;
 }
 
+.available-times{
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.leave-review-button{
+    margin-top: 10px;
+}
