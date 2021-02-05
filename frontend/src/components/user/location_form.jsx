@@ -1,5 +1,8 @@
+import { Discovery } from 'aws-sdk';
 import React from 'react'
 import './user.scss'
+
+
 
 class LocationForm extends React.Component {
     constructor(props) {
@@ -11,18 +14,18 @@ class LocationForm extends React.Component {
             state: "",
             zip: "",
             equipment: ""
-        }   
+        }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleAddress(type) {
-        return e => this.setState({     
+        return e => this.setState({
             [type]: e.currentTarget.value
         });
     }
 
     handleInput(type) {
-        return e => this.setState({ 
+        return e => this.setState({
             [type]: e.currentTarget.value
         });
     }
@@ -43,23 +46,57 @@ class LocationForm extends React.Component {
             equipment: this.state.equipment.split(", ")
         };
 
-        this.props.createLocation(form)  
+        this.props.createLocation(form)
+        .then(() => window.location.reload())
     }
 
 
     render() {
-        return(
+
+        if (this.props.currentUser.location) {
+            return (
+                <div className="loc-form">
+                    <h2>My Location</h2>
+                    <span>
+                        <strong>Street Address:</strong> {this.props.currentUser.location.address.streetAddress}
+                    </span>
+                    <br/>
+                    <br />
+                    
+                    <span>
+                        <strong>City:</strong> {this.props.currentUser.location.address.city}
+
+                    </span>
+                    <br />
+                    <br/>
+                    <span>
+                        <strong>State:</strong> {this.props.currentUser.location.address.state}
+
+                    </span>
+                    <br />
+                    <br/>
+                    <span><strong>Zip Code:</strong> {this.props.currentUser.location.address.zip}
+
+                    </span>
+                    <br />
+                    <br />
+
+                </div>
+            )
+        } else {}
+
+        return (
             <form className="loc-form" onSubmit={this.handleSubmit}>
                 <h2>Add Your Location</h2>
-                <input type="text" placeholder="Street Address" onChange={this.handleAddress("streetAddress")}/>
-                <br/>
-                <input type="text" placeholder="City" onChange={this.handleAddress("city")}/>
+                <input type="text" placeholder="Street Address" onChange={this.handleAddress("streetAddress")} />
                 <br />
-                <input type="text" placeholder="State" onChange={this.handleAddress("state")}/>
+                <input type="text" placeholder="City" onChange={this.handleAddress("city")} />
                 <br />
-                <input type="text" placeholder="Zip Code" onChange={this.handleAddress("zip")}/>
+                <input type="text" placeholder="State" onChange={this.handleAddress("state")} />
                 <br />
-                <input type="text" placeholder="Please enter all available equipment seperated by a comma and space" onChange={this.handleInput("equipment")}/>
+                <input type="text" placeholder="Zip Code" onChange={this.handleAddress("zip")} />
+                <br />
+                <input type="text" placeholder="Please enter all available equipment seperated by a comma and space" onChange={this.handleInput("equipment")} />
                 <br />
                 <button>ADD MY LOCATION</button>
             </form>

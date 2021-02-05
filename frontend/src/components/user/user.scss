@@ -17,8 +17,8 @@ $fit2me-light-blue: #25859bef;
     margin-top: 140px;
     margin-right: 20px;
     box-shadow: 3px 3px 8px gray;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
     background-color:white;
 
 }
@@ -26,9 +26,10 @@ $fit2me-light-blue: #25859bef;
     text-align: center;
     border-bottom: solid $fit2me-light-blue 1px;
 }
-.dashboard p{
-    // padding-left: 10px;
-    // padding-right: 10px;
+.dashboard a{
+text-decoration: none;
+color:black;
+text-align: center;
 }
 
 .main-cont{
@@ -86,5 +87,42 @@ outline: none;
 
 .loc-form-div{
     border-bottom: solid $fit2me-light-blue 1px;
+}
+
+.work-left img{
+    height: 125px;
+    width: 125px;
+    border-radius: 3px;
+}
+.work-right {
+    padding-left: 20px;
+}
+
+.wkc {
+    display: flex;
+    align-items: center;
+    border-bottom: solid $fit2me-blue 1px; 
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-bottom:15px;
+}
+.work-right span{
+    margin-bottom: 20px;
+    font-size:18px;
+}
+
+.wkc-links{
+    display: flex;
+}
+.wkc-links span{
+    color:#25859b;
+    cursor:pointer;
+    margin-right: 40px;
+    
+}
+
+.loc-form span{
+    font-size: 18px;
+    padding-bottom: 20px;
 }
 
