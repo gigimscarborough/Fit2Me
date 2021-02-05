@@ -64,6 +64,7 @@ class SearchForm extends React.Component {
         // } else {
          
 
+
         return (
             <div className="search-form">
                 <div className="search-form-inner">
