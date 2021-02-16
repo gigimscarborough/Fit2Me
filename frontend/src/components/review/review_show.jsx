@@ -7,17 +7,17 @@ import React from 'react';
 import './review_show.scss'
 
 const ReviewShow = props => {
-    let oneStar = (<div ><i class="fas fa-star str"></i><i class="fas fa-star str-g"></i><i class="fas fa-star str-g"></i><i class="fas fa-star str-g"></i><i class="fas fa-star str-g"></i></div>)
+    let oneStar = (<div ><i className="fas fa-star str"></i><i className="fas fa-star str-g"></i><i className="fas fa-star str-g"></i><i className="fas fa-star str-g"></i><i className="fas fa-star str-g"></i></div>)
     let twoStar = (<div>
-                        <i class="fas fa-star str"></i>
-                        <i class="fas fa-star str"></i>
-                        <i class="fas fa-star str-g"></i>
-                        <i class="fas fa-star str-g"></i>
-                        <i class="fas fa-star str-g"></i>
+                        <i className="fas fa-star str"></i>
+                        <i className="fas fa-star str"></i>
+                        <i className="fas fa-star str-g"></i>
+                        <i className="fas fa-star str-g"></i>
+                        <i className="fas fa-star str-g"></i>
                     </div>)
-    let threeStar = (<div><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str-g"></i><i class="fas fa-star str-g"></i></div>)
-    let fourStar = (<div><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str-g"></i></div>)
-    let fiveStar = (<div><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i><i class="fas fa-star str"></i></div>)
+    let threeStar = (<div><i className="fas fa-star str"></i><i className="fas fa-star str"></i><i className="fas fa-star str"></i><i className="fas fa-star str-g"></i><i className="fas fa-star str-g"></i></div>)
+    let fourStar = (<div><i className="fas fa-star str"></i><i className="fas fa-star str"></i><i className="fas fa-star str"></i><i className="fas fa-star str"></i><i className="fas fa-star str-g"></i></div>)
+    let fiveStar = (<div><i className="fas fa-star str"></i><i className="fas fa-star str"></i><i className="fas fa-star str"></i><i className="fas fa-star str"></i><i className="fas fa-star str"></i></div>)
     
     
     let ratingStar = "";

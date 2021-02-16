@@ -85,20 +85,20 @@ class Splash extends React.Component {
                                 <div className="ftr-links">
                                     <div className="ftr-link">
                                         <a href="https://github.com/ralles-liu">
-                                            <i class=" ftl fc fas fa-circle"></i>
-                                            <i class=" ftl fi fab fa-github-square"></i>
+                                            <i className=" ftl fc fas fa-circle"></i>
+                                            <i className=" ftl fi fab fa-github-square"></i>
                                         </a>
                                     </div>
                                     <div className="ftr-link">
                                         <a href="https://angel.co/u/gigi-scarborough">
-                                            <i class="ftl fc fas fa-circle"></i>
-                                            <i class="ftl fi fab fa-angellist"></i>
+                                            <i className="ftl fc fas fa-circle"></i>
+                                            <i className="ftl fi fab fa-angellist"></i>
                                         </a>
                                     </div>
                                     <div className="ftr-link">
                                         <a href="https://www.linkedin.com/in/ralles-liu">
-                                            <i class="ftl fc fas fa-circle"></i>
-                                            <i class="ftl fi fab fa-linkedin-in"></i>
+                                            <i className="ftl fc fas fa-circle"></i>
+                                            <i className="ftl fi fab fa-linkedin-in"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -109,20 +109,20 @@ class Splash extends React.Component {
                                 <div className="ftr-links">
                                     <div className="ftr-link">
                                         <a href="https://github.com/gigimscarborough">
-                                            <i class=" ftl fc fas fa-circle"></i>
-                                            <i class=" ftl fi fab fa-github-square"></i>
+                                            <i className=" ftl fc fas fa-circle"></i>
+                                            <i className=" ftl fi fab fa-github-square"></i>
                                         </a>
                                     </div>
                                     <div className="ftr-link">
                                         <a href="https://angel.co/u/gigi-scarborough">
-                                            <i class="ftl fc fas fa-circle"></i>
-                                            <i class="ftl fi fab fa-angellist"></i>
+                                            <i className="ftl fc fas fa-circle"></i>
+                                            <i className="ftl fi fab fa-angellist"></i>
                                         </a>
                                     </div>
                                     <div className="ftr-link">
                                         <a href="https://linkedin.com/in/gigimscarborough">
-                                            <i class="ftl fc fas fa-circle"></i>
-                                            <i class="ftl fi fab fa-linkedin-in"></i>
+                                            <i className="ftl fc fas fa-circle"></i>
+                                            <i className="ftl fi fab fa-linkedin-in"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -133,20 +133,20 @@ class Splash extends React.Component {
                                 <div className="ftr-links">
                                     <div className="ftr-link">
                                         <a href="https://github.com/hoj0210">
-                                            <i class=" ftl fc fas fa-circle"></i>
-                                            <i class=" ftl fi fab fa-github-square"></i>
+                                            <i className=" ftl fc fas fa-circle"></i>
+                                            <i className=" ftl fi fab fa-github-square"></i>
                                         </a>
                                     </div>
                                     <div className="ftr-link">
                                         <a href="https://angel.co/u/hojung-cha">
-                                            <i class="ftl fc fas fa-circle"></i>
-                                            <i class="ftl fi fab fa-angellist"></i>
+                                            <i className="ftl fc fas fa-circle"></i>
+                                            <i className="ftl fi fab fa-angellist"></i>
                                         </a>
                                     </div>
                                     <div className="ftr-link">
                                         <a href="https://www.linkedin.com/in/hojung-cha-4b613b206/">
-                                            <i class="ftl fc fas fa-circle"></i>
-                                            <i class="ftl fi fab fa-linkedin-in"></i>
+                                            <i className="ftl fc fas fa-circle"></i>
+                                            <i className="ftl fi fab fa-linkedin-in"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -157,20 +157,20 @@ class Splash extends React.Component {
                                 <div className="ftr-links">
                                     <div className="ftr-link">
                                         <a href="https://github.com/ddgiovinazzo">
-                                            <i class=" ftl fc fas fa-circle"></i>
-                                            <i class=" ftl fi fab fa-github-square"></i>
+                                            <i className=" ftl fc fas fa-circle"></i>
+                                            <i className=" ftl fi fab fa-github-square"></i>
                                         </a>
                                     </div>
                                     <div className="ftr-link">
                                         <a href="https://angel.co/u/domenicodanielgiovinazzo">
-                                            <i class="ftl fc fas fa-circle"></i>
-                                            <i class="ftl fi fab fa-angellist"></i>
+                                            <i className="ftl fc fas fa-circle"></i>
+                                            <i className="ftl fi fab fa-angellist"></i>
                                         </a>
                                     </div>
                                     <div className="ftr-link">
                                         <a href="https://www.linkedin.com/in/domenicodanielgiovinazzo/">
-                                            <i class="ftl fc fas fa-circle"></i>
-                                            <i class="ftl fi fab fa-linkedin-in"></i>
+                                            <i className="ftl fc fas fa-circle"></i>
+                                            <i className="ftl fi fab fa-linkedin-in"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@ class Splash extends React.Component {
                             <div className="techs-img">
                                 <img id="react-img" src={mongo} alt="" />
                                 <img id="express" src={express} alt="" />
-                                <i class="fab fa-node node-t"></i>
+                                <i className="fab fa-node node-t"></i>
                                 <img id="react-img" src={reactimg} alt=""/>
                             </div>
                         </div>
