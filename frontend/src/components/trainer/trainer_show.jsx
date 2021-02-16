@@ -12,7 +12,7 @@ class TrainerShow extends React.Component {
     componentDidMount() {
 
         this.props.getTrainer(this.props.trainerId)
-        this.props.fetchUser(this.props.currentUserId)
+        // this.props.fetchUser(this.props.currentUserId)
     }
 
     render() {
