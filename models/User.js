@@ -27,7 +27,9 @@ const UserSchema = new Schema({
       required: true
     },
     workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}],
-    location: {type: Schema.Types.ObjectId, ref: 'Location'}
+    location: {type: Schema.Types.ObjectId, ref: 'Location'},
+    reviews: [{type: Schema.Types.ObjectId, ref: 'Review'}]
+
   }, {
     timestamps: true
   })

@@ -11,7 +11,7 @@ const validateLoginInput = require('../../validation/login');
 
 
 router.get('/show/:userId', (req, res) => {
-  User.findById(req.params.userId).populate('workouts').populate("location")
+  User.findById(req.params.userId).populate('workouts').populate("location").populate("reviews")
 
   .then(user => res.json(user))
   .catch(err => console.log(err));

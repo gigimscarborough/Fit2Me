@@ -26,6 +26,7 @@ router.post('/create', (req, res) => {
       const options = { "upsert": false };
 
       Trainer.updateOne({'_id': review.trainerId}, update, options).catch(err => console.log(err));
+      User.updateOne({'_id': review.userId}, update, options).catch(err => console.log(err));
 
       return res.json(review)
       })
