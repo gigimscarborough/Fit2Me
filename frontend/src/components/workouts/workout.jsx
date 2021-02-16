@@ -16,7 +16,7 @@ class Workout extends React.Component {
             trainerName: this.props.trainer.firstName + " " + this.props.trainer.lastName,
             trainerImage: this.props.trainer.imageUrl,
             trainerAvailability: this.props.trainer.dailyAvailability,
-            trainerLocation: this.props.trainer.location.address.streetAddress
+            trainerLocation: this.props.trainer.location ? this.props.trainer.location.address.streetAddress : null
         }
         this.date = new Date()
         this.timeOptions = this.timeOptions.bind(this)
