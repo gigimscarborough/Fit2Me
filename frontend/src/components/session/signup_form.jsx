@@ -107,6 +107,7 @@ class SignupForm extends React.Component {
                             className="username-input"
                         />
                         {this.handleErrors('Email')}
+                        {this.handleErrors('already')}
                         <br />
                         <input type="text"
                             value={this.state.handle}
