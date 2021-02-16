@@ -10,6 +10,27 @@ router.get('/show/:reviewId', (req, res) => {
   .catch(err => console.log(err));
 })
 
+router.patch('/update/:reviewId', (req, res) => {
+
+
+  const updatedReview = {
+    body: req.body.body,
+    workoutDate: req.body.workoutDate,
+    rating: req.body.rating
+  }
+
+  Review.findOneAndUpdate({'_id': req.body['_id']}, {$set: updatedReview}, {new: true})
+
+  .then(review => res.json(review))
+  .catch(err => console.log(err));
+})
+
+router.delete('/delete/:reviewId', (req, res) => {
+  Review.findOneAndDelete({_id: req.params.reviewId})
+.then(review => res.json(review))
+.catch((error) => (res.status(400).json({error})))
+});
+
 router.post('/create', (req, res) => {
             
   const newReview = new Review({
