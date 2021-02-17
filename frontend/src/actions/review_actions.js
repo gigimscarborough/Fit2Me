@@ -46,7 +46,8 @@ export const updateReview = (review) => dispatch => (
 )
 
 export const deleteReview = (reviewId) => dispatch => {
-    debugger
+    console.log("in delete action!")
+    console.log(reviewId)
     return (
         ReviewApiUtil.deleteReview(reviewId)
             .then( () => dispatch(removeReview(reviewId)))

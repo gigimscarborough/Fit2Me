@@ -68,13 +68,14 @@ class ReviewShow extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let form = {
+            _id: this.props.review._id,
             body: this.state.body,
             rating: parseInt(this.state.rating),
             userId: this.state.userId,
             trainerId: this.state.trainerId,
             workoutDate: this.state.workoutDate
         } 
-        this.props.updateReview(form).then(() => this.props.history.push(`/trainers/${this.props.trainer['_id']}`))
+        this.props.updateReview(form).then(() => window.location.reload())
     }
 
     handleChange(type){
@@ -86,24 +87,25 @@ class ReviewShow extends React.Component {
     }
 
 
-    deleteModal(){
+    deleteModal(id){
         debugger
         // e.preventDefault();
         // this.props.history("/search/results")
-        const deleteBtn = document.getElementById("delete");
+        const deleteBtn = document.getElementById(`delete${id}`);
         // if (deleteBtn) {
         //     deleteBtn.addEventListener("click", (e) => {
         //         deleteBtn.style.display = "none";
         //     })
         // }
+        console.log(this.props.review)
         return (
             deleteBtn.style.display = "block"
             // window.location.reload()
         )
     }
 
-    updateModal(){
-        const updateBtn = document.getElementById("update");
+    updateModal(id){
+        const updateBtn = document.getElementById(`update${id}`);
         return (
             updateBtn.style.display = "block"
         )
@@ -116,7 +118,6 @@ class ReviewShow extends React.Component {
     }
     
     handleDelete() {
-        debugger
         this.props.deleteReview(this.props.review._id).then(() => window.location.reload())
     }
 
@@ -126,8 +127,8 @@ class ReviewShow extends React.Component {
             if (this.props.review.userId === this.props.currentUser._id) {
                 return (
                     <div className="edit-delete-btn">
-                        <p className="update-btn" onClick={() => this.updateModal()}>Update</p>
-                        <div id="update" className="update-background" onClick={this.removeModal}>
+                        <p className="update-btn" onClick={() => this.updateModal(this.props.review._id)}>Update</p>
+                        <div id={`update${this.props.review._id}`} className="update-background" onClick={this.removeModal}>
                             <div className="update-container-top" >
                                 <form className="update-rev-form" onSubmit={this.handleSubmit}>
                                     <div className="review-form-box"onClick={e => e.stopPropagation()}>
@@ -140,25 +141,26 @@ class ReviewShow extends React.Component {
                                                 <p className="select-rating-text">How would you rate your workout with them? (must choose one)</p>
                                                 <div className="radio-button-container">
                                                     <span className="rating-radio-button">
-                                                        <input className="radio-button" type="radio" name="trainer-rating" id="1" value={1} checked={this.state.rating === 1} onChange={this.handleChange('rating')}/>
+                                                        <input className="radio-button" type="radio" name="trainer-rating" id="1" value={1} checked={this.state.rating === 1 ? 1 : null} onChange={this.handleChange('rating')}/>
                                                         <label htmlFor="1">{1}</label>
                                                     </span>
                                                     <span className="rating-radio-button">
-                                                        <input className="radio-button"type="radio" name="trainer-rating" id="2" value={2} checked={this.state.rating === 2} onChange={this.handleChange('rating')} />
+                                                        <input className="radio-button"type="radio" name="trainer-rating" id="2" value={2} checked={this.state.rating === 2 ? 2 : null} onChange={this.handleChange('rating')} />
                                                         <label htmlFor="2">{2}</label>
                                                     </span>
                                                     <span className="rating-radio-button">
-                                                        <input className="radio-button"type="radio" name="trainer-rating" id="3" value={3} checked={this.state.rating === 3} onChange={this.handleChange('rating')}/>
+                                                        <input className="radio-button"type="radio" name="trainer-rating" id="3" value={3} checked={this.state.rating === 3 ? 3 : null} onChange={this.handleChange('rating')}/>
                                                         <label htmlFor="3">{3}</label>
                                                     </span>
                                                     <span className="rating-radio-button">
-                                                        <input className="radio-button"type="radio" name="trainer-rating" id="4" value={4} checked={this.state.rating === 4} onChange={this.handleChange('rating')}/>
+                                                        <input className="radio-button"type="radio" name="trainer-rating" id="4" value={4} checked={this.state.rating === 4 ? 4 : null} onChange={this.handleChange('rating')}/>
                                                         <label htmlFor="4">{4}</label>
                                                     </span>
                                                     <span className="rating-radio-button">
-                                                        <input className="radio-button"type="radio" name="trainer-rating" id="5" value={5} checked={this.state.rating === 5} onChange={this.handleChange('rating')}/>
+                                                        <input className="radio-button"type="radio" name="trainer-rating" id="5" value={5} checked={this.state.rating === 5 ? 5 : null} onChange={this.handleChange('rating')}/>
                                                         <label htmlFor="5">{5}</label>
                                                     </span>
+                                                    {/* checked={this.state.rating === 5}  */}
                                                 </div>
                                             </div>
                                             <div className="rating-workout-date">
@@ -174,9 +176,9 @@ class ReviewShow extends React.Component {
                                 </form>
                             </div>
                         </div>
-                        <p className="delete-btn" onClick={() => this.deleteModal()}>Delete</p>
+                        <p className="delete-btn" onClick={() => this.deleteModal(this.props.review._id)}>Delete</p>
                         {/* <p value="delete" onClick={this.handleDelete}>Delete</p>      */}
-                        <div id="delete" className="delete-background" onClick={this.removeModal}>
+                        <div id={`delete${this.props.review._id}`} className="delete-background" onClick={this.removeModal}>
                             <div className="delete-container-top"onClick={e => e.stopPropagation()} >
                                 <div className="delete-text">
                                     <p className="delete-text-q">Are you sure you want to delete the review?</p>

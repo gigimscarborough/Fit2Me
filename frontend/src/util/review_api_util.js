@@ -17,5 +17,7 @@ export const updateReview = (review) => {
 }
 
 export const deleteReview = (reviewId) => {
+    console.log("in our api delete")
+    console.log(reviewId)
     return axios.delete(`/api/reviews/delete/${reviewId}`)
 }
