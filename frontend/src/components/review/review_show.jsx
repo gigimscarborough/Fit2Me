@@ -9,6 +9,7 @@ import './review_show.scss'
 
 class ReviewShow extends React.Component {
     constructor(props){
+        debugger
         super(props);
         this.state = {
             body: this.props.review.body,
@@ -60,6 +61,7 @@ class ReviewShow extends React.Component {
         }
         this.date = new Date(this.props.review.createdAt);
         this.deleteModal = this.deleteModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
@@ -75,9 +77,11 @@ class ReviewShow extends React.Component {
     }
 
     handleChange(type){
-        return(e) => (
-            this.setState({[type]: e.currentTarget.value})
-        )
+        debugger
+        return(e) => {
+            debugger
+            return this.setState({[type]: e.currentTarget.value})
+        }
     }
 
 
@@ -86,11 +90,11 @@ class ReviewShow extends React.Component {
         // e.preventDefault();
         // this.props.history("/search/results")
         const deleteBtn = document.getElementById("delete");
-        if (deleteBtn) {
-            deleteBtn.addEventListener("click", (e) => {
-                deleteBtn.style.display = "none";
-            })
-        }
+        // if (deleteBtn) {
+        //     deleteBtn.addEventListener("click", (e) => {
+        //         deleteBtn.style.display = "none";
+        //     })
+        // }
         return (
             deleteBtn.style.display = "block"
             // window.location.reload()
@@ -99,15 +103,17 @@ class ReviewShow extends React.Component {
 
     updateModal(){
         const updateBtn = document.getElementById("update");
-        if (updateBtn) {
-            updateBtn.addEventListener("click", (e) => {
-                updateBtn.style.display = "none";
-            })
-        }
         return (
             updateBtn.style.display = "block"
         )
     }
+    removeModal(e) {
+        // const updateBtn = document.getElementById("update");
+        return (
+            e.currentTarget.style.display = "none"
+        )
+    }
+    
 
     editandDelete(){
         debugger
@@ -116,7 +122,7 @@ class ReviewShow extends React.Component {
                 return (
                     <div className="edit-delete-btn">
                         <p className="update-btn" onClick={() => this.updateModal()}>Update</p>
-                        <div id="update" className="update-background">
+                        <div id="update" className="update-background" onClick={this.removeModal}>
                             <div className="update-container-top" onClick={e => e.stopPropagation()}>
                                 <form className="update-rev-form" onSubmit={this.handleSubmit}>
                                     <div className="review-form-box">
@@ -155,21 +161,21 @@ class ReviewShow extends React.Component {
                                                 <input className="rating-workout-d" type="date" value={this.state.workoutDate} onChange={this.handleChange("workoutDate")}/>
                                             </div>
                                             <h3 className="review-body">WRITE YOUR REVIEW</h3>                                   
-                                            <textarea className="text-area-text"value={this.state.body} onChange={this.handleChange("body")} 
+                                            <textarea className="text-area-text-update"value={this.state.body} onChange={this.handleChange("body")} 
                                             placeholder="Your Review Goes Here!"></textarea>
                                         </div>
                                     </div>
-                                    <button className="review-post-button">Post Review</button>
+                                    <button className="review-post-button">Update Review</button>
                                 </form>
                             </div>
                         </div>
                         <p className="delete-btn" onClick={() => this.deleteModal()}>Delete</p>
                         {/* <p value="delete" onClick={this.handleDelete}>Delete</p>      */}
-                        <div id="delete" className="delete-background">
-                            <div className="delete-container-top" >
-                                <div className="delete-text" onClick={e => e.stopPropagation()}>
-                                    <p className="delete-text-q" onClick={e => e.stopPropagation()}>Are you sure you want to delete the review?</p>
-                                    <div className="buttons-box"onClick={e => e.stopPropagation()}>
+                        <div id="delete" className="delete-background" onClick={this.removeModal}>
+                            <div className="delete-container-top"onClick={e => e.stopPropagation()} >
+                                <div className="delete-text">
+                                    <p className="delete-text-q">Are you sure you want to delete the review?</p>
+                                    <div className="buttons-box">
                                         <button className="del-yes"onClick={() => this.props.deleteReview(this.props.review._id).then(() => window.location.reload())}>Yes</button>
                                         <button className="del-no"onClick={() => window.location.reload()}>No</button>
                                     </div>
