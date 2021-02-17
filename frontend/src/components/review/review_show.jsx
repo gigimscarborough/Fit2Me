@@ -193,6 +193,13 @@ class ReviewShow extends React.Component {
 
                     </div>
                 )
+            } else {
+                return (
+                    <div className="invisible">
+                        Hey
+                    </div>
+                )
+                
             }
         }
     }
@@ -218,7 +225,7 @@ class ReviewShow extends React.Component {
                         <div className="rating-top">
                             <div>
                                 <span className="review-created-time">{this.getDate()} </span>
-                                <span className="review-upload">upload date</span>
+                                <p className="review-upload">upload date</p>
                             </div>
                             <div className="rating-date-box">
                                 {/* <img className ="rating-star" src={ratingStar} alt=""/> */}
