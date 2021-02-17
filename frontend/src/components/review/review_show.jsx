@@ -73,27 +73,29 @@ class ReviewShow extends React.Component {
 
     editandDelete(){
         debugger
-        if (this.props.review.userId === this.props.currentUser._id) {
-            return (
-                <div className="edit-delete-btn">
-                    <p value="update" onClick={this.handleUpdate}>Edit</p>
-                    <p className="delete-btn" onClick={() => this.deleteModal()}>Delete</p>
-                    {/* <p value="delete" onClick={this.handleDelete}>Delete</p>      */}
-                     <div id="delete" className="delete-background">
-                        <div className="delete-container-top" onClick={e => e.stopPropagation()}>
-                            <div className="delete-text">
-                                <p>Are you sure you want to delete the review?</p>
-                                <button onClick={() => this.props.deleteReview(this.props.review._id).then(() => window.location.reload())}>Yes</button>
-                                <button onClick={() => window.location.reload()}>No</button>
+        if (this.props.currentUser !== undefined) {
+            if (this.props.review.userId === this.props.currentUser._id) {
+                return (
+                    <div className="edit-delete-btn">
+                        <p className="update-btn"value="update" onClick={this.handleUpdate}>Edit</p>
+                        <p className="delete-btn" onClick={() => this.deleteModal()}>Delete</p>
+                        {/* <p value="delete" onClick={this.handleDelete}>Delete</p>      */}
+                         <div id="delete" className="delete-background">
+                            <div className="delete-container-top" onClick={e => e.stopPropagation()}>
+                                <div className="delete-text">
+                                    <p>Are you sure you want to delete the review?</p>
+                                    <button onClick={() => this.props.deleteReview(this.props.review._id).then(() => window.location.reload())}>Yes</button>
+                                    <button onClick={() => window.location.reload()}>No</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            )
-        } else {
-            return (
-                <p>Fail</p>
-            )
+                )
+            } else {
+                return (
+                    <p>Fail</p>
+                )
+            }
         }
     }
 
