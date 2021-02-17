@@ -5,7 +5,7 @@ import { fetchReviews, updateReview, deleteReview } from '../../actions/review_a
 const msp = (state) => (
     {
         reviews: state.entities.trainers.reviews,
-        currentUser: state.entities.users[state.session.user.id]
+        currentUser: state.session.user ? state.entities.users[state.session.user.id] : null
     }
 )
 

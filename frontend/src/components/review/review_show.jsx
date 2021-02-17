@@ -9,7 +9,7 @@ import './review_show.scss'
 
 class ReviewShow extends React.Component {
     constructor(props){
-        debugger
+        // debugger
         super(props);
         this.state = {
             body: this.props.review.body,
@@ -62,6 +62,7 @@ class ReviewShow extends React.Component {
         this.date = new Date(this.props.review.createdAt);
         this.deleteModal = this.deleteModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleSubmit(e) {
@@ -114,18 +115,22 @@ class ReviewShow extends React.Component {
         )
     }
     
+    handleDelete() {
+        debugger
+        this.props.deleteReview(this.props.review._id).then(() => window.location.reload())
+    }
 
     editandDelete(){
-        debugger
-        if (this.props.currentUser !== undefined) {
+        if (this.props.currentUser !== null && this.props.currentUser !== undefined) {
+            debugger
             if (this.props.review.userId === this.props.currentUser._id) {
                 return (
                     <div className="edit-delete-btn">
                         <p className="update-btn" onClick={() => this.updateModal()}>Update</p>
                         <div id="update" className="update-background" onClick={this.removeModal}>
-                            <div className="update-container-top" onClick={e => e.stopPropagation()}>
+                            <div className="update-container-top" >
                                 <form className="update-rev-form" onSubmit={this.handleSubmit}>
-                                    <div className="review-form-box">
+                                    <div className="review-form-box"onClick={e => e.stopPropagation()}>
                                         <div className="review-form-texts">
                                         <img className="review-trainer-pic" src={this.props.trainer.imageUrl} alt=""/>
                                             <span className="review-form-trainer-name">{this.props.trainer.firstName} {this.props.trainer.lastName}</span>
@@ -176,7 +181,7 @@ class ReviewShow extends React.Component {
                                 <div className="delete-text">
                                     <p className="delete-text-q">Are you sure you want to delete the review?</p>
                                     <div className="buttons-box">
-                                        <button className="del-yes"onClick={() => this.props.deleteReview(this.props.review._id).then(() => window.location.reload())}>Yes</button>
+                                        <button className="del-yes"onClick={this.handleDelete}>Yes</button>
                                         <button className="del-no"onClick={() => window.location.reload()}>No</button>
                                     </div>
                                 </div>
@@ -197,6 +202,7 @@ class ReviewShow extends React.Component {
     }
 
     render() {
+        debugger
         const deleteBtn = document.getElementById("delete");
         if (deleteBtn) {
             deleteBtn.addEventListener("click", (e) => {
