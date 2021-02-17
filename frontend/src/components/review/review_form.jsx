@@ -10,7 +10,7 @@ class ReviewForm extends React.Component {
             rating: null,
             userId: this.props.user_id,
             trainerId: this.props.match.params.trainerId,
-            workoutDate: 'march 10 2020'
+            workoutDate: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }

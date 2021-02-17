@@ -21,6 +21,17 @@
    display: none;
 }
 
+.update-background{
+    position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.35);
+   z-index: 10;
+   display: none;
+}
+
 .delete-container-top{
     background-color: white;
    position: absolute;
@@ -29,9 +40,20 @@
    top: 50%;
    left: 44%;
    transform: translate(-50%, -50%); 
+   height: 300px;
+   border: 1px solid #25859b;
+    box-shadow: 3px 3px 3px grey;
 }
-.rating-top{
 
+.update-container-top{
+     background-color: white;
+   position: absolute;
+   border-radius: 5px;
+   top: 50%;
+   left: 44%;
+   transform: translate(-50%, -50%);
+   border: 1px solid #25859b;
+    box-shadow: 3px 3px 3px grey;
 }
 
 
@@ -94,11 +116,59 @@
     color: black;
     transition: 0.7s;
 }
-
+.update-rev-form{
+    padding: 20px;
+}
 .update-btn:hover{
     cursor: pointer;
     color: black;
     transition: 0.7s;
 }
 
+.delete-text-q{
+    color: black;
+    margin-left: 10px;
+}
 
+.buttons-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 27px;
+}
+
+.del-yes{
+    background-color: white;
+    font-size: 30px;
+    color: #25859b;
+    border: 2px solid;
+    border-radius: 10px;
+    outline: none;
+}
+
+.del-yes:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.del-no{
+    margin-left: 55px;
+    background-color: white;
+    font-size: 30px;
+    color: #25859b;
+    border: 2px solid;
+    border-radius: 10px;
+    outline: none;
+}
+
+.del-no:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.delete-container-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
