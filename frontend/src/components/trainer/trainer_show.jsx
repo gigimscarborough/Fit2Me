@@ -106,7 +106,7 @@ class TrainerShow extends React.Component {
                                 <div className="revs-head">
                                     <h2>CLIENT REVIEWS</h2>
                                 </div>
-                                <div className="review-index-container"><ReviewIndexContainer trainer={this.props.trainer}/></div>
+                                <div className="review-index-container"><ReviewIndexContainer currentUserId={this.props.currentUserId}trainer={this.props.trainer}/></div>
                             </div>
                         </div>
                         <div className="trainer-workout-container trainer-booleans">

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import ReviewIndex from './review_index';
-import { fetchReviews } from '../../actions/review_actions';
+import { fetchReviews, updateReview, deleteReview } from '../../actions/review_actions';
 
-const msp = (state, ownProps) => (
+const msp = (state) => (
     {
         reviews: state.entities.trainers.reviews,
         currentUser: state.entities.users[state.session.user.id]
@@ -11,7 +11,9 @@ const msp = (state, ownProps) => (
 
 const mdp = dispatch => (
     {
-        fetchReviews: (trainerId) => dispatch(fetchReviews(trainerId))                                                                                                                                                                                                     
+        fetchReviews: (trainerId) => dispatch(fetchReviews(trainerId)),
+        updateReview: (review) => dispatch(updateReview(review)),
+        deleteReview: (reviewId) =>  dispatch(deleteReview(reviewId))                                                                                                                                                                                             
     }
 )
 
