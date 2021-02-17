@@ -7,7 +7,7 @@ import SearchForm from './search_form';
 
 const mSTP = state => {
     return { 
-        currentUser: state.entities.users[state.session.user.id],
+        currentUser: state.session.user ? state.entities.users[state.session.user.id] : null,
         search: state.ui.search
     }
 };
