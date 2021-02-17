@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './search.scss'
 
+
 class SearchResults extends React.Component {
     constructor(props) {
         super(props);
@@ -12,13 +13,18 @@ class SearchResults extends React.Component {
     }
 
     componentDidMount() {
-    
-
+        if (Object.values(this.props.search).length !== 0){
+            // debugger
+            window.localStorage.setItem("savedState", JSON.stringify(this.props.search))
+            this.props.searchTrainers(this.props.search)
+        }else{
+            // debugger
+            const search = JSON.parse(window.localStorage.getItem("savedState") )
+            this.props.searchTrainers(search)
+        }
     }
 
-
     sumRating(reviews){
-        // debugger
         let sumRating = 0;
         for (let i = 0; i < reviews.length; i++) {
             sumRating += reviews[i].rating;
@@ -30,6 +36,7 @@ class SearchResults extends React.Component {
 
 
     render() {
+
         if (Object.keys(this.props.trainers).length === 0) {
             return(
                 <div className="holder">
@@ -38,8 +45,7 @@ class SearchResults extends React.Component {
                         <div className="t-content-header">
                             <h1>TRAINER SEARCH</h1>
                             <div className="no-search-results">
-                                <h2>Your Search Did Not Return Any Results</h2>
-                            </div>
+                            <div><i className="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Loading...</div>                            </div>
                             </div>
                         </div>
                     </div>
