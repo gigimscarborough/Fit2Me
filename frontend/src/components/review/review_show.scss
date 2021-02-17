@@ -49,11 +49,9 @@
      background-color: white;
    position: absolute;
    border-radius: 5px;
-   width: 350px;
    top: 50%;
    left: 44%;
-   transform: translate(-50%, -50%); 
-   height: 300px;
+   transform: translate(-50%, -50%);
    border: 1px solid #25859b;
     box-shadow: 3px 3px 3px grey;
 }
@@ -118,7 +116,9 @@
     color: black;
     transition: 0.7s;
 }
-
+.update-rev-form{
+    padding: 20px;
+}
 .update-btn:hover{
     cursor: pointer;
     color: black;

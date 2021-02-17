@@ -166,10 +166,10 @@ class ReviewShow extends React.Component {
                         <p className="delete-btn" onClick={() => this.deleteModal()}>Delete</p>
                         {/* <p value="delete" onClick={this.handleDelete}>Delete</p>      */}
                         <div id="delete" className="delete-background">
-                            <div className="delete-container-top" onClick={e => e.stopPropagation()}>
-                                <div className="delete-text">
-                                    <p className="delete-text-q">Are you sure you want to delete the review?</p>
-                                    <div className="buttons-box">
+                            <div className="delete-container-top" >
+                                <div className="delete-text" onClick={e => e.stopPropagation()}>
+                                    <p className="delete-text-q" onClick={e => e.stopPropagation()}>Are you sure you want to delete the review?</p>
+                                    <div className="buttons-box"onClick={e => e.stopPropagation()}>
                                         <button className="del-yes"onClick={() => this.props.deleteReview(this.props.review._id).then(() => window.location.reload())}>Yes</button>
                                         <button className="del-no"onClick={() => window.location.reload()}>No</button>
                                     </div>
