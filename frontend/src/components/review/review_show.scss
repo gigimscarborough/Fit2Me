@@ -64,6 +64,9 @@
 .str{
     color: #25859b;
 }
+.delete-btn{
+    margin-left: 15px;
+}
 
 .str-g{
     color: lightgrey;
@@ -83,6 +86,19 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    color: #25859b;
+}
+
+.delete-btn:hover{
+    cursor: pointer;
+    color: black;
+    transition: 0.7s;
+}
+
+.update-btn:hover{
+    cursor: pointer;
+    color: black;
+    transition: 0.7s;
 }
 
 
