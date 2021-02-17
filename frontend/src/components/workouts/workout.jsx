@@ -7,16 +7,17 @@ class Workout extends React.Component {
     
     constructor(props) {
         super(props);
+
         this.state = {
             trainerId: this.props.trainerId,
             userId: this.props.currentUserId,
             date: "",
             time: "",
             location: "",
-            trainerName: this.props.trainer.firstName + " " + this.props.trainer.lastName,
-            trainerImage: this.props.trainer.imageUrl,
-            trainerAvailability: this.props.trainer.dailyAvailability,
-            trainerLocation: this.props.trainer.location ? this.props.trainer.location.address.streetAddress : null
+            trainerName: this.props.trainer ? this.props.trainer.firstName + " " + this.props.trainer.lastName : null,
+            trainerImage: this.props.trainer ? this.props.trainer.imageUrl : null,
+            trainerAvailability: this.props.trainer ? this.props.trainer.dailyAvailability : null,
+            trainerLocation: this.props.trainer ? this.props.trainer.location ? this.props.trainer.location.address.streetAddress : null : null
         }
         this.date = new Date()
         this.timeOptions = this.timeOptions.bind(this)
@@ -98,13 +99,16 @@ class Workout extends React.Component {
 
 
     render() {
+        
+        if(!this.props.trainer)return null
+        debugger
+
         const dateOptions = []
 
         for (let i = 1; i <= 7; i++) {
             let date = new Date();
             let nextDate = date.getDate() + i;
             date.setDate(nextDate)
-
             if (this.props.trainer.dailyAvailability.includes(date.toDateString().split(" ").slice(0, 1))) {
 
                 dateOptions.push(<option value={date.toDateString()}>{date.toDateString()}</option>)
@@ -150,7 +154,7 @@ class Workout extends React.Component {
                                     <div className="loc-div">
                                         <select onChange={this.handleInput('location')}>
                                             <option disabled selected value=""> --- Select A Location --- </option>
-                                            {this.props.trainer.location ? <option value={this.props.trainer.location.address.streetAddress}>Trainer's Location</option> : null}
+                                            { this.props.trainer ? this.props.trainer.location ? <option value={this.props.trainer.location.address.streetAddress}>Trainer's Location</option> : null : null}
                                             {this.props.currentUser.location ? <option value={this.props.currentUser.location.address.streetAddress}>My Location</option> : null}
                                         </select>
                                     </div>
