@@ -6,17 +6,18 @@ class SearchForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            canTravel: "",
-            hasLocation: "",
-            experienceLevel: "beginner",
-            specialty: "yoga",
-            zipCode: this.props.currentUser ? this.props.currentUser.location ? this.props.currentUser.location.address.zip : null : null,
+            canTravel: this.props.search.canTravel || "",
+            hasLocation: this.props.search.hasLocation || "",
+            experienceLevel: this.props.search.experienceLevel || "intermediate",
+            specialty: this.props.search.specialty || "cardio",
+            zipCode: this.props.search.zipCode ? this.props.search.zipCode : this.props.currentUser ? this.props.currentUser.location ? this.props.currentUser.location.address.zip : null : null,
             didSubmit: false
-
         }
+
         this.handleLocation = this.handleLocation.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
+
 
     handleInput(type) {
         return e => this.setState({
@@ -48,8 +49,10 @@ class SearchForm extends React.Component {
         zipCode: this.state.zipCode
       }
 
-      this.props.searchTrainers(form)
-      .then(() => this.props.history.push("/search/results"))
+      this.props.sendForm(this.state)
+      this.props.history.push("/search/results")
+    //   this.props.searchTrainers(form)
+      
       
         // this.setState({ didSubmit: true })
     }
