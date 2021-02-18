@@ -17,7 +17,7 @@ class Workout extends React.Component {
             trainerName: this.props.trainer ? this.props.trainer.firstName + " " + this.props.trainer.lastName : null,
             trainerImage: this.props.trainer ? this.props.trainer.imageUrl : null,
             trainerAvailability: this.props.trainer ? this.props.trainer.dailyAvailability : null,
-            trainerLocation: this.props.trainer ? this.props.trainer.location ? this.props.trainer.location.address.streetAddress : null : null
+            trainerLocation: this.props.trainer ? this.props.trainer.location ? this.props.trainer.location.address.streetAddress : null : null,
         }
         this.date = new Date()
         this.timeOptions = this.timeOptions.bind(this)
@@ -100,8 +100,7 @@ class Workout extends React.Component {
 
     render() {
         
-        if(!this.props.trainer)return null
-        debugger
+        if(!this.props.trainer || !this.props.currentUser)return null
 
         const dateOptions = []
 
@@ -154,7 +153,7 @@ class Workout extends React.Component {
                                     <div className="loc-div">
                                         <select onChange={this.handleInput('location')}>
                                             <option disabled selected value=""> --- Select A Location --- </option>
-                                            { this.props.trainer ? this.props.trainer.location ? <option value={this.props.trainer.location.address.streetAddress}>Trainer's Location</option> : null : null}
+                                            {this.props.trainer.location ? <option value={this.props.trainer.location.address.streetAddress}>Trainer's Location</option> : null}
                                             {this.props.currentUser.location ? <option value={this.props.currentUser.location.address.streetAddress}>My Location</option> : null}
                                         </select>
                                     </div>
