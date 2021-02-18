@@ -11,7 +11,7 @@ class ReviewIndex extends React.Component {
     render() {
         const reviewsList = Object.values(this.props.trainer.reviews).map((review, i) => {
             // console.log(review)
-            debugger
+            
             return (
                 <div key={i}>
                     {/* passing in updateReview and deleteReview as props */}
