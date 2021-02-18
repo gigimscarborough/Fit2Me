@@ -14,11 +14,11 @@ class SearchResults extends React.Component {
 
     componentDidMount() {
         if (Object.values(this.props.search).length !== 0){
-            // debugger
+            // 
             window.localStorage.setItem("savedState", JSON.stringify(this.props.search))
             this.props.searchTrainers(this.props.search)
         }else{
-            // debugger
+            // 
             const search = JSON.parse(window.localStorage.getItem("savedState") )
             this.props.searchTrainers(search)
         }

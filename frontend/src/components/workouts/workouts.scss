@@ -9,7 +9,6 @@ $fit2me-light-blue: #25859bef;
 
 
 .workout-cont{
-    position: fixed;
     display: flex;
     justify-content: center;
     background-image: url(../../assets/images/attic_gym1.jpg);
@@ -22,8 +21,7 @@ $fit2me-light-blue: #25859bef;
 .workout-inner{
     width: 50%;
     box-shadow: 3px 3px 8px gray;
-    padding-left: 35px;
-    padding-right: 35px;
+    padding: 35px;
     font-family: 'Rubik', sans-serif;
     margin-top: 40px;
     background-color:white;

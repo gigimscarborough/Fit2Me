@@ -9,7 +9,7 @@ import './review_show.scss'
 
 class ReviewShow extends React.Component {
     constructor(props){
-        // debugger
+        // 
         super(props);
         this.state = {
             body: this.props.review.body,
@@ -87,16 +87,16 @@ class ReviewShow extends React.Component {
         }   
     }
     handleChange(type){
-        debugger
+        
         return(e) => {
-            debugger
+            
             return this.setState({[type]: e.currentTarget.value})
         }
     }
 
 
     deleteModal(id){
-        debugger
+        
         // e.preventDefault();
         // this.props.history("/search/results")
         const deleteBtn = document.getElementById(`delete${id}`);
@@ -133,7 +133,7 @@ class ReviewShow extends React.Component {
 
     editandDelete(){
         if (this.props.currentUser !== null && this.props.currentUser !== undefined) {
-            debugger
+            
             if (this.props.review.userId === this.props.currentUser._id) {
                 return (
                     <div className="edit-delete-btn">
@@ -221,7 +221,7 @@ class ReviewShow extends React.Component {
     }
 
     render() {
-        debugger
+        
         const deleteBtn = document.getElementById("delete");
         if (deleteBtn) {
             deleteBtn.addEventListener("click", (e) => {
@@ -300,7 +300,7 @@ class ReviewShow extends React.Component {
 //         )
 //     }
     
-//     debugger
+//     
 //     let date = new Date(props.review.createdAt);
 //     const realDate = `${parseInt(date.getMonth()) + 1}` + "/" + date.getDate() + "/" + date.getFullYear();
 //     return (
