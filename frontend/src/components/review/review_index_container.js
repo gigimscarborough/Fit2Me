@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import ReviewIndex from './review_index';
+import {getTrainer} from '../../actions/trainer_actions';
 import { fetchReviews, updateReview, deleteReview } from '../../actions/review_actions';
 
 const msp = (state) => (
@@ -11,6 +12,7 @@ const msp = (state) => (
 
 const mdp = dispatch => (
     {
+        getTrainer: (trainerId) => dispatch(getTrainer(trainerId)),
         fetchReviews: (trainerId) => dispatch(fetchReviews(trainerId)),
         updateReview: (review) => dispatch(updateReview(review)),
         deleteReview: (reviewId) =>  dispatch(deleteReview(reviewId))                                                                                                                                                                                             

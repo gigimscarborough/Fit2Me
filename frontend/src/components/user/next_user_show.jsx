@@ -41,7 +41,7 @@ class NextUserShow extends React.Component {
             )
         }
     }
-
+ 
     render() {
         const currentUser = this.props.currentUser[this.props.currentUserId];
 
