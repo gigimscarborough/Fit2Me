@@ -47,9 +47,6 @@ class NextUserShow extends React.Component {
             )
         }
     }
-<<<<<<< HEAD
- 
-=======
 
     formattedTimes(workout) {
 
@@ -70,7 +67,6 @@ class NextUserShow extends React.Component {
     }
 
 
->>>>>>> bf76580e84dab5a96c1f0de5953ebcba6ce78a49
     render() {
         const currentUser = this.props.currentUser[this.props.currentUserId];
 
