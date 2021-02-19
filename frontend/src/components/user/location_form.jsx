@@ -12,7 +12,7 @@ class LocationForm extends React.Component {
             streetAddress: "",
             city: "",
             state: "",
-            zip: "",
+            borough: "",
             equipment: {
                 "Squat Rack": "",
                 "Weight Set": "",
@@ -61,7 +61,7 @@ class LocationForm extends React.Component {
                 streetAddress: this.state.streetAddress,
                 city: this.state.city,
                 state: this.state.state,
-                zip: this.state.zip
+                borough: this.state.borough
             },
             equipment
         };
@@ -95,7 +95,7 @@ class LocationForm extends React.Component {
                     </span>
                     <br />
                     <br />
-                    <span><strong>Zip Code:</strong> {this.props.currentUser.location.address.zip}
+                    <span><strong>Borough:</strong> {this.props.currentUser.location.address.borough}
 
                     </span>
                     <br />
@@ -114,7 +114,14 @@ class LocationForm extends React.Component {
                 <br />
                 <input type="text" placeholder="State" onChange={this.handleAddress("state")} />
                 <br />
-                <input type="text" placeholder="Zip Code" onChange={this.handleAddress("zip")} />
+                <select type="text" onChange={this.handleAddress("borough")} >
+                    <option value="" selected disabled>Borough</option>
+                    <option value="Manhattan">Manhattan</option>
+                    <option value="Queens">Queens</option>
+                    <option value="Brooklyn">Brooklyn</option>
+                    <option value="Bronx">Bronx</option>
+                    <option value="Staten Island">Staten Island</option>
+                </select>
                 <br />
                 {/* <input type="text" placeholder="Please enter all available equipment seperated by a comma and space" onChange={this.handleInput("equipment")} /> */}
 

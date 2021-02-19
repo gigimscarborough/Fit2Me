@@ -45,6 +45,18 @@ text-align: center;
     border-bottom: solid $fit2me-light-blue 1px;
 }
 
+.loc-form select{
+    width: 464px;
+    height: 44px;
+    margin-bottom: 20px;
+    font-family: 'Rubik', sans-serif;
+    border: solid $fit2me-blue 1px;
+    border-radius: 3px;
+    padding-left: 10px;
+    color: grey;
+    outline: none;
+}
+
 .loc-form input[type=text]{
     font-family: 'Rubik', sans-serif;
     height: 40px;
