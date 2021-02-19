@@ -8,7 +8,6 @@ import splashIntro3 from '../../assets/images/splash_intro3.jpg'
 import reactimg from '../../assets/images/react.png'
 import mongo from '../../assets/images/mongo.png'
 import  express from '../../assets/images/express.png'
-import About from '../about/about';
 class Splash extends React.Component {
     constructor(props){
         super(props);
