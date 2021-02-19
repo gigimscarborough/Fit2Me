@@ -11,5 +11,5 @@ export const createLocation = (location) => {
 }
 
 export const updateLocation = (location) => {
-    return axios.patch(`api/locations/update`, location)
+    return axios.patch(`api/locations/update/${location._id}`, location)
 }

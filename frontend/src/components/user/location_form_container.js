@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import LocationForm from './location_form';
-import {createLocation} from "../../actions/users_actions"
+import {createLocation, updateLocation, fetchUser} from "../../actions/users_actions"
 
 
 
@@ -10,7 +10,9 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-    createLocation: location => dispatch(createLocation(location))
+    createLocation: location => dispatch(createLocation(location)),
+    updateLocation: location => dispatch(updateLocation(location)),
+    fetchUser: userId => dispatch(fetchUser(userId))
 });
 
 

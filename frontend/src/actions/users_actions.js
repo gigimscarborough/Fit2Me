@@ -27,7 +27,7 @@ export const createLocation = (location) => dispatch => (
     ))
 )
 
-export const updateLocation = location => dispatch (
+export const updateLocation = location => dispatch => (
     UsersUtil.updateLocation(location).then(user => (
         dispatch(receiveUser(user))
     ))

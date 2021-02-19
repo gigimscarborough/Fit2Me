@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 const Location = require('../../models/Location');
-const validatelocationInput = require('../../validation/login');
+const validateLocation = require('../../validation/location');
 
 
 
@@ -26,6 +26,12 @@ router.patch('/update/:locationId', (req, res) => {
 })
 
 router.post('/create', (req, res) => {
+
+  const { errors, isValid } = validateLocation(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
             
           const newLocation = new Location({
               ownerId: req.body.ownerId,
