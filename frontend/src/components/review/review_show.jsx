@@ -16,7 +16,8 @@ class ReviewShow extends React.Component {
             rating: this.props.review.rating,
             userId: this.props.user_id,
             trainerId: this.props.trainer.id,
-            workoutDate: this.props.review.workoutDate
+            workoutDate: this.props.review.workoutDate,
+            update: false
         }
         this.oneStar = (<div ><i className="fas fa-star str"></i><i className="fas fa-star str-g"></i><i className="fas fa-star str-g"></i><i className="fas fa-star str-g"></i><i className="fas fa-star str-g"></i></div>)
         this.twoStar = (<div>
@@ -75,9 +76,16 @@ class ReviewShow extends React.Component {
             trainerId: this.state.trainerId,
             workoutDate: this.state.workoutDate
         } 
-        this.props.updateReview(form).then(() => window.location.reload())
+        this.props.updateReview(form)
+        this.setState({update: true});
+            // .then(() => window.location.reload())
     }
-
+    componentDidUpdate(prevProps) {
+        if (this.state.update) {
+            this.props.getTrainer(this.props.trainer._id);
+            this.setState({update: false});
+        }   
+    }
     handleChange(type){
         
         return(e) => {
@@ -118,7 +126,9 @@ class ReviewShow extends React.Component {
     }
     
     handleDelete() {
-        this.props.deleteReview(this.props.review._id).then(() => window.location.reload())
+        this.props.deleteReview(this.props.review._id)
+        this.setState({update: true})
+
     }
 
     editandDelete(){
