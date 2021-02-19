@@ -34,7 +34,7 @@ const TrainerSchema = new Schema({
       type: String,
       required: true
     },
-    zipCode: {
+    borough: {
       type: String,
       required: true
     },
