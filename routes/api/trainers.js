@@ -42,6 +42,7 @@ router.get('/search', (req, res) => {
     .find({hasLocation: {$in: [locationFlag1, locationFlag2]}})
      
     .then(trainers => {
+        if(!trainers.length) return res.json({trainers: "x"})
         return res.json({trainers})       
     })
 })

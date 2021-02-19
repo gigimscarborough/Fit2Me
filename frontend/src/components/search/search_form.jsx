@@ -18,6 +18,10 @@ class SearchForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    componentDidMount(){
+        this.props.clearTrainers()
+    }
+
 
     handleInput(type) {
         return e => this.setState({
