@@ -10,10 +10,18 @@ class UpdateWorkout extends React.Component {
             date: "",
             time: "",
             location: "",
+            update: false
         }
         this.date = new Date()
         this.handleSubmit = this.handleSubmit.bind(this)
 
+    }
+
+    componentDidUpdate(){
+        if(this.state.update){
+            this.props.fetchUser(this.props.currentUser._id);
+            this.setState({update: false})
+        }
     }
 
     handleInput(type) {
@@ -33,8 +41,8 @@ class UpdateWorkout extends React.Component {
         }
 
         this.props.updateWorkout(workout)
-
-            .then(() => window.location.reload(false) )
+        this.setState({update: true})
+        document.getElementById("update-workout-modal").style.display = "none"
 
 
     }
@@ -94,7 +102,7 @@ class UpdateWorkout extends React.Component {
 
         return (
 
-            <div onClick={(e) => e.stopPropagation()} className="workout-inner">
+            <div id="update-workout-modal" onClick={(e) => e.stopPropagation()} className="workout-inner">
                 <div className="workout-head">
                     <h1>Update My Workout</h1>
                 </div>

@@ -5,7 +5,7 @@ import {
 } from '../actions/review_actions';
 
 const reviewsReducer = (state = {}, action) => {
-    debugger
+    
     Object.freeze(state);
     const newState = Object.assign({}, state);
     switch(action.type) {
