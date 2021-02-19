@@ -12,6 +12,19 @@ router.get('/show/:locationId', (req, res) => {
     .catch(err => console.log(err));
 })
 
+router.patch('/update/:locationId', (req, res) => {
+
+  const updatedLocation = {
+    address: req.body.address,
+    equipment: req.body.equipment
+  }
+
+  Location.findOneAndUpdate({'_id': req.body['_id']}, {$set: updatedLocation}, {new: true})
+
+  .then(location => res.json(location))
+  .catch(err => console.log(err));
+})
+
 router.post('/create', (req, res) => {
             
           const newLocation = new Location({
