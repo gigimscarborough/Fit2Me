@@ -9,3 +9,7 @@ export const createLocation = (location) => {
 
     return axios.post('/api/locations/create', location)
 }
+
+export const updateLocation = (location) => {
+    return axios.patch(`api/locations/update`, location)
+}

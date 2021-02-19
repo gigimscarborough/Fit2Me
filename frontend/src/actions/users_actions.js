@@ -26,3 +26,9 @@ export const createLocation = (location) => dispatch => (
         dispatch(receiveUser(user))
     ))
 )
+
+export const updateLocation = location => dispatch (
+    UsersUtil.updateLocation(location).then(user => (
+        dispatch(receiveUser(user))
+    ))
+)
