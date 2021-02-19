@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 const Location = require('../../models/Location');
+const validatelocationInput = require('../../validation/login');
+
 
 
 router.get('/show/:locationId', (req, res) => {
