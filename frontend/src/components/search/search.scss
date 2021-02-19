@@ -20,6 +20,7 @@ $fit2me-light-blue: #25859bef;
     font-family: 'Rubik', sans-serif;
     margin-top: 40px;
     background-color:white;
+    min-width: 464px;
 }
 .search-form-inner div{
     margin-bottom: 40px;
@@ -67,6 +68,11 @@ $fit2me-light-blue: #25859bef;
     font-size: 16px;
     color: white;
     margin: 30px 0;
+    
+}
+
+.search-form-btn:focus{
+    outline: none;
 }
 
 .search-btn-div{

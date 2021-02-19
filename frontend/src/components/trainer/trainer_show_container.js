@@ -2,6 +2,7 @@ import TrainerShow from './trainer_show';
 import { connect } from 'react-redux';
 import { getTrainer } from '../../actions/trainer_actions'
 import { fetchUser } from '../../actions/users_actions'
+import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
 
@@ -15,6 +16,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => (
     {
+        openModal: (modal) => dispatch(openModal(modal)),
         getTrainer: (trainerId) => dispatch(getTrainer(trainerId)),
         fetchUser: (userId) => dispatch(fetchUser(userId))
     }

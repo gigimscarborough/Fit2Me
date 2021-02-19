@@ -7,6 +7,7 @@ import goldBadge from '../../assets/images/gold_badge.png';
 class TrainerShow extends React.Component {
     constructor(props) {
         super(props);
+        this.bookWorkout = this.bookWorkout.bind(this);
     }
 
     componentDidMount() {
@@ -14,7 +15,13 @@ class TrainerShow extends React.Component {
         this.props.getTrainer(this.props.trainerId)
         // this.props.fetchUser(this.props.currentUserId)
     }
-
+    bookWorkout(){
+        if (this.props.currentUser) {
+            this.props.history.push(`/trainers/${this.props.trainer._id}/workout`)
+        } else {
+            this.props.openModal('login');
+        }
+    }
     render() {
         
         if (!this.props.trainer) {
@@ -113,9 +120,9 @@ class TrainerShow extends React.Component {
                             <h2 className="trainer-booleans-title">Workout Options</h2>
                             <p className="trainer-booleans-option">Workout Location Available? {hasLocation}</p>
                             <p className="trainer-booleans-option">Trainer Available At Your Location? {canTravel}</p>
-                            <Link className="trainer-book-workout" to={{pathname: `/trainers/${this.props.trainer._id}/workout`, currentUser: this.props.currentUser}}>
-                                <button>BOOK A WORKOUT!</button>
-                                </Link>
+                            {/* <Link  to={{pathname: `/trainers/${this.props.trainer._id}/workout`, currentUser: this.props.currentUser}}> */}
+                                <button className="trainer-book-workout"onClick={() => this.bookWorkout()}>BOOK A WORKOUT!</button>
+                            {/* </Link> */}
                         </div>
                     </div>
                 </div>

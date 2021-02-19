@@ -131,9 +131,10 @@ font-family: "Rubik", sans-serif;
     margin-top: 200px;
     position: fixed;
     margin-left: 800px;
+    min-width: 287fpx;
 }
 
-.trainer-book-workout button{
+.trainer-book-workout{
     border: 2px solid  #25859b;
     text-decoration: none;
     color:  #25859b;
@@ -145,6 +146,7 @@ font-family: "Rubik", sans-serif;
     width: 175px;
     font-size: 18px;
     margin-top: 10px;
+    outline: none;
 }
 
 .trainer-book-workout a{ 
@@ -153,11 +155,12 @@ font-family: "Rubik", sans-serif;
     font-family: "Rubik", sans-serif;
 }
 
-.trainer-book-workout button:hover{
+.trainer-book-workout:hover{
      border: 2px solid black;
     background-color: black;
     color: white;
     cursor: pointer;
+    outline: none;
 }
 .trainer-book-workout button:focus{
     outline: none;
