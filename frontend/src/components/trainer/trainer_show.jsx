@@ -16,13 +16,17 @@ class TrainerShow extends React.Component {
         // this.props.fetchUser(this.props.currentUserId)
     }
     bookWorkout(){
+        debugger
         if (this.props.currentUser) {
             this.props.history.push(`/trainers/${this.props.trainer._id}/workout`)
         } else {
             this.props.openModal('login');
         }
     }
+
     render() {
+
+        debugger
         
         if (!this.props.trainer) {
             return (

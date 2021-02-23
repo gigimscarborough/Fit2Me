@@ -88,11 +88,12 @@ outline: none;
 }
 
 .main-nav-div-s{
+    box-sizing: border-box;
     position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     margin-top: 15px;
     margin-bottom: 15px;
     z-index: 2;
