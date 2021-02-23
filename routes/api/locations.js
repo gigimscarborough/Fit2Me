@@ -21,8 +21,13 @@ router.patch('/update/:locationId', (req, res) => {
 
   Location.findOneAndUpdate({'_id': req.body['_id']}, {$set: updatedLocation}, {new: true})
 
-  .then(location => res.json(location))
-  .catch(err => console.log(err));
+  .then(location => {
+    
+    User.findOneAndUpdate({'_id': location.ownerId}, {location}, {new: true}).populate("location").populate("workouts")
+    .catch(err => console.log(err))
+    .then(user => res.json(user))      
+    })
+    .catch(err => console.log(err));
 })
 
 router.post('/create', (req, res) => {
@@ -42,13 +47,9 @@ router.post('/create', (req, res) => {
   newLocation.save()
   .then(location => {
     
-      User.updateOne({'_id': location.ownerId}, {location}, { "upsert": false }).catch(err => console.log(err))
-
-      User.findById(location.ownerId).populate('workouts').populate("location")
-      .then(user => res.json(user))
-
-
-      
+      User.findOneAndUpdate({'_id': location.ownerId}, {$set: {location}}, {new: true}).populate("location").populate("workouts")
+      .catch(err => console.log(err))
+      .then(user => res.json(user))      
       })
       .catch(err => console.log(err));
 

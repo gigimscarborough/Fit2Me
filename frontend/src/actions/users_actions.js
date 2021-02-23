@@ -34,6 +34,9 @@ export const createLocation = (location) => dispatch => {
 
 export const updateLocation = location => dispatch => (
     UsersUtil.updateLocation(location).then(user => (
-        dispatch(receiveUser(user))
-    ))
+        dispatch(receiveUser(user))),
+        err => {
+            console.log(err.response.data)
+        }
+    )
 )

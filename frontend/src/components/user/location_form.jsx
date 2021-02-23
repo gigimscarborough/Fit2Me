@@ -32,7 +32,7 @@ class LocationForm extends React.Component {
 
     componentDidUpdate(){
         if(this.state.handleUpdate){
-            this.props.fetchUser(this.props.currentUser._id);
+            // this.props.fetchUser(this.props.currentUser._id);
             this.setState({handleUpdate: false, update: false})
         }
     }
@@ -77,10 +77,8 @@ class LocationForm extends React.Component {
             equipment
         };
         
-        console.log('submitting')
-
         this.props.createLocation(form)
-            // .then(() => window.location.reload())
+
             
     }
 
@@ -101,14 +99,14 @@ class LocationForm extends React.Component {
             equipment
         };
         
-        this.props.updateLocation(form); 
-        this.setState({ handleUpdate: true });
+        this.props.updateLocation(form)
+        .then((promise)=> {if (promise) this.setState({ handleUpdate: true })});
         
     }
 
 
     render() {
-
+        debugger
         if (this.props.currentUser.location) {
 
             if(this.state.update){
@@ -203,6 +201,7 @@ class LocationForm extends React.Component {
                 </form>
                 )
             }else{
+
                 return (
                 
                     <div className="loc-form">
