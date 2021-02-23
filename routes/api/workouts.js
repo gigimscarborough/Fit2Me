@@ -3,6 +3,7 @@ const router = express.Router({ mergeParams: true });
 const Workout = require('../../models/Workout');
 const Trainer = require('../../models/Trainer');
 const User = require('../../models/User');
+const validateWorkout = require("../../validation/workout");
 
 
   router.get('/index/', (req, res) => {
@@ -22,17 +23,23 @@ router.get('/show/:workoutId', (req, res) => {
 
 router.patch('/update/:workoutId', (req, res) => {
 
+  console.log(req.body)
+  const { errors, isValid } = validateWorkout(req.body);
 
-    const updatedWorkout = {
-      date: req.body.date,
-      time: req.body.time,
-      location: req.body.location
-    }
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
-    Workout.findOneAndUpdate({'_id': req.body['_id']}, {$set: updatedWorkout}, {new: true})
+  const updatedWorkout = {
+    date: req.body.date,
+    time: req.body.time,
+    location: req.body.location
+  }
 
-    .then(workout => res.json(workout))
-    .catch(err => console.log(err));
+  Workout.findOneAndUpdate({'_id': req.body['_id']}, {$set: updatedWorkout}, {new: true})
+
+  .then(workout => res.json(workout))
+  .catch(err => console.log(err));
 })
 
 router.delete('/delete/:workoutId', (req, res) => {
@@ -42,33 +49,40 @@ router.delete('/delete/:workoutId', (req, res) => {
 });
 
 router.post('/create', (req, res) => {
-            
-            const newWorkout = new Workout({
-                trainerId: req.body.trainerId,
-                trainerName: req.body.trainerName,
-                trainerImage: req.body.trainerImage,
-                trainerAvailability: req.body.trainerAvailability,
-                trainerLocation: req.body.trainerLocation,
-                userId: req.body.userId,
-                date: req.body.date,
-                time: req.body.time,
-                location: req.body.location,
-              })
-        
-            newWorkout.save()
-            .then(workout => {
 
-                const update = {$push: {workouts: workout._id}}
-                const options = { "upsert": false };
+  const { errors, isValid } = validateWorkout(req.body);
 
-                Trainer.updateOne({'_id': workout.trainerId}, update, options).catch(err => console.log(err));
-                User.updateOne({'_id': workout.userId}, update, options).catch(err => console.log(err));
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+      
+  
+  const newWorkout = new Workout({
+      trainerId: req.body.trainerId,
+      trainerName: req.body.trainerName,
+      trainerImage: req.body.trainerImage,
+      trainerAvailability: req.body.trainerAvailability,
+      trainerLocation: req.body.trainerLocation,
+      userId: req.body.userId,
+      date: req.body.date,
+      time: req.body.time,
+      location: req.body.location,
+    })
+
+  newWorkout.save()
+  .then(workout => {
+
+      const update = {$push: {workouts: workout._id}}
+      const options = { "upsert": false };
+
+      Trainer.updateOne({'_id': workout.trainerId}, update, options).catch(err => console.log(err));
+      User.updateOne({'_id': workout.userId}, update, options).catch(err => console.log(err));
 
 
 
-                return res.json({workout})
-                })
-                .catch(err => console.log(err));
+      return res.json({workout})
+      })
+      .catch(err => console.log(err));
 
 })
 

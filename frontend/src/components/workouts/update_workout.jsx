@@ -40,6 +40,7 @@ class UpdateWorkout extends React.Component {
             location: this.state.location,
         }
 
+        console.log("workout", workout)
         this.props.updateWorkout(workout)
         this.setState({update: true})
         document.getElementById("update-workout-modal").style.display = "none"
