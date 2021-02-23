@@ -17,7 +17,7 @@ class TrainerShow extends React.Component {
     }
     bookWorkout(){
         debugger
-        if (this.props.currentUser) {
+        if (this.props.currentUserId) {
             this.props.history.push(`/trainers/${this.props.trainer._id}/workout`)
         } else {
             this.props.openModal('login');
@@ -25,9 +25,6 @@ class TrainerShow extends React.Component {
     }
 
     render() {
-
-        debugger
-        
         if (!this.props.trainer) {
             return (
                 <div>Loading..</div>
