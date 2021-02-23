@@ -21,11 +21,16 @@ export const fetchUser = user => dispatch => (
     ))
 );
 
-export const createLocation = (location) => dispatch => (
-    UsersUtil.createLocation(location).then(user => (
-        dispatch(receiveUser(user))
+export const createLocation = (location) => dispatch => {
+    // console.log("test")
+    return (UsersUtil.createLocation(location).then(user => (
+        dispatch(receiveUser(user))),
+        err => {
+            console.log(err.response.data)
+        }
+        
     ))
-)
+}
 
 export const updateLocation = location => dispatch => (
     UsersUtil.updateLocation(location).then(user => (

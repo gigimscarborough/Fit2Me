@@ -77,9 +77,11 @@ class LocationForm extends React.Component {
             equipment
         };
         
+        console.log('submitting')
 
         this.props.createLocation(form)
-            .then(() => window.location.reload())
+            // .then(() => window.location.reload())
+            
     }
 
     handleUpdate(e){
