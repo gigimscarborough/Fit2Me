@@ -4,21 +4,19 @@ import { openModal } from '../../actions/modal_actions';
 import './navbar.scss'
 import fit2me from '../../assets/images/fit2me.png'
 import fit2meT from '../../assets/images/fit2me-wl.png'
+import {Redirect} from "react-router"
 
 class NavBar extends React.Component {
     constructor(props) {
-   
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
         this.getButton = this.getButton.bind(this)
-
-        
     }
 
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
-        // .then(() => this.props.history.push("/"))
+        this.props.history.push("/")
     }
     
     componentDidUpdate() {
@@ -51,7 +49,7 @@ class NavBar extends React.Component {
             );
         }else if (this.props.loggedIn) {
             return (
-                <div>
+                <div>                    
                     <button className="session-btn" onClick={this.logoutUser}>LOGOUT</button>
                     <Link to={`/users/${this.props.currentUser.id}`}><i className=" user-icon fas fa-user-alt"></i></Link>
                 </div>
