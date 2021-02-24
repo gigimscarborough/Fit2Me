@@ -88,7 +88,7 @@ class Workout extends React.Component {
 
         this.props.createWorkout(workout)
         
-        .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
+        .then((payload) => {if(payload) this.props.history.push(`/users/${this.props.currentUserId}`)})
     
 
     }
