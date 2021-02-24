@@ -17,8 +17,7 @@ const mDTP = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
     searchTrainers: search => dispatch(searchTrainers(search)),
     getTrainer: trainerId => dispatch(getTrainer(trainerId)),
-    clearTrainers: () => dispatch(clearTrainers())
-
+    clearTrainers: () => dispatch(clearTrainers()),
 });
 
 

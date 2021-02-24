@@ -13,6 +13,7 @@ class SearchResults extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchAllTrainers()
         if (Object.values(this.props.search).length !== 0) {
             // 
             window.localStorage.setItem("savedState", JSON.stringify(this.props.search))
@@ -55,20 +56,60 @@ class SearchResults extends React.Component {
             )
         }
 
-        else if(this.props.trainers[0] === "x") {
+        else if(this.props.searchResults[0] === "x") {
+
+            const trainersIndex = this.props.trainers.map(trainer => {
+
+                return(
+                <div className="trainers-container">
+                    <div className="trainer-div" >
+                        <div className="trainer-l">
+                            <Link to={`/trainers/${trainer._id}`}>
+                                <img className="trainer-image" src={trainer.imageUrl} />
+                            </Link>
+                            <Link className="trainer-link" to={`/trainers/${trainer._id}`}>
+                                View Profile
+                        </Link>
+                        </div>
+                        <div className="trainer-r">
+                            <Link to={`/trainers/${trainer._id}`}>{trainer.firstName} {trainer.lastName}</Link>
+                            <p><i>"{trainer.bio}"</i></p>
+
+                            <p>{trainer.borough}</p>
+                            <p>Experience Level: {trainer.experienceLevel}</p>
+                            <p>Rating: {this.sumRating(trainer.reviews)}</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                )
+            }
+        )
+
+            
             return(
                 <div className="holder">
-                    <div className="results-container">
-                        <div className="trainer-content">
+                <div className="results-container">
+                    <div className="trainer-content">
                         <div className="t-content-header">
                             <h1>TRAINER SEARCH</h1>
-                            <div className="no-search-results">
-                            <div><h2>No Results Found</h2></div>
-                            </div>
+                            <div className="matches">
+                            <h2>No Results Matched Your Search</h2>
                             </div>
                         </div>
+                        <div className="t-content-header">
+                            <h2>Other Trainers You May Like</h2>
+                            <div className="matches">
+                            </div>
+                        </div>
+                        {trainersIndex}
                     </div>
+
                 </div>
+            </div>
+
             )
 
         }
@@ -76,9 +117,18 @@ class SearchResults extends React.Component {
 
         else  {
 
+            const searchedTrainers = []
+            const otherTrainers = []
 
+            this.props.trainers.forEach(trainer=>{
+                if (this.props.searchResults.includes(trainer._id)){
+                    searchedTrainers.push(trainer)
+                }else{
+                    otherTrainers.push(trainer)
+                }
+            })
 
-            const trainers = this.props.trainers.map(trainer =>
+            const trainers = searchedTrainers.map(trainer =>
 
                 <div className="trainers-container">
                     <div className="trainer-div" >
@@ -115,6 +165,36 @@ class SearchResults extends React.Component {
 
                 </div>
 
+            )
+
+                const trainersIndex = otherTrainers.map(trainer => {
+
+                    return(
+                    <div className="trainers-container">
+                        <div className="trainer-div" >
+                            <div className="trainer-l">
+                                <Link to={`/trainers/${trainer._id}`}>
+                                    <img className="trainer-image" src={trainer.imageUrl} />
+                                </Link>
+                                <Link className="trainer-link" to={`/trainers/${trainer._id}`}>
+                                    View Profile
+                            </Link>
+                            </div>
+                            <div className="trainer-r">
+                                <Link to={`/trainers/${trainer._id}`}>{trainer.firstName} {trainer.lastName}</Link>
+                                <p><i>"{trainer.bio}"</i></p>
+
+                            <p>{trainer.borough}</p>
+                            <p>Experience Level: {trainer.experienceLevel}</p>
+                            <p>Rating: {this.sumRating(trainer.reviews)}</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    )
+                }
             )
 
             const hStar = (<div >
@@ -201,12 +281,19 @@ class SearchResults extends React.Component {
                             <div className="t-content-header">
                                 <h1>TRAINER SEARCH</h1>
                                 <div className="matches">
-                                    <p>You matched with {this.props.trainers.length} {this.props.trainers.length <= 1 ? "trainer" : "trainers"} in your area</p>
+                                    <p>You matched with {searchedTrainers.length} {searchedTrainers.length <= 1 ? "trainer" : "trainers"} in your area</p>
                                     <Link to="/search">New Search</Link>
                                 </div>
                             </div>
                             {trainers}
+                            <div className="t-content-header">
+                                <h2>Other Trainers You May Like</h2>
+                                <div className="matches">
+                                </div>
+                            </div>
+                            {trainersIndex}
                         </div>
+
                     </div>
                 </div>
             )

@@ -6,11 +6,11 @@ class SearchForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            canTravel: this.props.search.canTravel || "",
-            hasLocation: this.props.search.hasLocation || "",
-            experienceLevel: this.props.search.experienceLevel || "intermediate",
-            specialty: this.props.search.specialty || "cardio",
-            borough: this.props.search.borough ? this.props.search.borough : this.props.currentUser ? this.props.currentUser.location ? this.props.currentUser.location.address.borough : null : null,
+            canTravel: "",
+            hasLocation: "",
+            experienceLevel: "",
+            specialty: "",
+            borough: "",
             didSubmit: false
         }
 
@@ -55,6 +55,9 @@ class SearchForm extends React.Component {
 
       this.props.sendForm(this.state)
       this.props.history.push("/search/results")
+
+
+
     //   this.props.searchTrainers(form)
       
       
