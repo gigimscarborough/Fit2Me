@@ -55,13 +55,14 @@ text-align: center;
     padding-left: 10px;
     color: grey;
     outline: none;
+    margin-top: 20px;
 }
 
 .loc-form input[type=text]{
     font-family: 'Rubik', sans-serif;
     height: 40px;
     width: 450px;
-    margin-bottom: 20px;
+    margin-top: 20px;
     border: solid $fit2me-blue 1px;
     border-radius: 3px;
     padding-left: 10px;
@@ -196,4 +197,14 @@ outline: none;
     border: 1px solid #25859b;
     box-shadow: 3px 3px 3px grey;
     z-index: 1000;
+}
+
+.loc-errors{
+    color: #25859b;
+    list-style: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+
 }

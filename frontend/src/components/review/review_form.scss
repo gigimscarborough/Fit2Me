@@ -148,3 +148,24 @@ td{
     right: 10px;
 }
 
+.rev-errors-rating{
+    color: rgb(187, 38, 38);
+    list-style: none;
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    font-size: 18px;
+}
+
+.rev-errors-date{
+    margin: 0;
+    padding-right: 47px;
+    color: rgb(187, 38, 38);
+    list-style: none;
+    font-family: "Rubik", sans-serif;
+    font-size: 18px;
+}
+
+.b-err::placeholder{
+    color: rgb(187, 38, 38);
+}
+
