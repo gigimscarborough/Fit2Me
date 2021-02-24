@@ -38,15 +38,17 @@ export const fetchReview = (trainerId, reviewId) => dispatch => (
 export const createReview = (review, trainerId) => dispatch => (
     ReviewApiUtil.createReview(review, trainerId)
         .then(review => dispatch(receiveReview(review)))
+        .catch((err) => {console.log(err.response.data)})
 )
 
 export const updateReview = (review) => dispatch => (
     ReviewApiUtil.updateReview(review)
         .then(review => dispatch(receiveReview(review)))
+        .catch((err) => {console.log(err.response.data)})
+
 )
 
 export const deleteReview = (reviewId) => dispatch => {
-    console.log("in delete action!")
     console.log(reviewId)
     return (
         ReviewApiUtil.deleteReview(reviewId)

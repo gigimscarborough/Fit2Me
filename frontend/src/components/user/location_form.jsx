@@ -78,8 +78,7 @@ class LocationForm extends React.Component {
         };
         
         this.props.createLocation(form)
-
-            
+     
     }
 
     handleUpdate(e){
