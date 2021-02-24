@@ -23,7 +23,6 @@ router.get('/show/:workoutId', (req, res) => {
 
 router.patch('/update/:workoutId', (req, res) => {
 
-  console.log(req.body)
   const { errors, isValid } = validateWorkout(req.body);
 
   if (!isValid) {

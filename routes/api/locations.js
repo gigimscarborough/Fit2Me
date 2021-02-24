@@ -14,6 +14,12 @@ router.get('/show/:locationId', (req, res) => {
 
 router.patch('/update/:locationId', (req, res) => {
 
+  const { errors, isValid } = validateLocation(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   const updatedLocation = {
     address: req.body.address,
     equipment: req.body.equipment
