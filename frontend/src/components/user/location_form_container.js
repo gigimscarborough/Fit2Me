@@ -6,7 +6,10 @@ import {createLocation, updateLocation, fetchUser} from "../../actions/users_act
 
 
 const mSTP = (state, ownProps) => {
-    return { currentUser: state.entities.users[ownProps.match.params.userId] }
+    return { 
+        // currentUser: state.entities.users[ownProps.match.params.userId],
+        errors: state.errors.location
+    }
 };
 
 const mDTP = dispatch => ({
@@ -18,6 +21,6 @@ const mDTP = dispatch => ({
 
 
 export default connect(
-    null,
+    mSTP,
     mDTP
 )(LocationForm);

@@ -66,7 +66,7 @@ class SignupForm extends React.Component {
 
     handleDemo() {
         let user = {
-            email: "hey@hey.com",
+            email: "demo@demo.com",
             password: "pass1234"
         }
 
