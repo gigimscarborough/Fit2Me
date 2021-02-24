@@ -8,7 +8,8 @@ const msp = (state, ownProps) => {
    
     return {
         trainer: state.entities.trainers[ownProps.match.params.trainerId],
-        user_id: state.session.user.id
+        user_id: state.session.user.id,
+        errors: state.errors.review
     }
 }
 
