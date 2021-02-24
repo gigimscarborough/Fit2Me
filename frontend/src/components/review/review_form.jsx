@@ -43,7 +43,7 @@ class ReviewForm extends React.Component {
             workoutDate: this.state.workoutDate
         } 
        
-        this.props.createReview(form).then(()=> this.props.history.push(`/trainers/${this.props.trainer['_id']}`))
+        this.props.createReview(form).then((payload)=> {if (payload) this.props.history.push(`/trainers/${this.props.trainer['_id']}`)})
     }
 
     render(){
