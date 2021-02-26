@@ -6,10 +6,10 @@ class UserShow extends React.Component{
         super(props);
     }
 
-    componentWillMount(){
+    // componentWillMount(){
  
-        this.props.fetchUser(this.props.currentUserId)
-    }
+    //     this.props.fetchUser(this.props.currentUserId)
+    // }
 
     render(){
         // const currentUser = this.props.currentUser

@@ -23,16 +23,26 @@ class LocationForm extends React.Component {
                 "Pull-Up Bar": this.props.currentUser.location ? this.props.currentUser.location.equipment.includes("Pull-Up Bar") ? "Pull-Up Bar" : "" : ""
             },
             update: false,
-            handleUpdate: false
+            handleUpdate: false,
+            errors: {}
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleUpdate = this.handleUpdate.bind(this)
     }
 
+    handleErrors(type) {
+        const inputErrors = Object.keys(this.state.errors).filter(error => this.state.errors[error].includes(type))
+        return inputErrors.map(error => <li className="err-list">{this.state.errors[error]}</li>)
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({errors: nextProps.errors})
+    }
+
     componentDidUpdate(){
         if(this.state.handleUpdate){
-            this.props.fetchUser(this.props.currentUser._id);
+            // this.props.fetchUser(this.props.currentUser._id);
             this.setState({handleUpdate: false, update: false})
         }
     }
@@ -77,9 +87,8 @@ class LocationForm extends React.Component {
             equipment
         };
         
-
         this.props.createLocation(form)
-            .then(() => window.location.reload())
+     
     }
 
     handleUpdate(e){
@@ -99,14 +108,14 @@ class LocationForm extends React.Component {
             equipment
         };
         
-        this.props.updateLocation(form); 
-        this.setState({ handleUpdate: true });
+        this.props.updateLocation(form)
+        .then((promise)=> {if (promise) this.setState({ handleUpdate: true })});
         
     }
 
 
     render() {
-
+        debugger
         if (this.props.currentUser.location) {
 
             if(this.state.update){
@@ -114,10 +123,13 @@ class LocationForm extends React.Component {
                     <form className="loc-form" onSubmit={this.handleUpdate}>
                     <h2>Update Your Location</h2>
                     <input type="text" defaultValue={this.props.currentUser.location.address.streetAddress}  placeholder="Street Address" onChange={this.handleAddress("streetAddress")} />
+                    <ul className="loc-errors">{this.handleErrors("Street")}</ul>
                     <br />
                     <input type="text" defaultValue={this.props.currentUser.location.address.city}  placeholder="City" onChange={this.handleAddress("city")} />
+                    <ul className="loc-errors">{this.handleErrors("City")}</ul>
                     <br />
                     <input type="text" defaultValue={this.props.currentUser.location.address.state}  placeholder="State" onChange={this.handleAddress("state")} />
+                    <ul className="loc-errors">{this.handleErrors("State")}</ul>
                     <br />
                     <select type="text" onChange={this.handleAddress("borough")} >
                     {!this.props.currentUser || !this.props.currentUser.location ? <option selected value="" disabled> Borough </option> : <option value="" disabled> --- Borough --- </option>}
@@ -127,6 +139,7 @@ class LocationForm extends React.Component {
                                 {this.props.currentUser ? this.props.currentUser.location ? this.props.currentUser.location.address.borough === "Bronx" ? <option selected value="Bronx">Bronx</option> : <option value="Bronx">Bronx</option> : <option value="Bronx">Bronx</option> : <option value="Bronx">Bronx</option>}
                                 {this.props.currentUser ? this.props.currentUser.location ? this.props.currentUser.location.address.borough === "Staten Island" ? <option selected value="Staten Island">Staten Island</option> : <option value="Staten Island">Staten Island</option> : <option value="Staten Island">Staten Island</option> : <option value="Staten Island">Staten Island</option>}
                     </select>
+                    <ul className="loc-errors">{this.handleErrors("Borough")}</ul>
                     <br />    
     
                     <div className="checkbox-outer-cont">
@@ -201,6 +214,7 @@ class LocationForm extends React.Component {
                 </form>
                 )
             }else{
+
                 return (
                 
                     <div className="loc-form">
@@ -240,10 +254,13 @@ class LocationForm extends React.Component {
             <form className="loc-form" onSubmit={this.handleSubmit}>
                 <h2>Add Your Location</h2>
                 <input type="text" placeholder="Street Address" onChange={this.handleAddress("streetAddress")} />
+                <ul className="loc-errors">{this.handleErrors("Street")}</ul>
                 <br />
                 <input type="text" placeholder="City" onChange={this.handleAddress("city")} />
+                <ul className="loc-errors">{this.handleErrors("City")}</ul>
                 <br />
                 <input type="text" placeholder="State" onChange={this.handleAddress("state")} />
+                <ul className="loc-errors">{this.handleErrors("State")}</ul>
                 <br />
                 <select type="text" onChange={this.handleAddress("borough")} >
                     <option value="" selected disabled>Borough</option>
@@ -253,6 +270,7 @@ class LocationForm extends React.Component {
                     <option value="Bronx">Bronx</option>
                     <option value="Staten Island">Staten Island</option>
                 </select>
+                <ul className="loc-errors">{this.handleErrors("Borough")}</ul>
                 <br />
                 {/* <input type="text" placeholder="Please enter all available equipment seperated by a comma and space" onChange={this.handleInput("equipment")} /> */}
 

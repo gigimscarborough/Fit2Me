@@ -3,6 +3,7 @@ import * as WorkoutApiUtil from '../util/workout_api_util';
 export const RECEIVE_WORKOUT = "RECEIVE_WORKOUT";
 export const RECEIVE_WORKOUTS = "RECEIVE_WORKOUTS";
 export const REMOVE_WORKOUT = "REMOVE_WORKOUT";
+export const RECEIVE_WORKOUT_ERRORS = "RECEIVE_WORKOUT_ERRORS";
 
 
 const receiveWorkout = workout => (
@@ -26,6 +27,11 @@ const removeWorkout = workoutId => (
     }
 )
 
+export const receiveWorkoutErrors = errors => ({
+    type: RECEIVE_WORKOUT_ERRORS,
+    errors
+});
+
 
 
 export const fetchWorkout = (workoutId) => dispatch => (
@@ -36,11 +42,15 @@ export const fetchWorkout = (workoutId) => dispatch => (
 export const createWorkout = (workout) => dispatch => (
     WorkoutApiUtil.createWorkout(workout)
         .then(workout => dispatch(receiveWorkout(workout)))
+        .catch((err) => {dispatch(receiveWorkoutErrors(err.response.data))})
+
 )
 
 export const updateWorkout = (workout) => dispatch => (
     WorkoutApiUtil.updateWorkout(workout)
         .then(workout => dispatch(receiveWorkout(workout)))
+        .catch((err) => {dispatch(receiveWorkoutErrors(err.response.data))})
+
 )
 
 export const deleteWorkout = (workoutId) => dispatch => (

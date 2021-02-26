@@ -18,10 +18,20 @@ class Workout extends React.Component {
             trainerImage: this.props.trainer ? this.props.trainer.imageUrl : null,
             trainerAvailability: this.props.trainer ? this.props.trainer.dailyAvailability : null,
             trainerLocation: this.props.trainer ? this.props.trainer.location ? this.props.trainer.location.address.streetAddress : null : null,
+            errors: {}
         }
         this.date = new Date()
         this.timeOptions = this.timeOptions.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    handleErrors(type) {
+        const inputErrors = Object.keys(this.state.errors).filter(error => this.state.errors[error].includes(type))
+        return inputErrors.map(error => <span className="err-workout-span">{this.state.errors[error]}</span>)
+    }
+
+    componentWillReceiveProps(nextProps){
+        this.setState({errors: nextProps.errors})
     }
 
     componentDidMount() {
@@ -55,6 +65,7 @@ class Workout extends React.Component {
                         <option disabled selected value=""> --- Select A Time --- </option>
                        {timeOptions}
                     </select>
+                    {this.handleErrors("Time")}
                 </div>
                 </div>
             )
@@ -88,7 +99,7 @@ class Workout extends React.Component {
 
         this.props.createWorkout(workout)
         
-        .then(() => this.props.history.push(`/users/${this.props.currentUserId}`))
+        .then((payload) => {if(payload) this.props.history.push(`/users/${this.props.currentUserId}`)})
     
 
     }
@@ -156,6 +167,7 @@ class Workout extends React.Component {
                                             {this.props.trainer.location ? <option value={this.props.trainer.location.address.streetAddress}>Trainer's Location</option> : null}
                                             {this.props.currentUser.location ? <option value={this.props.currentUser.location.address.streetAddress}>My Location</option> : null}
                                         </select>
+                                    {this.handleErrors("Location")}
                                     </div>
                                         <p>Select A Date:</p>
                                     <div className="loc-div">
@@ -165,6 +177,7 @@ class Workout extends React.Component {
                                             {/* <option value={this.date.toDateString()}>{this.date.toDateString()}</option> */}
                                             {dateOptions}
                                         </select>
+                                    {this.handleErrors("Date")}
                                     </div>
                                         {this.timeOptions()}
                                         {/* </select> */}

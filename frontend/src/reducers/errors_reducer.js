@@ -1,7 +1,13 @@
 import { combineReducers } from 'redux';
 
 import SessionErrorsReducer from './session_errors_reducer';
+import LocationErrorsReducer from './location_errors_reducer';
+import ReviewErrorsReducer from './review_errors_reducer';
+import WorkoutErrorsReducer from './workout_errors_reducer';
 
 export default combineReducers({
-    session: SessionErrorsReducer
+    session: SessionErrorsReducer,
+    location: LocationErrorsReducer,
+    review: ReviewErrorsReducer,
+    workout: WorkoutErrorsReducer
 });

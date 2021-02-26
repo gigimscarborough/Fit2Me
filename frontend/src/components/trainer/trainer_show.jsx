@@ -11,13 +11,11 @@ class TrainerShow extends React.Component {
     }
 
     componentDidMount() {
-
         this.props.getTrainer(this.props.trainerId)
-        // this.props.fetchUser(this.props.currentUserId)
     }
     bookWorkout(){
         debugger
-        if (this.props.currentUser) {
+        if (this.props.currentUserId) {
             this.props.history.push(`/trainers/${this.props.trainer._id}/workout`)
         } else {
             this.props.openModal('login');
@@ -25,9 +23,6 @@ class TrainerShow extends React.Component {
     }
 
     render() {
-
-        debugger
-        
         if (!this.props.trainer) {
             return (
                 <div>Loading..</div>

@@ -10,10 +10,28 @@ class ReviewForm extends React.Component {
             rating: null,
             userId: this.props.user_id,
             trainerId: this.props.match.params.trainerId,
-            workoutDate: ''
+            workoutDate: '',
+            errors: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({errors: nextProps.errors})
+    }
+
+    handleErrors(type) {
+        const inputErrors = Object.keys(this.state.errors).filter(error => this.state.errors[error].includes(type))
+        return inputErrors.map(error => <li className="err-list">{this.state.errors[error]}</li>)
+    }
+
+    handleErrorBody(type) {
+        const inputErrors = Object.keys(this.state.errors).filter(error => this.state.errors[error].includes(type))
+        debugger
+        return this.state.errors[inputErrors[0]]
+    }
+
+    // .map(error => <li className="err-list">{this.state.errors[error]}
 
     handleChange(type){
         return(e) => (
@@ -43,7 +61,7 @@ class ReviewForm extends React.Component {
             workoutDate: this.state.workoutDate
         } 
        
-        this.props.createReview(form).then(()=> this.props.history.push(`/trainers/${this.props.trainer['_id']}`))
+        this.props.createReview(form).then((payload)=> {if (payload) this.props.history.push(`/trainers/${this.props.trainer['_id']}`)})
     }
 
     render(){
@@ -86,14 +104,17 @@ class ReviewForm extends React.Component {
                                                 <label htmlFor="5">{5}</label>
                                             </span>
                                         </div>
+                                        <ul className="rev-errors-rating">{this.handleErrors("Rating")}</ul>
                                     </div>
                                     <div className="rating-workout-date">
                                         <span className="last-workout-date">last workout date </span>
                                         <input className="rating-workout-d" type="date" value={this.state.workoutDate} onChange={this.handleChange("workoutDate")}/>
+                                        <ul className="rev-errors-date">{this.handleErrors("Date")}</ul>
                                     </div>
                                     <h3 className="review-body">WRITE YOUR REVIEW</h3>                                   
-                                    <textarea className="text-area-text"value={this.state.body} onChange={this.handleChange("body")} 
-                                    placeholder="Your Review Goes Here!"></textarea>
+                                    <textarea className={`text-area-text ${this.handleErrorBody("Body") ? "b-err" : "n-err"}`}value={this.state.body} onChange={this.handleChange("body")} 
+                                    placeholder={this.handleErrorBody("Body") ? this.handleErrorBody("Body") : "Your Review Goes Here!" }></textarea>
+                                    {/* <ul className="rev-errors">{this.handleError("Body")}</ul> */}
                                 </div>
                             </div>
                             <button className="review-post-button">Post Review</button>

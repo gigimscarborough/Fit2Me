@@ -4,21 +4,18 @@ const validText = require('./valid-text');
 module.exports = function validateLocation(data) {
   let errors = {};
 
-
-        // if (Validator.isEmpty(data.address.city)) {
-        //   errors.address = 'City is required';
-        // }
-        // if (Validator.isEmpty(data.address.state)) {
-        //   errors.address = 'State is required';
-        // }
-        // if (Validator.isEmpty(data.address.borough)) {
-        //   errors.address = 'Borough is required';
-        // }
-
-        // if (Validator.isEmpty(data.equipment)) {
-        //   errors.equipment = 'Equipment is required';
-        // }
-
+  if (Validator.isEmpty(data.address.streetAddress)) {
+    errors.streetAddress = "Street Address is required";
+  }
+  if (Validator.isEmpty(data.address.city)) {
+    errors.city = 'City is required';
+  }
+  if (Validator.isEmpty(data.address.state)) {
+    errors.state = 'State is required';
+  }
+  if (Validator.isEmpty(data.address.borough)) {
+    errors.borough = 'Borough is required';
+  }
 
   return {
     errors,

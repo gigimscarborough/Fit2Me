@@ -14,6 +14,12 @@ router.get('/show/:locationId', (req, res) => {
 
 router.patch('/update/:locationId', (req, res) => {
 
+  const { errors, isValid } = validateLocation(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   const updatedLocation = {
     address: req.body.address,
     equipment: req.body.equipment
@@ -21,36 +27,37 @@ router.patch('/update/:locationId', (req, res) => {
 
   Location.findOneAndUpdate({'_id': req.body['_id']}, {$set: updatedLocation}, {new: true})
 
-  .then(location => res.json(location))
-  .catch(err => console.log(err));
+  .then(location => {
+    
+    User.findOneAndUpdate({'_id': location.ownerId}, {location}, {new: true}).populate("location").populate("workouts")
+    .catch(err => console.log(err))
+    .then(user => res.json(user))      
+    })
+    .catch(err => console.log(err));
 })
 
 router.post('/create', (req, res) => {
-
+  
   const { errors, isValid } = validateLocation(req.body);
 
   if (!isValid) {
     return res.status(400).json(errors);
   }
             
-          const newLocation = new Location({
-              ownerId: req.body.ownerId,
-              address: req.body.address,
-              equipment: req.body.equipment
-            })
-      
-          newLocation.save()
-          .then(location => {
-            
-              User.updateOne({'_id': location.ownerId}, {location}, { "upsert": false }).catch(err => console.log(err))
+  const newLocation = new Location({
+      ownerId: req.body.ownerId,
+      address: req.body.address,
+      equipment: req.body.equipment
+    })
 
-              User.findById(location.ownerId).populate('workouts').populate("location")
-              .then(user => res.json(user))
-
-
-              
-              })
-              .catch(err => console.log(err));
+  newLocation.save()
+  .then(location => {
+    
+      User.findOneAndUpdate({'_id': location.ownerId}, {$set: {location}}, {new: true}).populate("location").populate("workouts")
+      .catch(err => console.log(err))
+      .then(user => res.json(user))      
+      })
+      .catch(err => console.log(err));
 
 })
 

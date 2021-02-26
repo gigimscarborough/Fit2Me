@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 const Review = require('../../models/Review');
-
+const validateReview = require("../../validation/review");
 
 router.get('/show/:reviewId', (req, res) => {
   Review.findById(req.params.reviewId)
@@ -11,7 +11,11 @@ router.get('/show/:reviewId', (req, res) => {
 })
 
 router.patch('/update/:reviewId', (req, res) => {
+  const { errors, isValid } = validateReview(req.body);
 
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
   const updatedReview = {
     body: req.body.body,
@@ -32,6 +36,13 @@ router.delete('/delete/:reviewId', (req, res) => {
 });
 
 router.post('/create', (req, res) => {
+  
+  const { errors, isValid } = validateReview(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
             
   const newReview = new Review({
       trainerId: req.body.trainerId,
