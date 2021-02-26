@@ -103,6 +103,7 @@ class SearchResults extends React.Component {
                                 <h1>TRAINER SEARCH</h1>
                                 <div className="matches">
                                     <h2>No Results Matched Your Search</h2>
+                                    <Link to="/search">New Search</Link>
                                 </div>
                             </div>
                             <div className="t-content-header">
