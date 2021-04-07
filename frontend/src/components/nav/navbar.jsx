@@ -13,6 +13,7 @@ class NavBar extends React.Component {
         this.getButton = this.getButton.bind(this)
     }
 
+    
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
